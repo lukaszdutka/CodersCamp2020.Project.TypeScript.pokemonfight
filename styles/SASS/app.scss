@@ -1,0 +1,33 @@
+@import './resets';
+@import './loading-view';
+@import './start-view';
+@import './pokemon-choose-view';
+@import './fight-view';
+@import './animations';
+@import './config';
+@import './responsive-view';
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+}
+
+footer {
+    // ...
+}
+
+p {
+    // ...
+}
+
+a {
+    // ...
+}
+
+h1 {
+    // ...
+}
+
+h2 {
+    // ...
+}
