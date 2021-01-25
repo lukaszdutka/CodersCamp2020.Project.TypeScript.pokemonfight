@@ -1,1 +1,9 @@
 // Placeholder for @media-query-breakpoints
+
+@import './config'
+
+@mixins mobile {
+    @media (max-width: $mobile) {
+        @content
+    }
+}
