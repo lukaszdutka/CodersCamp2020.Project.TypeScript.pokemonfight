@@ -1,3 +1,8 @@
+// File should contains:
+// - styles for body, footer, p, h1, ... 
+// - styles for buttons and scrollbars
+// - imports for rest of _<name>.scss files
+
 @import './resets';
 @import './config';
 @import './loading-view';
