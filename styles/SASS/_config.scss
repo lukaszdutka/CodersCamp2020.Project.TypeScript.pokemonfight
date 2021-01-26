@@ -1,0 +1,13 @@
+// Placeholder for variables, colors, mixins etc.
+
+// Example of variable
+$background-color: white;
+$text-color: black;
+$mobile: 800px;
+
+
+@mixins mobile {
+    @media (max-width: $mobile) {
+        @content
+    }
+}
