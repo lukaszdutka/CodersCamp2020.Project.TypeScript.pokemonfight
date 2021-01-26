@@ -6,7 +6,7 @@ $text-color: black;
 $mobile: 800px;
 
 
-@mixins mobile {
+@mixin mobile {
     @media (max-width: $mobile) {
         @content
     }
