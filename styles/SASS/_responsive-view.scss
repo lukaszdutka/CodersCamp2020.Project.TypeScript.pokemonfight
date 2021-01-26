@@ -1,7 +1,2 @@
 // Placeholder for @media-query-breakpoints
 
-@mixins mobile {
-    @media (max-width: 800px) {
-        @content
-    }
-}
