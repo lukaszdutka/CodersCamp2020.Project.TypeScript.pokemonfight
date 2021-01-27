@@ -1,74 +1,69 @@
-export type pokemonType = 'grass' | 'poison' | 'fire' | 'water' | 'bug' | 'normal' | 'flying' | 'electric' | 'ground' | 'fairy' | 'psychic' | 'fighting' | 'rock' | 'ground'
+export type pokemonType =
+  | "grass"
+  | "poison"
+  | "fire"
+  | "water"
+  | "bug"
+  | "normal"
+  | "flying"
+  | "electric"
+  | "ground"
+  | "fairy"
+  | "psychic"
+  | "fighting"
+  | "rock";
 
 export abstract class Pokemon {
-    constructor() {}
-    abstract _image: string;
-    abstract _HP: number;
-    abstract _attackPoints: number; 
-    abstract _defensePoints: number; 
-    abstract _types: pokemonType[];
-    abstract _moves: {moveName: string, moveType: pokemonType}[];
-    _isAlive: boolean = true;
-    _hasMango: boolean = true;
+  constructor() {}
+  abstract readonly _name: string;
+  abstract readonly _image: string;
+  abstract readonly _maxHP: number;
+  abstract _currentHP: number;
+  abstract _attackPoints: number;
+  abstract _defensePoints: number;
+  abstract readonly _types: pokemonType[];
+  abstract readonly _moves: { moveName: string; moveType: pokemonType }[];
+  abstract _isAlive: boolean = true;
 
-    get image() {
-        return this._image;
-    }
+  get name() {
+    return this._name;
+  }
 
-    get HP() {
-        return this._HP;
-    }
+  get image() {
+    return this._image;
+  }
 
-    set HP(newHP) {
-        if (newHP <= 0) {
-        this.HP = 0;
-        }
-        this._HP = newHP;
-    }
+  get currentHP() {
+    return this._currentHP;
+  }
 
-    get attackPoints() {
-        return this._attackPoints;
+  set currentHP(newHP) {
+    if (newHP <= 0) {
+      this._currentHP = 0;
     }
+    if (newHP >= this._maxHP) {
+      this._currentHP = this._maxHP;
+    }
+    this._currentHP = newHP;
+  }
 
-    set attackPoints(newAttackPoints) {
-        if (newAttackPoints <= 0) {
-        this._attackPoints = 0;
-        }
-        this._attackPoints = newAttackPoints;
-    }
+  get attackPoints() {
+    return this._attackPoints;
+  }
 
-    get defensePoints() {
-        return this._defensePoints;
-    }
+  get defensePoints() {
+    return this._defensePoints;
+  }
 
-    set defensePoints(newDefensePoints) {
-        if (newDefensePoints <= 0) {
-        this.defensePoints = 0;
-        }
-        this._defensePoints = newDefensePoints;
-    }
+  get types() {
+    return this._types;
+  }
 
-    get types() {
-        return this._types;
-    }
+  get moves() {
+    return this._moves;
+  }
 
-    get moves() {
-        return this._moves;
-    }
-
-    get isAlive () {
-        return this._isAlive;
-    }
-
-    set isAlive (isAliveNewValue: boolean) {
-         this._isAlive = isAliveNewValue;
-    }
-
-    get hasMango () {
-        return this._hasMango;
-    }
-
-    set hasMango (hasMangoNewValue: boolean) {
-         this._hasMango = hasMangoNewValue;
-    }
-}   
+  get isAlive() {
+    return this._currentHP > 0
+  }
+}
