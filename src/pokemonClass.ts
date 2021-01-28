@@ -1,4 +1,4 @@
-export type pokemonType =
+export type PokemonType =
   | "grass"
   | "poison"
   | "fire"
@@ -21,8 +21,8 @@ export abstract class Pokemon {
   abstract _currentHP: number;
   abstract readonly _attackPoints: number;
   abstract readonly _defensePoints: number;
-  abstract readonly _types: pokemonType[];
-  abstract readonly _moves: { moveName: string; moveType: pokemonType }[];
+  abstract readonly _types: PokemonType[];
+  abstract readonly _moves: { moveName: string; moveType: PokemonType }[];
 
   get name() {
     return this._name;
