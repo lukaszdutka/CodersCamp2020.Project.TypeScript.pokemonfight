@@ -54,6 +54,33 @@
   padding-right: 10vw;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper {
+  max-width: 500px;
+  height: 50vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper .gameTitle {
+  text-align: center;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper .startInstruction {
+  text-align: center;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area {
+  display: flex;
+  justify-content: space-around;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput {
+  width: 40%;
 }
 
 #starting-page #start-game-border {
@@ -61,7 +88,41 @@
   padding-left: 10vw;
   padding-right: 10vw;
   width: 100%;
-  height: 40px;
+  height: 20px;
+}
+
+#starting-page #start-game-border #start-game-bg1 {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  background-color: #020402ff;
+  width: 200px;
+  height: 200px;
+}
+
+#starting-page #start-game-border #start-game-bg1 #start-game-bg2 {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  background-color: #e8f1f2ff;
+  width: 160px;
+  height: 160px;
+}
+
+#starting-page #start-game-border #start-game-bg1 #start-game-bg2 #start-game-btn {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px #020402ff;
+  background-color: #9b1d20ff;
+  width: 130px;
+  height: 130px;
 }
 
 #starting-page #info-menu {
@@ -70,6 +131,22 @@
   padding-right: 10vw;
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#starting-page #info-menu #select-info-menu {
+  max-width: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+#starting-page #info-menu #select-info-menu .start-page-button {
+  text-align: center;
+  list-style: none;
 }
 
 body {
