@@ -1,13 +1,35 @@
 // Placeholder for variables, colors, mixins etc.
 
 // Example of variable
-$background-color: white;
-$text-color: black;
-$mobile: 800px;
+$color-red: #9b1d20ff;
+$color-black: #020402ff;
+$color-white: #e8f1f2ff;
+$color-blue: #235789ff;
+$color-yellow: #e3b505ff;
 
+$mobile: 768px;
 
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content
-    }
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "Pokemon Solid";
+  src: url(../assets/PokemonSolid.ttf);
+} 
+
+@mixin transition-ease {
+    transition: all 0.3s ease-in-out;
 }
+  
+@mixin boxshadow {
+    box-shadow: 2px 2px 2px $color-black;
+}
+
+@mixin dropshadow {
+  filter: drop-shadow(2px 2px 2px $color-black);
+}
+
+@mixin desktop {
+    @media screen and (min-width: $mobile) {
+      @content;
+    }
+  }
