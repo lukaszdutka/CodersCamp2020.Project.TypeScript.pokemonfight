@@ -36,14 +36,15 @@ export abstract class Pokemon {
     return this._currentHP;
   }
 
-  subtractHP(pointsToSubtract: number): number {
-    if (this._currentHP < pointsToSubtract) {
-      return 0;
+  subtractHP(pointsToSubtract: number): void {
+    const newHP = this._currentHP - pointsToSubtract;
+    if (newHP < 0) {
+      this._currentHP = 0;
     }
-    return this._currentHP - pointsToSubtract;
+    this._currentHP = newHP;
   }
 
-  heal() {
+  heal(): void {
     this._currentHP = this._maxHP;
   }
 
