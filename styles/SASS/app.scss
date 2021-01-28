@@ -1,0 +1,38 @@
+// File should contains:
+// - styles for body, footer, p, h1, ... 
+// - styles for buttons and scrollbars
+// - imports for rest of _<name>.scss files
+
+@import './resets';
+@import './config';
+@import './loading-view';
+@import './start-view';
+@import './pokemon-choose-view';
+@import './fight-view';
+@import './animations';
+@import './responsive-view';
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+}
+
+footer {
+    // ...
+}
+
+p {
+    // ...
+}
+
+a {
+    // ...
+}
+
+h1 {
+    // ...
+}
+
+h2 {
+    // ...
+}
