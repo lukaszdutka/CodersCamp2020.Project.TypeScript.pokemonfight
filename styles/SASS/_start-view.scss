@@ -1,1 +1,35 @@
 // Styles for start page. Common elements should be added to _config.scss in mixins.
+#starting-page {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    #header-with-enter-name-manu {
+        background-color: $color-red;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #start-game-border {
+        background-color: $color-black;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        width: 100%;
+        height: 40px;
+    }
+
+    #info-menu {
+        background-color: $color-white;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        width: 100%;
+        height: 100vh;
+    }
+}
