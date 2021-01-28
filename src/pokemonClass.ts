@@ -19,11 +19,10 @@ export abstract class Pokemon {
   abstract readonly _image: string;
   abstract readonly _maxHP: number;
   abstract _currentHP: number;
-  abstract _attackPoints: number;
-  abstract _defensePoints: number;
+  abstract readonly _attackPoints: number;
+  abstract readonly _defensePoints: number;
   abstract readonly _types: pokemonType[];
   abstract readonly _moves: { moveName: string; moveType: pokemonType }[];
-  abstract _isAlive: boolean = true;
 
   get name() {
     return this._name;
@@ -37,14 +36,15 @@ export abstract class Pokemon {
     return this._currentHP;
   }
 
-  set currentHP(newHP) {
-    if (newHP <= 0) {
-      this._currentHP = 0;
+  subtractHP(pointsToSubtract: number): number {
+    if (this._currentHP < pointsToSubtract) {
+      return 0;
     }
-    if (newHP >= this._maxHP) {
-      this._currentHP = this._maxHP;
-    }
-    this._currentHP = newHP;
+    return this._currentHP - pointsToSubtract;
+  }
+
+  heal() {
+    this._currentHP = this._maxHP;
   }
 
   get attackPoints() {
@@ -63,7 +63,7 @@ export abstract class Pokemon {
     return this._moves;
   }
 
-  get isAlive() {
-    return this._currentHP > 0
+  isAlive(): boolean {
+    return this._currentHP > 0;
   }
 }
