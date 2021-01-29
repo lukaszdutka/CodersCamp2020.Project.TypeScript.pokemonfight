@@ -10,15 +10,26 @@
 @import './pokemon-choose-view';
 @import './fight-view';
 @import './animations';
-@import './responsive-view';
+@import './responsive';
 
 body {
-    background-color: $background-color;
-    color: $text-color;
+    font-family: 'Bellota Text', cursive;
+    font-size: 2.4em;
+    letter-spacing: .05em;
+    background-color: $color-bg;
+    color: $color-text;
 }
 
 footer {
-    // ...
+    font-size: .5em;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    margin-left: .5em;
+    transform: rotate(-90deg) translate(-50%);
+    transform-origin: top left;
+    white-space: nowrap;
 }
 
 p {
