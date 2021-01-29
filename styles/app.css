@@ -68,6 +68,9 @@
 
 #starting-page #header-with-enter-name-manu .headerWrapper .gameTitle {
   text-align: center;
+  font-family: 'Pokemon Solid';
+  font-size: 1.5em;
+  color: #e8f1f2ff;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper .startInstruction {
@@ -138,15 +141,22 @@
 }
 
 #starting-page #info-menu #select-info-menu {
-  max-width: 500px;
+  width: 240px;
+  height: 30vh;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: 80px;
 }
 
 #starting-page #info-menu #select-info-menu .start-page-button {
   text-align: center;
   list-style: none;
+  background-color: #020402ff;
+  color: #e8f1f2ff;
+  padding: 0.3em;
+  margin: 0.5em;
+  border-radius: 1em;
 }
 
 body {

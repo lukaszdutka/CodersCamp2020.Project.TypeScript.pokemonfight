@@ -26,6 +26,9 @@
 
             .gameTitle {
                 text-align: center;
+                font-family: 'Pokemon Solid';
+                font-size: 1.5em;
+                color: $color-bg;
             }
 
             .startInstruction {
@@ -89,14 +92,22 @@
         
 
         #select-info-menu {
-            max-width: 500px;
+            width: 240px;
+            height: 30vh;
             display: flex;
             flex-flow: column nowrap;
-            justify-content: center;
+            justify-content: flex-start;
+            margin-top: 80px;
             
             .start-page-button {
                 text-align: center;
                 list-style: none;
+                background-color: $color-text;
+                color: $color-bg;
+                padding: 0.3em;
+                margin: 0.5em;
+                border-radius: 1em;
+            
             }
         }
         
