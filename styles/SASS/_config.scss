@@ -1,11 +1,11 @@
 // Placeholder for variables, colors, mixins etc.
 
 // Example of variable
-$color-red: #9b1d20ff;
-$color-black: #020402ff;
-$color-white: #e8f1f2ff;
-$color-blue: #235789ff;
-$color-yellow: #e3b505ff;
+$color-primary: #9b1d20ff;
+$color-text: #020402ff;
+$color-bg: #e8f1f2ff;
+$color-optional-one: #235789ff;
+$color-optional-two: #e3b505ff;
 
 $mobile: 768px;
 
@@ -17,15 +17,15 @@ $mobile: 768px;
 } 
 
 @mixin transition-ease {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
   
 @mixin boxshadow {
-    box-shadow: 2px 2px 2px $color-black;
+    box-shadow: 2px 2px 2px $color-text;
 }
 
 @mixin dropshadow {
-  filter: drop-shadow(2px 2px 2px $color-black);
+  filter: drop-shadow(2px 2px 2px $color-text);
 }
 
 @mixin desktop {
