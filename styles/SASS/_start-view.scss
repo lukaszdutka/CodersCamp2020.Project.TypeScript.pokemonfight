@@ -38,6 +38,10 @@
                 color: $color-bg;
                 font-family: 'Bellota Text', cursive;
                 font-size: 0.8em;
+
+                &:hover {
+                    opacity: 0.7;
+                }
             }
 
             .gameTitle {
@@ -49,6 +53,7 @@
 
             .startInstruction {
                 text-align: center;
+                font-size: 0.6em;
             }
 
             #enter-name-area {
@@ -89,6 +94,10 @@
                     background-color: $color-primary;
                     width: 130px;
                     height: 130px;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
                 }
             }
         }
@@ -122,6 +131,10 @@
                 padding: 0.3em;
                 margin: 0.5em;
                 border-radius: 1em;
+
+                &:hover {
+                    @include boxshadow;
+                }
             
             }
         }
