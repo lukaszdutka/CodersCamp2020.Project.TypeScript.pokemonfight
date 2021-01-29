@@ -16,19 +16,35 @@
         height: 100vh;
         display: flex;
         justify-content: center;
+        align-items: center;
 
         .headerWrapper {
             max-width: 500px;
-            height: 50vh;
+            height: 300px;
             display: flex;
             flex-flow: column nowrap;
-            justify-content: center;
+            justify-content: space-evenly;
+            padding-bottom: 100px;
+            color: $color-bg;
+
+            p, div {
+                margin: 5px;
+            }
+
+            input {
+                border: none;
+                background-color: $color-primary;
+                text-align: center;
+                color: $color-bg;
+                font-family: 'Bellota Text', cursive;
+                font-size: 0.8em;
+            }
 
             .gameTitle {
                 text-align: center;
                 font-family: 'Pokemon Solid';
                 font-size: 1.5em;
-                color: $color-bg;
+                
             }
 
             .startInstruction {
@@ -36,7 +52,6 @@
             }
 
             #enter-name-area {
-                // overflow: auto;
                 display: flex;
                 justify-content: space-around;
                 

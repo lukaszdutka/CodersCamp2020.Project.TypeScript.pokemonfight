@@ -56,21 +56,36 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper {
   max-width: 500px;
-  height: 50vh;
+  height: 300px;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding-bottom: 100px;
+  color: #e8f1f2ff;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper p, #starting-page #header-with-enter-name-manu .headerWrapper div {
+  margin: 5px;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper input {
+  border: none;
+  background-color: #9b1d20ff;
+  text-align: center;
+  color: #e8f1f2ff;
+  font-family: 'Bellota Text', cursive;
+  font-size: 0.8em;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper .gameTitle {
   text-align: center;
   font-family: 'Pokemon Solid';
   font-size: 1.5em;
-  color: #e8f1f2ff;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper .startInstruction {
