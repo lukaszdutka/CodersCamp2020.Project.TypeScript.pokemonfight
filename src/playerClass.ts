@@ -1,16 +1,22 @@
-import {Pokemon} from "./pokemonClass"; 
+import { Pokemon } from "./pokemonClass";
 
-export class Player{
-    private _name: string;
-    private _pokemons: Pokemon[];
-    constructor(name:string, pokemons:Pokemon[]){
-        this._name=name;
-        this._pokemons=pokemons;
+export class Player {
+  private _name: string;
+  private _pokemons: Pokemon[];
+  constructor(name: string, pokemons: Pokemon[]) {
+    if (name.length > 20) {
+      throw new Error("Too long name");
     }
-    get name():string{
-        return this._name;
+    if (pokemons.length != 3) {
+      throw new Error("Wrong number of pokemons");
     }
-    get pokemons():Pokemon[]{
-        return this._pokemons
-    }
+    this._name = name;
+    this._pokemons = pokemons;
+  }
+  get name(): string {
+    return this._name;
+  }
+  get pokemons(): Pokemon[] {
+    return this._pokemons;
+  }
 }
