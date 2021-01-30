@@ -146,10 +146,16 @@
   background-color: #9b1d20ff;
   width: 130px;
   height: 130px;
+  text-align: center;
+  font-family: 'Pokemon Solid';
+  font-size: 1em;
+  color: #9b1d20ff;
+  padding-top: 15%;
 }
 
 #starting-page #start-game-border #start-game-bg1 #start-game-bg2 #start-game-btn:hover {
-  opacity: 0.7;
+  background-color: #e8f1f2ff;
+  color: #020402ff;
 }
 
 #starting-page #info-menu {
@@ -185,6 +191,7 @@
 
 #starting-page #info-menu #select-info-menu .start-page-button:hover {
   box-shadow: 2px 2px 2px #020402ff;
+  background-color: #9b1d20ff;
 }
 
 body {
