@@ -66,12 +66,107 @@ html {
           filter: drop-shadow(2px 2px 2px #020402ff);
 }
 
+#choose-page {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 5vh 2.5vh;
+}
+
+#choose-page > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+  text-align: center;
+  font-weight: 900;
+}
+
+#choose-page p {
+  font-size: 2.2vh;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1vh 0;
+}
+
+#choose-page h1 {
+  font-size: 5vh;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Pokemon Solid";
+}
+
+#choose-page #whoChoosesParagraph {
+  font-size: 3vh;
+  color: #9b1d20ff;
+}
+
+#choose-page .choosePagePlayers {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#choose-page .choosePagePlayers .choosePagePlayersName {
+  grid-column: span 3;
+  padding: 0.5vh;
+}
+
+#choose-page .choosePagePlayers img {
+  max-width: 7vh;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1;
+          flex: 0 1;
+  padding: 0 0.8vh;
+}
+
+#choose-page #pokemonList {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+#choose-page #pokemonList img {
+  max-height: 8.5vh;
+  padding: 0.8vh 0.5vh;
+}
+
 body {
   font-family: 'Bellota Text', cursive;
   font-size: 2.4em;
   letter-spacing: .05em;
   background-color: #e8f1f2ff;
   color: #020402ff;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
 }
 
 footer {

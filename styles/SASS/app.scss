@@ -20,6 +20,12 @@ body {
     color: $color-text;
 }
 
+#app {
+    height: 100vh;
+    width: 100vw;
+   // overflow: hidden;
+}
+
 footer {
     font-size: .5em;
     font-weight: bold;
