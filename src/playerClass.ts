@@ -4,7 +4,7 @@ export class Player {
   private _name: string;
   private _pokemons: Pokemon[];
   constructor(name: string, pokemons: Pokemon[]) {
-    if (name.length > 20) {
+    if (name.length > 8) {
       throw new Error("Too long name");
     }
     if (pokemons.length != 3) {
