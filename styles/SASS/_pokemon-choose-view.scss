@@ -39,6 +39,8 @@
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         align-items: center;
+        justify-items: center;
+        max-height: 18%;
         .choosePagePlayersName {
             grid-column: span 3;
             padding: 0.5vh;

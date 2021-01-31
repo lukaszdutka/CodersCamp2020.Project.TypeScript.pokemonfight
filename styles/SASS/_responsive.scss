@@ -4,4 +4,37 @@
   #loading-view {
     //no style needed
   }
+
+  #choose-page {
+
+    padding: 15vh 2.5vh;
+
+    p {
+        font-size: 3.5vh;
+        padding: 2vh 0;
+    }
+
+    h1 {
+        font-size: 5.5vh;
+    }
+
+    #whoChoosesParagraph {
+        font-size: 3.5vh;
+    }
+
+    .choosePagePlayers {
+        grid-template-columns: repeat(6, 1fr);
+        img {
+            max-width: 8vh;
+            margin: 2vh;
+        }
+    }
+
+    #pokemonList{
+        grid-template-columns: repeat(6, 1fr);
+        img {
+            max-height: 10vh;
+        }
+    }
+}    
 }
