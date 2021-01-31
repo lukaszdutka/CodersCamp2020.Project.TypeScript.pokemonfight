@@ -89,12 +89,12 @@
 #starting-page #header-with-enter-name-manu .headerWrapper .gameTitle {
   text-align: center;
   font-family: 'Pokemon Solid';
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper .startInstruction {
   text-align: center;
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area {
@@ -230,6 +230,32 @@
 
 .popupScreen .popupScreenArea .modalParagraph {
   font-size: 0.3em;
+}
+
+@media screen and (min-width: 768px) {
+  #starting-page #header-with-enter-name-manu .headerWrapper {
+    max-width: 700px;
+    height: 300px;
+  }
+  #starting-page #header-with-enter-name-manu .headerWrapper input {
+    font-size: 1.2em;
+  }
+  #starting-page #header-with-enter-name-manu .headerWrapper .gameTitle {
+    font-size: 3em;
+  }
+  #starting-page #header-with-enter-name-manu .headerWrapper .startInstruction {
+    font-size: 1em;
+  }
+  #starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput {
+    width: 40%;
+  }
+  #starting-page #info-menu #select-info-menu {
+    width: 350px;
+    height: 35vh;
+  }
+  #starting-page #info-menu #select-info-menu .start-page-button {
+    font-size: 1.3em;
+  }
 }
 
 body {
