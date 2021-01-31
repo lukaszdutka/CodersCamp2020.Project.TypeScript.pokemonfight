@@ -9,15 +9,18 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  @include transition-ease;
 
   p {
     max-width: 400px;
     text-align: center;
     margin-bottom: 1em;
+    @include transition-ease;
   }
 
   img {
     width: fit-content;
+    @include transition-ease;
   }
 
   #zzz {
