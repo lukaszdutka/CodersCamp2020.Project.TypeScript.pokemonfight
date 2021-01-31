@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap");
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 @font-face {
@@ -260,8 +268,9 @@
 
 body {
   font-family: 'Bellota Text', cursive;
-  font-size: 24px;
+  font-size: 2.4em;
   letter-spacing: .05em;
+  background-color: #e8f1f2ff;
   color: #020402ff;
 }
 
