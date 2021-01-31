@@ -74,26 +74,26 @@
         padding-left: 10vw;
         padding-right: 10vw;
         width: 100%;
-        height: 20px;
+        height: 15px;
 
         #start-game-bg1 {
             @include centerpokeball;
             background-color: $color-text;
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
 
             #start-game-bg2 {
                 @include centerpokeball;
                 background-color: $color-bg;
-                width: 160px;
-                height: 160px;
+                width: 130px;
+                height: 130px;
 
                 #start-game-btn {
                     @include centerpokeball;
                     @include boxshadow;
                     background-color: $color-primary;
-                    width: 130px;
-                    height: 130px;
+                    width: 110px;
+                    height: 110px;
                     text-align: center;
                     font-family: 'Pokemon Solid';
                     font-size: 1em;
@@ -129,7 +129,7 @@
             display: flex;
             flex-flow: column nowrap;
             justify-content: flex-start;
-            margin-top: 80px;
+            margin-top: 70px;
             
             .start-page-button {
                 text-align: center;
@@ -139,6 +139,7 @@
                 padding: 0.3em;
                 margin: 0.5em;
                 border-radius: 1em;
+                font-size: 0.9em;
 
                 &:hover {
                     @include boxshadow;
