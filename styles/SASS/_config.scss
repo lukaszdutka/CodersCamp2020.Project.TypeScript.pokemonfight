@@ -32,4 +32,12 @@ $mobile: 768px;
     @media screen and (min-width: $mobile) {
       @content;
     }
-  }
+}
+
+@mixin centerpokeball {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+}

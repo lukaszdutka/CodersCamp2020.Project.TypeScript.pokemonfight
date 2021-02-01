@@ -4,4 +4,62 @@
   #loading-view {
     //no style needed
   }
+
+  #starting-page {
+    #header-with-enter-name-manu {
+        .headerWrapper {
+            max-width: 700px;
+            height: 300px;
+            input {
+                font-size: 1.2em;
+            }
+
+            .gameTitle {
+                font-size: 3em; 
+            }
+
+            .startInstruction {
+                font-size: 1em;
+            }
+
+            #enter-name-area {
+                .playerNameInput {
+                    width: 40%;
+                }
+            }  
+        }     
+    }
+
+    #start-game-border {
+        height: 20px;
+
+        #start-game-bg1 {
+            width: 200px;
+            height: 200px;
+
+            #start-game-bg2 {
+                width: 160px;
+                height: 160px;
+
+                #start-game-btn {
+                    width: 130px;
+                    height: 130px;
+
+                }
+            }
+        }
+    }
+
+    #info-menu {
+      
+      #select-info-menu {
+          width: 350px;
+          height: 35vh;
+          
+          .start-page-button {
+              font-size: 1.3em;
+          }
+      } 
+    }
+  }
 }
