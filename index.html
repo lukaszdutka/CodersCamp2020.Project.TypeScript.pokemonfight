@@ -11,12 +11,19 @@
 
 <body>
 
+<div id="app">
 
     <div id="loading-view">
         <p>Please wait a bit, we are looking for the Poké Flute to wake up Snorlax to fight.</p>
         <img id="zzz" src="assets/zzz.png" alt="zzz">
         <img src="assets/snorlax.png" alt="sleeping snorlax">
     </div>
+
+    <footer>
+        TypeScript Mangos project for CodersCamp2020
+    </footer>
+
+</div>
 
     <template id="starting-page-template">
         <div id="starting-page">
@@ -59,17 +66,44 @@
         </div>
     </template>
 
-    <template id="choose-page-template">
-        <!-- pokemon-choose-view -->
+    <template id='choose-page-template'>
+        <div id='choose-page'>
+            <p>Sorry, but we couldn't wake up Snorlax... <br>Here you have 12 Pokemons ready to fight</p>
+            <p id='whoChoosesParagraph'>Ash chooses 1 (the last) pokemon</p>
+            <div class='choosePagePlayers' id='choosePagePlayer1'>
+                <h1 class='choosePagePlayersName fancyFont' id='choosePagePlayer1Name'>ASH</h1>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+            </div>
+            <div class='choosePagePlayers' id='choosePagePlayer2'>
+                <h1 class='choosePagePlayersName fancyFont' id='choosePagePlayer2Name'>MISTY</h1>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+            </div>
+            <h1 class='fancyFont' id='pokemonListHeader'>POKEMON LIST</h1>
+            <p class='smallFont' id='pokemonListParagraph'>Click on a pokemon to choose the best one for you!</p>
+            <div id='pokemonList'>
+                <img src='./assets/sandshrew.png' alt='sandshrew'>
+                <img src='./assets/pikachu.png' alt='pikachu'>
+                <img src='./assets/abra.png' alt='abra'>
+                <img src='./assets/pidgey.png' alt='pidgey'>
+                <img src='./assets/bulbasaur.png' alt='bulbasaur'>
+                <img src='./assets/squirtle.png' alt='squirtle'>
+                <img src='./assets/machop.png' alt='machop'>
+                <img src='./assets/rattata.png' alt='rattata'>
+                <img src='./assets/charmander.png' alt='charmander'>
+                <img src='./assets/clefairy.png' alt='clefairy'>
+                <img src='./assets/geodude.png' alt='geodude'>
+                <img src='./assets/weedle.png' alt='weedle'>
+            </div>
+        </div>
     </template>
 
     <template id="fight-page-template">
         <!-- fight-view -->
     </template>
-
-    <footer>
-        TypeScript Mangos project for CodersCamp2020
-    </footer>
 
     <script src="dist/index.js"></script>
 

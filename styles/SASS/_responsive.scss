@@ -4,7 +4,7 @@
   #loading-view {
     //no style needed
   }
-
+  
   #starting-page {
     #header-with-enter-name-manu {
         .headerWrapper {
@@ -62,4 +62,36 @@
       } 
     }
   }
+
+    #choose-page {
+
+    padding: 5vh;
+
+        p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        #whoChoosesParagraph {
+            font-size: 24px;
+        }
+
+        .choosePagePlayers {
+            grid-template-columns: repeat(6, 1fr);
+            img {
+                max-width: 8vh;
+                margin: 2vh;
+            }
+        }
+
+        #pokemonList{
+            grid-template-columns: repeat(6, 1fr);
+            img {
+                max-height: 10vh;
+            }
+        }
+    }  
 }

@@ -1,1 +1,52 @@
 // Styles for pokemon choosing screen. Common elements should be added to _config.scss in mixins.
+
+#choose-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    line-height: 1.2;
+    padding: 2vh;
+
+    p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-family: "Pokemon Solid";
+    }
+
+    #whoChoosesParagraph {
+        color: $color-primary;
+        font-size: 20px;
+    }
+
+    .choosePagePlayers {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        justify-items: center;
+        .choosePagePlayersName {
+            grid-column: span 3;
+        }
+        img {
+            max-width: 7vh;
+            padding: 0 0.8vh;
+        }
+    }
+
+    #pokemonList{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        img {
+            max-height: 8.5vh;
+            padding: 0.8vh 0.5vh;
+            cursor: pointer;
+        }
+    }
+}    
