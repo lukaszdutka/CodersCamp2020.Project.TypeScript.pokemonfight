@@ -4,36 +4,94 @@
   #loading-view {
     //no style needed
   }
+  
+  #starting-page {
+    #header-with-enter-name-manu {
+        .headerWrapper {
+            max-width: 700px;
+            height: 300px;
+            input {
+                font-size: 1.2em;
+            }
 
-  #choose-page {
+            .gameTitle {
+                font-size: 3em; 
+            }
+
+            .startInstruction {
+                font-size: 1em;
+            }
+
+            #enter-name-area {
+                .playerNameInput {
+                    width: 40%;
+                }
+            }  
+        }     
+    }
+
+    #start-game-border {
+        height: 20px;
+
+        #start-game-bg1 {
+            width: 200px;
+            height: 200px;
+
+            #start-game-bg2 {
+                width: 160px;
+                height: 160px;
+
+                #start-game-btn {
+                    width: 130px;
+                    height: 130px;
+
+                }
+            }
+        }
+    }
+
+    #info-menu {
+      
+      #select-info-menu {
+          width: 350px;
+          height: 35vh;
+          
+          .start-page-button {
+              font-size: 1.3em;
+          }
+      } 
+    }
+  }
+
+    #choose-page {
 
     padding: 5vh;
 
-    p {
-        font-size: 20px;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-
-    #whoChoosesParagraph {
-        font-size: 24px;
-    }
-
-    .choosePagePlayers {
-        grid-template-columns: repeat(6, 1fr);
-        img {
-            max-width: 8vh;
-            margin: 2vh;
+        p {
+            font-size: 20px;
         }
-    }
 
-    #pokemonList{
-        grid-template-columns: repeat(6, 1fr);
-        img {
-            max-height: 10vh;
+        h1 {
+            font-size: 40px;
         }
-    }
-}    
+
+        #whoChoosesParagraph {
+            font-size: 24px;
+        }
+
+        .choosePagePlayers {
+            grid-template-columns: repeat(6, 1fr);
+            img {
+                max-width: 8vh;
+                margin: 2vh;
+            }
+        }
+
+        #pokemonList{
+            grid-template-columns: repeat(6, 1fr);
+            img {
+                max-height: 10vh;
+            }
+        }
+    }  
 }
