@@ -1,4 +1,5 @@
-import { Fight } from "../src/fightClass"
+import { Fight } from "../fightClass"
+
 
 const fight = new Fight();
 
