@@ -101,9 +101,7 @@
                     padding-top: 15%;
 
                     &:hover {
-                        background-color: $color-bg;
-                        color: $color-text;
-                        
+                        @include dropshadow
                     }
 
                 }
