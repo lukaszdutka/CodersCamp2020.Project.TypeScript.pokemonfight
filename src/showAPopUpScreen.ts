@@ -2,14 +2,15 @@ export const showAPopUpScreen = (screenToDisplay: HTMLDivElement, startingPositi
     // display the help screen
      screenToDisplay.style.display = startingPosition;
     // function which gets called when the exit button is clicked
-    if (screenToDisplay.querySelector('.exitBtn')) {
+    const exitButton = screenToDisplay.querySelector('.exitBtn');
+    if (exitButton) {
          const exitPopUpFunction = () => {
              //hide the screen
              screenToDisplay.style.display = 'none';
              // remove the event listener
-             screenToDisplay.querySelector('.exitBtn')?.removeEventListener('click', exitPopUpFunction);
+             exitButton?.removeEventListener('click', exitPopUpFunction);
      };
      // add event listener to the exit button;
-     screenToDisplay.querySelector('.exitBtn')?.addEventListener('click', exitPopUpFunction);
+     exitButton?.addEventListener('click', exitPopUpFunction);
      }
   };
