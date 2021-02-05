@@ -102,7 +102,60 @@
     </template>
 
     <template id="fight-page-template">
-        <!-- fight-view -->
+        <div id='fight-page'>
+            <div class="playersContainer">
+                <div class='playerDetails activePlayer' id='fight-page-player1'>
+                    <h2 id='fight-page-player1-name'>Ash</h2>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                </div>
+                <div class='playerDetails' id='fight-page-player1'>
+                    <h2 id='fight-page-player1-name'>Misty</h2>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                </div>
+            </div>
+            <div class="activePlayerInfo" id="active-player-info">
+                Ash now is your turn. Get the revenge!
+            </div>
+            <div class="battleArea">
+                <div class="pokemonDetails">
+                    <img id="pokemon-player1" src='./assets/pikachu.png' alt='Pokemon'>
+                    <div class="pokemonInfo">
+                        <h2>Pikachu</h2>
+                        <div class="hpProgressBar">
+                            <h2>HP:</h2>
+                            <div class="hpBar" id="hp-bar-player1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pokemonDetails">
+                    <img id="pokemon-player2" src='./assets/bulbasaur.png' alt='Pokemon'>
+                    <div class="pokemonInfo">
+                        <h2>Bulbasaur</h2>
+                        <div class="hpProgressBar">
+                            <h2>HP:</h2>
+                            <div class="hpBar" id="hp-bar-player2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gameLogs">
+                <p>Pikachu used Thunder Shock!</p>
+                <p>Bulbasaur used Mango</p>
+                <p>Pikachu used Thunder Shock!</p>
+                <p>Bulbasaur used Mango</p>
+                <p>Pikachu used Thunder Shock!</p>
+                <p>Bulbasaur used Mango</p>
+            </div>
+            <div class="buttonsContainer">
+                <div class="button battleButton">attack</div>
+                <div class="button battleButton">switch</div>
+                <div class="button battleButton disabledButton">use mango (<span id="mango">0</span>)</div>
+            </div>
+        </div>
     </template>
 
     <script src="dist/index.js"></script>

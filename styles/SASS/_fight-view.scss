@@ -1,1 +1,132 @@
 // Styles for pokemon fighting screen. Common elements should be added to _config.scss in mixins.
+
+#fight-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .playersContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+    .playerDetails {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      align-items: center;
+      justify-items: center;
+
+      h2 {
+        font-family: 'Pokemon Solid';
+        font-size: 1.8rem;
+        letter-spacing: .2rem;
+        grid-column: span 3;
+      }
+      .pokeballWithPokemon {
+        width: 20px;
+        @include dropshadow;
+        margin: 0 2px;
+      }
+    }
+
+    .activePlayer {
+      color: $color-primary;
+      border-bottom: 2px solid $color-primary;
+    }
+  }
+
+  .activePlayerInfo {
+    text-align: center;
+    width: 80%;
+    font-size: 1.8rem;
+    margin: 25px auto;
+  }
+
+  .battleArea {
+    width: 90%;
+
+    .pokemonDetails {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        width: fit-content;
+      }
+
+      #pokemon-player2 {
+        order: 2;
+      }
+
+      .pokemonInfo {
+        width: 70%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+          font-family: 'Pokemon Solid';
+          font-size: 1.8rem;
+          line-height: 1;
+          letter-spacing: .2rem;
+          text-align: center;
+          width: 100%;
+          text-align: center;
+        }
+        .hpProgressBar {
+          width: 70%;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          align-items: center;
+          justify-items: first;
+          
+          .hpBar {
+            grid-column: span 5;
+            width: 100%;
+            height: 1.8rem;
+            background-color: #0C9300;
+            @include boxshadow;
+            transform-origin: left center;
+            border-radius: 10px;
+            margin-top: 1rem;
+          }
+
+          #hp-bar-player2{
+            width: 20%;
+            background-color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .gameLogs {
+    width: 90%;
+    height: 10%;
+    border: 2px solid $color-text;
+    @include boxshadow;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 25px;
+    font-size: 1.6rem;
+    overflow-y: scroll;
+
+    p {
+      margin: 10px auto;
+      color: $color-text;
+      font-weight: bold;
+    
+    &:nth-child(2n) {
+      color: $color-primary;
+    }
+    }
+  }
+
+  .buttonsContainer {
+    width: 80%;
+  }
+}

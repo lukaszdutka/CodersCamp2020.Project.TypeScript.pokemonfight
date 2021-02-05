@@ -62,8 +62,8 @@ html {
 #loading-view #zzz {
   position: relative;
   left: 50px;
-  -webkit-filter: drop-shadow(2px 2px 2px #020402ff);
-          filter: drop-shadow(2px 2px 2px #020402ff);
+  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
+          filter: drop-shadow(1px 1px 3px #020402ff);
 }
 
 #starting-page {
@@ -198,8 +198,8 @@ html {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
-  -webkit-box-shadow: 2px 2px 2px #020402ff;
-          box-shadow: 2px 2px 2px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   background-color: #9b1d20ff;
   width: 110px;
   height: 110px;
@@ -264,8 +264,8 @@ html {
 }
 
 #starting-page #info-menu #select-info-menu .start-page-button:hover {
-  -webkit-box-shadow: 2px 2px 2px #020402ff;
-          box-shadow: 2px 2px 2px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   background-color: #9b1d20ff;
 }
 
@@ -277,8 +277,8 @@ html {
 }
 
 .popupScreen .popupScreenArea {
-  -webkit-box-shadow: 2px 2px 2px #020402ff;
-          box-shadow: 2px 2px 2px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   background-color: #e8f1f2ff;
   height: 100%;
   display: -webkit-box;
@@ -386,6 +386,181 @@ html {
   cursor: pointer;
 }
 
+#fight-page {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#fight-page .playersContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#fight-page .playersContainer .playerDetails {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+#fight-page .playersContainer .playerDetails h2 {
+  font-family: 'Pokemon Solid';
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+  grid-column: span 3;
+}
+
+#fight-page .playersContainer .playerDetails .pokeballWithPokemon {
+  width: 20px;
+  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
+          filter: drop-shadow(1px 1px 3px #020402ff);
+  margin: 0 2px;
+}
+
+#fight-page .playersContainer .activePlayer {
+  color: #9b1d20ff;
+  border-bottom: 2px solid #9b1d20ff;
+}
+
+#fight-page .activePlayerInfo {
+  text-align: center;
+  width: 80%;
+  font-size: 1.8rem;
+  margin: 25px auto;
+}
+
+#fight-page .battleArea {
+  width: 90%;
+}
+
+#fight-page .battleArea .pokemonDetails {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#fight-page .battleArea .pokemonDetails img {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#fight-page .battleArea .pokemonDetails #pokemon-player2 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo h2 {
+  font-family: 'Pokemon Solid';
+  font-size: 1.8rem;
+  line-height: 1;
+  letter-spacing: .2rem;
+  text-align: center;
+  width: 100%;
+  text-align: center;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar {
+  width: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: first;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBar {
+  grid-column: span 5;
+  width: 100%;
+  height: 1.8rem;
+  background-color: #0C9300;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar #hp-bar-player2 {
+  width: 20%;
+  background-color: #9b1d20ff;
+}
+
+#fight-page .gameLogs {
+  width: 90%;
+  height: 10%;
+  border: 2px solid #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 25px;
+  font-size: 1.6rem;
+  overflow-y: scroll;
+}
+
+#fight-page .gameLogs p {
+  margin: 10px auto;
+  color: #020402ff;
+  font-weight: bold;
+}
+
+#fight-page .gameLogs p:nth-child(2n) {
+  color: #9b1d20ff;
+}
+
+#fight-page .buttonsContainer {
+  width: 80%;
+}
+
 @media screen and (min-width: 768px) {
   #starting-page #header-with-enter-name-manu .headerWrapper {
     max-width: 700px;
@@ -479,5 +654,38 @@ footer {
   -webkit-transform-origin: top left;
           transform-origin: top left;
   white-space: nowrap;
+}
+
+.button {
+  text-align: center;
+  background-color: #020402ff;
+  color: #e8f1f2ff;
+  padding: 0.3em;
+  margin: 0.5em;
+  border-radius: 1em;
+  font-size: 0.9em;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #9b1d20ff;
+}
+
+.battleButton {
+  background-color: #e8f1f2ff;
+  color: #020402ff;
+}
+
+.disabledButton {
+  background-color: #4D4D4D;
+  color: #e8f1f2ff;
+  cursor: not-allowed;
+}
+
+.disabledButton:hover {
+  background-color: #4D4D4D;
 }
 /*# sourceMappingURL=app.css.map */
