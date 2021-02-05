@@ -94,4 +94,54 @@
             }
         }
     }  
+
+    #fight-page {
+
+        .playersContainer {
+            
+            .playerDetails {
+        
+              h2 {
+                font-size: 3rem;
+              }
+        
+              .pokeballWithPokemon {
+                width: 30px;
+                margin: 0 5px;
+              }
+         }
+                
+          .activePlayerInfo {
+            font-size: 2.4rem;
+          }
+        }
+        .battleArea {
+            display: flex;
+        
+            .pokemonDetails {
+                flex-flow: column;
+                align-items: center;
+        
+                #pokemon-player2 {
+                order: 0;
+                }
+            }
+        }
+        .gameActions {
+            flex-flow: row;
+            justify-content: space-evenly;
+
+           .gameLogs {
+                height: auto;
+                max-height: 30vh;
+                width: 45%;
+                order: 2;
+            }   
+
+            .buttonsContainer {
+                width: 45%;
+          } 
+        }
+    
+    }
 }
