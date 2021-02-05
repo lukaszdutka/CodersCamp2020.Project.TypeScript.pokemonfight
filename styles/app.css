@@ -439,9 +439,14 @@ html {
   margin: 0 2px;
 }
 
+#fight-page .playersContainer .playerDetails .disabledPokemon {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
 #fight-page .playersContainer .activePlayer {
   color: #9b1d20ff;
-  border-bottom: 2px solid #9b1d20ff;
+  border-bottom: 3px solid #9b1d20ff;
 }
 
 #fight-page .activePlayerInfo {
@@ -534,30 +539,63 @@ html {
   background-color: #9b1d20ff;
 }
 
-#fight-page .gameLogs {
+#fight-page .gameActions {
   width: 90%;
-  height: 10%;
-  border: 2px solid #020402ff;
+  max-height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+}
+
+#fight-page .gameActions .gameLogs {
+  height: 10vh;
+  width: 100%;
   -webkit-box-shadow: 1px 1px 3px #020402ff;
           box-shadow: 1px 1px 3px #020402ff;
   border-radius: 5px;
   padding: 10px;
-  margin-top: 25px;
   font-size: 1.6rem;
   overflow-y: scroll;
 }
 
-#fight-page .gameLogs p {
+#fight-page .gameActions .gameLogs p {
   margin: 10px auto;
   color: #020402ff;
   font-weight: bold;
 }
 
-#fight-page .gameLogs p:nth-child(2n) {
+#fight-page .gameActions .gameLogs p:nth-child(2n) {
   color: #9b1d20ff;
 }
 
-#fight-page .buttonsContainer {
+#fight-page .gameActions .gameLogs::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+#fight-page .gameActions .gameLogs::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+#fight-page .gameActions .gameLogs::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #020402ff;
+}
+
+#fight-page .gameActions .buttonsContainer {
   width: 80%;
 }
 
@@ -626,6 +664,55 @@ html {
   }
   #choose-page #pokemonList img {
     max-height: 10vh;
+  }
+  #fight-page .playersContainer .playerDetails h2 {
+    font-size: 3rem;
+  }
+  #fight-page .playersContainer .playerDetails .pokeballWithPokemon {
+    width: 30px;
+    margin: 0 5px;
+  }
+  #fight-page .playersContainer .activePlayerInfo {
+    font-size: 2.4rem;
+  }
+  #fight-page .battleArea {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #fight-page .battleArea .pokemonDetails {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #fight-page .battleArea .pokemonDetails #pokemon-player2 {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+  #fight-page .gameActions {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #fight-page .gameActions .gameLogs {
+    height: auto;
+    max-height: 30vh;
+    width: 45%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #fight-page .gameActions .buttonsContainer {
+    width: 45%;
   }
 }
 
