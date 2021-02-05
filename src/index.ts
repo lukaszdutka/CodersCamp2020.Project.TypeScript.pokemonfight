@@ -12,7 +12,7 @@ const renderInfoModal = () => {
 }
 const createHowToPlayButton = () => {
     const howToPlayBtn = document.querySelector('#how-to-play-button') as HTMLUListElement;
-    const infoModal = document.querySelector('#info-modal-template') as HTMLDivElement;
+    const infoModal = document.querySelector('#info-modal-screen') as HTMLDivElement;
     howToPlayBtn.addEventListener('click', () => {
         showAPopUpScreen(infoModal, 'flex');
     })
