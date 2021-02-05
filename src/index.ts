@@ -1,16 +1,26 @@
 import { showAPopUpScreen } from './showAPopUpScreen';
 
-// setting up the starting page
-setTimeout(() => {
-    //Render starting page and add the help modal
-    const newTemplate = document.querySelector('#starting-page-template') as HTMLTemplateElement;
-    const app = document.querySelector('#app') as HTMLDivElement;
-    app.innerHTML = newTemplate.innerHTML;
-    const infoTemplate = document.querySelector('#info-modal-template') as HTMLTemplateElement;
-    app.innerHTML += infoTemplate.innerHTML;
-    // add event listeners
-    const howToPlayBtn = document.querySelector('#how-to-play-btn') as HTMLUListElement;
+const app = document.querySelector('#app') as HTMLDivElement
+
+const renderStartingPage = () => {
+    const startingPage = document.querySelector('#starting-page-template') as HTMLTemplateElement;
+    app.innerHTML = startingPage.innerHTML;
+}
+const renderInfoModal = () => {
+    const infoModal = document.querySelector('#info-modal-template') as HTMLTemplateElement;
+    app.innerHTML += infoModal.innerHTML;
+}
+const createHowToPlayButton = () => {
+    const howToPlayBtn = document.querySelector('#how-to-play-button') as HTMLUListElement;
+    const infoModal = document.querySelector('#info-modal-template') as HTMLDivElement;
     howToPlayBtn.addEventListener('click', () => {
-        showAPopUpScreen(document.querySelector('#info-modal-template') as HTMLDivElement, 'flex');
+        showAPopUpScreen(infoModal, 'flex');
     })
-}, 2000)
+}
+const renderApp = () => {
+    renderStartingPage();
+    renderInfoModal()
+    createHowToPlayButton();
+}
+
+setTimeout(renderApp, 2000);

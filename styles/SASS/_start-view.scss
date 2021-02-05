@@ -89,7 +89,7 @@
                 width: 130px;
                 height: 130px;
 
-                #start-game-btn {
+                #start-game-button {
                     @include centerpokeball;
                     @include boxshadow;
                     background-color: $color-primary;
@@ -170,12 +170,12 @@
         margin-bottom: -40vh;
         z-index: 2;
 
-        .exitBtn, .modalHeader, .modalParagraph {
+        .exitButton, .modalHeader, .modalParagraph {
             font-family: 'Pokemon Solid';
             color: $color-text;
         }
 
-        .exitBtn {
+        .exitButton {
             align-self:flex-end;
             line-height: 1;
             margin: 2vh;

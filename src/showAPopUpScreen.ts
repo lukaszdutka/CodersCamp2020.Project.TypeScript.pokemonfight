@@ -2,7 +2,7 @@ export const showAPopUpScreen = (screenToDisplay: HTMLDivElement, startingPositi
     // display the help screen
      screenToDisplay.style.display = startingPosition;
     // function which gets called when the exit button is clicked
-    const exitButton = screenToDisplay.querySelector('.exitBtn');
+    const exitButton = screenToDisplay.querySelector('.exitButton');
     if (exitButton) {
          const exitPopUpFunction = () => {
              //hide the screen
