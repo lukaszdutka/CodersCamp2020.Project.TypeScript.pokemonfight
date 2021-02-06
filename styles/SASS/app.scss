@@ -36,3 +36,24 @@ footer {
     transform-origin: top left;
     white-space: nowrap;
 }
+
+.button {
+    @include button;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.battleButton {
+    background-color: $color-bg;
+    color: $color-text;
+}
+
+.disabledButton {
+    background-color: $color-disable;
+    color: $color-bg;
+    cursor: not-allowed;
+    &:hover {
+        background-color: $color-disable;
+    }
+}
+

@@ -4,8 +4,7 @@
 $color-primary: #9b1d20ff;
 $color-text: #020402ff;
 $color-bg: #e8f1f2ff;
-$color-optional-one: #235789ff;
-$color-optional-two: #e3b505ff;
+$color-disable: #4D4D4D;
 
 $mobile: 768px;
 
@@ -21,11 +20,26 @@ $mobile: 768px;
 }
   
 @mixin boxshadow {
-    box-shadow: 2px 2px 2px $color-text;
+    box-shadow: 1px 1px 3px $color-text;
 }
 
 @mixin dropshadow {
-  filter: drop-shadow(2px 2px 2px $color-text);
+  filter: drop-shadow(1px 1px 3px $color-text);
+}
+
+@mixin button {
+  text-align: center;
+  background-color: $color-text;
+  color: $color-bg;
+  padding: 0.3em;
+  margin: 0.5em;
+  border-radius: 1em;
+  font-size: 0.9em;
+  @include boxshadow;
+
+  &:hover {
+      background-color: $color-primary;
+  }  
 }
 
 @mixin desktop {
