@@ -1,26 +1,36 @@
-import { showAPopUpScreen } from './showAPopUpScreen';
+import { showAModal, hideAModal } from "./modalPopUpFunctions";
 
-const app = document.querySelector('#app') as HTMLDivElement
-
-const renderStartingPage = () => {
-    const startingPage = document.querySelector('#starting-page-template') as HTMLTemplateElement;
-    app.innerHTML = startingPage.innerHTML;
-}
-const renderInfoModal = () => {
-    const infoModal = document.querySelector('#info-modal-template') as HTMLTemplateElement;
-    app.innerHTML += infoModal.innerHTML;
-}
+const renderStartingPage = (appDiv: HTMLDivElement) => {
+  const startingPage = document.querySelector(
+    "#starting-page-template"
+  ) as HTMLTemplateElement;
+  appDiv.innerHTML = startingPage.innerHTML;
+};
+const renderHowToPlayModal = (appDiv: HTMLDivElement) => {
+  const infoModal = document.querySelector(
+    "#info-modal-template"
+  ) as HTMLTemplateElement;
+  appDiv.innerHTML += infoModal.innerHTML;
+};
 const createHowToPlayButton = () => {
-    const howToPlayBtn = document.querySelector('#how-to-play-button') as HTMLUListElement;
-    const infoModal = document.querySelector('#info-modal-screen') as HTMLDivElement;
-    howToPlayBtn.addEventListener('click', () => {
-        showAPopUpScreen(infoModal, 'flex');
-    })
-}
+  const howToPlayButton = document.querySelector(
+    "#how-to-play-button"
+  ) as HTMLUListElement;
+  const infoModal = document.querySelector(
+    "#info-modal-screen"
+  ) as HTMLDivElement;
+  howToPlayButton.addEventListener("click", () => {
+    showAModal(infoModal, "flex");
+  });
+  howToPlayButton.addEventListener("click", () => {
+    hideAModal(infoModal);
+  });
+};
 const renderApp = () => {
-    renderStartingPage();
-    renderInfoModal()
-    createHowToPlayButton();
-}
+  const app = document.querySelector("#app") as HTMLDivElement;
+  renderStartingPage(app);
+  renderHowToPlayModal(app);
+  createHowToPlayButton();
+};
 
 setTimeout(renderApp, 2000);
