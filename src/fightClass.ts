@@ -26,7 +26,7 @@ export class Fight {
         if (!this._typesForChart.includes(attackType)) {
             throw new Error("Attack type does not exist")
         } 
-        if (!this._typesForChart.includes(attackType)) {
+        if (!this._typesForChart.includes(pokemonDefenceType)) {
             throw new Error("Pokemon type does not exist")
         }
         return this._fightChart[this._typesForChart.indexOf(attackType)][this._typesForChart.indexOf(pokemonDefenceType)]
