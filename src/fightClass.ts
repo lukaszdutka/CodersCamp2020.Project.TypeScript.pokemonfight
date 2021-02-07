@@ -1,3 +1,6 @@
+import { Pokemon, PokemonType } from "./pokemonClass";
+import { PokemonMove } from "./pokemonClass";
+
 export class Fight {
 
     private readonly _fightChart =
@@ -22,18 +25,30 @@ export class Fight {
 
     private readonly _typesForChart = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"]
 
-    private _calculateDamage(attackType: string, pokemonDefenceType: string): number {
-        if (!this._typesForChart.includes(attackType)) {
+    private _calculateDamage(attackType: PokemonType, pokemonDefenceType: PokemonType): number {
+        if (!this._typesForChart.includes(attackType as string)) {
             throw new Error("Attack type does not exist")
         } 
-        if (!this._typesForChart.includes(pokemonDefenceType)) {
+        if (!this._typesForChart.includes(pokemonDefenceType as string)) {
             throw new Error("Pokemon type does not exist")
         }
         return this._fightChart[this._typesForChart.indexOf(attackType)][this._typesForChart.indexOf(pokemonDefenceType)]
     }
 
-    calculateAttackEffectiveness(attackType: string, pokemonDefenceTypes: string[]): number {
+    private _calcualteDamage(attackingPokemon: Pokemon, deffendingPokemon: Pokemon, move: PokemonMove): number {
+        const minimumDamage = 5;
+        const baseDamage = attackingPokemon.attackPoints - deffendingPokemon.defensePoints;
+        return (baseDamage > minimumDamage ? baseDamage : minimumDamage) * this.calculateAttackEffectiveness(move.moveType, deffendingPokemon.types);
+    }
+
+    calculateAttackEffectiveness(attackType: PokemonType, pokemonDefenceTypes: PokemonType[]): number {
         const damagePerType = pokemonDefenceTypes.map( (pokemonType: any): number => this._calculateDamage(attackType, pokemonType))
         return damagePerType.reduce( (accumulator: number, value: number) => accumulator * value, 1)
+    }
+
+    fight(attackingPokemon: Pokemon, deffendingPokemon: Pokemon, move: PokemonMove) {
+       const damage = this._calcualteDamage(attackingPokemon, deffendingPokemon, move)
+       deffendingPokemon.subtractHP(damage)
+
     }
 }
