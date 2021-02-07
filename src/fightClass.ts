@@ -25,7 +25,7 @@ export class Fight {
 
     private readonly _typesForChart = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"]
 
-    private _calculateDamage(attackType: PokemonType, pokemonDefenceType: PokemonType): number {
+    private _getEffect(attackType: PokemonType, pokemonDefenceType: PokemonType): number {
         if (!this._typesForChart.includes(attackType as string)) {
             throw new Error("Attack type does not exist")
         } 
@@ -37,18 +37,18 @@ export class Fight {
 
     private _calcualteDamage(attackingPokemon: Pokemon, deffendingPokemon: Pokemon, move: PokemonMove): number {
         const minimumDamage = 5;
-        const baseDamage = attackingPokemon.attackPoints - deffendingPokemon.defensePoints;
+        const baseDamage: number = attackingPokemon.attackPoints - deffendingPokemon.defensePoints;
         return (baseDamage > minimumDamage ? baseDamage : minimumDamage) * this.calculateAttackEffectiveness(move.moveType, deffendingPokemon.types);
     }
 
     calculateAttackEffectiveness(attackType: PokemonType, pokemonDefenceTypes: PokemonType[]): number {
-        const damagePerType = pokemonDefenceTypes.map( (pokemonType: any): number => this._calculateDamage(attackType, pokemonType))
+        const damagePerType: number[] = pokemonDefenceTypes.map( (pokemonType: any): number => this._getEffect(attackType, pokemonType))
         return damagePerType.reduce( (accumulator: number, value: number) => accumulator * value, 1)
     }
 
-    fight(attackingPokemon: Pokemon, deffendingPokemon: Pokemon, move: PokemonMove) {
-       const damage = this._calcualteDamage(attackingPokemon, deffendingPokemon, move)
-       deffendingPokemon.subtractHP(damage)
-
+    fight(attackingPokemon: Pokemon, deffendingPokemon: Pokemon, move: PokemonMove): number {
+        const damage: number = this._calcualteDamage(attackingPokemon, deffendingPokemon, move);
+        deffendingPokemon.subtractHP(damage);
+        return damage
     }
 }
