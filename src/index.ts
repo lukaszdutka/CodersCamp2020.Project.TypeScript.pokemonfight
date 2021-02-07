@@ -1,4 +1,4 @@
-import { showAModal, hideAModal } from "./modalPopUpFunctions";
+import { showModal, hideModal } from "./modalPopUpFunctions";
 
 const renderStartingPage = (appDiv: HTMLDivElement) => {
   const startingPage = document.querySelector(
@@ -20,11 +20,9 @@ const createHowToPlayButton = () => {
     "#info-modal-screen"
   ) as HTMLDivElement;
   howToPlayButton.addEventListener("click", () => {
-    showAModal(infoModal, "flex");
+    showModal(infoModal, "flex");
   });
-  howToPlayButton.addEventListener("click", () => {
-    hideAModal(infoModal);
-  });
+    hideModal(infoModal);
 };
 const renderApp = () => {
   const app = document.querySelector("#app") as HTMLDivElement;
