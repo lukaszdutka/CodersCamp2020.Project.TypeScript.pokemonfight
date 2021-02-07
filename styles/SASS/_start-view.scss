@@ -91,19 +91,27 @@
                 #start-game-btn {
                     @include centerpokeball;
                     @include boxshadow;
-                    background-color: $color-primary;
                     width: 110px;
                     height: 110px;
                     text-align: center;
                     font-family: 'Pokemon Solid';
                     font-size: 1em;
-                    color: $color-primary;
                     padding-top: 15%;
 
                     &:hover {
                         @include dropshadow
                     }
 
+                }
+
+                #start-game-btn.button {
+                    background-color: $color-bg;
+                    color: $color-text;
+                }
+
+                .button-disabled {
+                    background-color: $color-primary;
+                    color: $color-primary;
                 }
             }
         }
