@@ -40,7 +40,6 @@ const activateStartButton = () => {
 const renderApp = () => {
   const app = document.querySelector("#app") as HTMLDivElement;
   renderStartingPage(app);
-  
   renderHowToPlayModal(app);
   activateStartButton();
   createHowToPlayButton();

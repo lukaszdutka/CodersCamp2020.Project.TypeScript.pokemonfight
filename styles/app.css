@@ -166,7 +166,7 @@ html {
   filter: drop-shadow(1px 1px 3px #020402ff);
 }
 
-#starting-page #start-game-border #start-game-bg1 #start-game-bg2 .button {
+#starting-page #start-game-border #start-game-bg1 #start-game-bg2 .button-enabled {
   background-color: #e8f1f2ff;
   color: #020402ff;
 }
