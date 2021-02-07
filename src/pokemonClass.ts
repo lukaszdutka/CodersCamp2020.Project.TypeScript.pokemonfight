@@ -13,16 +13,30 @@ export type PokemonType =
   | "fighting"
   | "rock";
 
-export abstract class Pokemon {
-  constructor() {}
-  abstract readonly _name: string;
-  abstract readonly _image: string;
-  abstract readonly _maxHP: number;
-  abstract _currentHP: number;
-  abstract readonly _attackPoints: number;
-  abstract readonly _defensePoints: number;
-  abstract readonly _types: PokemonType[];
-  abstract readonly _moves: { moveName: string; moveType: PokemonType }[];
+export class Pokemon {
+
+  readonly _name: string;
+  readonly _image: string;
+  readonly _maxHP: number;
+  private _currentHP: number;
+  readonly _attackPoints: number;
+  readonly _defensePoints: number;
+  readonly _types: PokemonType[];
+  readonly _moves: { moveName: string; moveType: PokemonType }[];
+
+  constructor(name: string, image: string, maxHP: number, attackPoints: number,
+    defensePoints: number, types: PokemonType[], moves: { moveName: string; moveType: PokemonType }[]) {
+
+    this._name = name;
+    this._image = image;
+    this._maxHP = maxHP;
+    this._currentHP = maxHP;
+    this._attackPoints = attackPoints;
+    this._defensePoints = defensePoints;
+    this._types = types;
+    this._moves = moves;
+  }
+
 
   get name() {
     return this._name;
