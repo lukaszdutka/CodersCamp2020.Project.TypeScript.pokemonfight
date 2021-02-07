@@ -13,6 +13,9 @@ export type PokemonType =
   | "fighting"
   | "rock";
 
+
+export type PokemonMove = { moveName: string; moveType: PokemonType }
+
 export class Pokemon {
 
   readonly _name: string;
@@ -22,7 +25,7 @@ export class Pokemon {
   readonly _attackPoints: number;
   readonly _defensePoints: number;
   readonly _types: PokemonType[];
-  readonly _moves: { moveName: string; moveType: PokemonType }[];
+  readonly _moves: PokemonMove[];
 
   constructor(name: string, image: string, maxHP: number, attackPoints: number,
     defensePoints: number, types: PokemonType[], moves: { moveName: string; moveType: PokemonType }[]) {

@@ -1,5 +1,5 @@
 import { Pokemon } from "./pokemonClass"
-import { PokemonType } from "./pokemonClass"
+import { PokemonType, PokemonMove } from "./pokemonClass"
 
 
 export class PokemonFactory {
@@ -19,7 +19,7 @@ export class PokemonFactory {
             const pokeMoves = pokemon.moves.reduce( (tab, move) => {
                 tab.push({moveName: move.name, moveType: move.type as PokemonType})
                 return tab
-                }, [] as {moveName: string, moveType: PokemonType}[])
+                }, [] as PokemonMove[])
 
             const pokeTypes: PokemonType[] = pokemon.types.map(v => v as PokemonType)
 
