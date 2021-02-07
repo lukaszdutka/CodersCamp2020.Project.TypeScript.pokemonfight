@@ -48,7 +48,7 @@ const renderChoosePokemonScreen = (appDiv: HTMLDivElement) => {
     ) as HTMLTemplateElement;
     appDiv.innerHTML = choosePokemonScreen.innerHTML;
   });
-
+}
 
 const renderApp = () => {
   const app = document.querySelector("#app") as HTMLDivElement;
