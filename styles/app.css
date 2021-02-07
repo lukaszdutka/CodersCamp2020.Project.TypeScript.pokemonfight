@@ -5,14 +5,12 @@
 }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 10px;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 @font-face {
@@ -26,20 +24,10 @@ html {
   margin: auto;
   padding: 10vw;
   background-color: #e8f1f2ff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: all .5s ease-in-out;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   transition: all .5s ease-in-out;
 }
 
@@ -47,42 +35,28 @@ html {
   max-width: 400px;
   text-align: center;
   margin-bottom: 1em;
-  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
 #loading-view img {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
-  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
 #loading-view #zzz {
   position: relative;
   left: 50px;
-  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
-          filter: drop-shadow(1px 1px 3px #020402ff);
+  filter: drop-shadow(1px 1px 3px #020402ff);
 }
 
 #starting-page {
   width: 100%;
   height: 100vh;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #starting-page #header-with-enter-name-manu {
@@ -91,30 +65,17 @@ html {
   padding-right: 10vw;
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper {
   max-width: 500px;
   height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
   padding-bottom: 100px;
   color: #e8f1f2ff;
 }
@@ -148,11 +109,8 @@ html {
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput {
@@ -171,8 +129,7 @@ html {
   position: relative;
   left: 50%;
   top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
   background-color: #020402ff;
   width: 160px;
@@ -183,8 +140,7 @@ html {
   position: relative;
   left: 50%;
   top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
   background-color: #e8f1f2ff;
   width: 130px;
@@ -195,24 +151,29 @@ html {
   position: relative;
   left: 50%;
   top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
-  -webkit-box-shadow: 1px 1px 3px #020402ff;
-          box-shadow: 1px 1px 3px #020402ff;
-  background-color: #9b1d20ff;
+  box-shadow: 1px 1px 3px #020402ff;
   width: 110px;
   height: 110px;
   text-align: center;
   font-family: 'Pokemon Solid';
   font-size: 1em;
-  color: #9b1d20ff;
   padding-top: 15%;
 }
 
 #starting-page #start-game-border #start-game-bg1 #start-game-bg2 #start-game-button:hover {
+  filter: drop-shadow(1px 1px 3px #020402ff);
+}
+
+#starting-page #start-game-border #start-game-bg1 #start-game-bg2 .button-enabled {
   background-color: #e8f1f2ff;
   color: #020402ff;
+}
+
+#starting-page #start-game-border #start-game-bg1 #start-game-bg2 .button-disabled {
+  background-color: #9b1d20ff;
+  color: #9b1d20ff;
 }
 
 #starting-page #info-menu {
@@ -221,33 +182,18 @@ html {
   padding-right: 10vw;
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #starting-page #info-menu #select-info-menu {
   width: 240px;
   height: 30vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-flow: column nowrap;
+  justify-content: space-around;
   margin-top: 80px;
 }
 
@@ -263,26 +209,17 @@ html {
 }
 
 #starting-page #info-menu #select-info-menu .start-page-button:hover {
-  -webkit-box-shadow: 1px 1px 3px #020402ff;
-          box-shadow: 1px 1px 3px #020402ff;
+  box-shadow: 1px 1px 3px #020402ff;
   background-color: #9b1d20ff;
 }
 
 .popupScreen {
-  -webkit-box-shadow: 1px 1px 3px #020402ff;
-          box-shadow: 1px 1px 3px #020402ff;
+  box-shadow: 1px 1px 3px #020402ff;
   background-color: #e8f1f2ff;
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 25px;
   width: 80vw;
   height: 80vh;
@@ -300,14 +237,10 @@ html {
 }
 
 .popupScreen .exitButton {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   line-height: 1;
   margin: 2vh;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   cursor: pointer;
 }
 
@@ -322,18 +255,10 @@ html {
 #choose-page {
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
   line-height: 1.2;
   padding: 2vh;
 }
@@ -354,13 +279,9 @@ html {
 }
 
 #choose-page .choosePagePlayers {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
   justify-items: center;
 }
 
@@ -374,10 +295,8 @@ html {
 }
 
 #choose-page #pokemonList {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
 }
 
@@ -390,39 +309,22 @@ html {
 #fight-page {
   width: 100%;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #fight-page .playersContainer {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 #fight-page .playersContainer .playerDetails {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
   justify-items: center;
 }
 
@@ -435,14 +337,12 @@ html {
 
 #fight-page .playersContainer .playerDetails .pokeballWithPokemon {
   width: 20px;
-  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
-          filter: drop-shadow(1px 1px 3px #020402ff);
+  filter: drop-shadow(1px 1px 3px #020402ff);
   margin: 0 2px;
 }
 
 #fight-page .playersContainer .playerDetails .disabledPokemon {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 #fight-page .playersContainer .activePlayer {
@@ -463,41 +363,24 @@ html {
 
 #fight-page .battleArea .pokemonDetails {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 #fight-page .battleArea .pokemonDetails img {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
 #fight-page .battleArea .pokemonDetails #pokemon-player2 {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  order: 2;
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo {
   width: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo h2 {
@@ -512,13 +395,9 @@ html {
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar {
   width: 70%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
   justify-items: first;
 }
 
@@ -527,10 +406,8 @@ html {
   width: 100%;
   height: 1.8rem;
   background-color: #0C9300;
-  -webkit-box-shadow: 1px 1px 3px #020402ff;
-          box-shadow: 1px 1px 3px #020402ff;
-  -webkit-transform-origin: left center;
-          transform-origin: left center;
+  box-shadow: 1px 1px 3px #020402ff;
+  transform-origin: left center;
   border-radius: 10px;
   margin-top: 1rem;
 }
@@ -543,24 +420,16 @@ html {
 #fight-page .gameActions {
   width: 90%;
   max-height: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-flow: column;
+  align-items: center;
   margin-top: 25px;
 }
 
 #fight-page .gameActions .gameLogs {
   height: 10vh;
   width: 100%;
-  -webkit-box-shadow: 1px 1px 3px #020402ff;
-          box-shadow: 1px 1px 3px #020402ff;
+  box-shadow: 1px 1px 3px #020402ff;
   border-radius: 5px;
   padding: 10px;
   font-size: 1.6rem;
@@ -578,8 +447,7 @@ html {
 }
 
 #fight-page .gameActions .gameLogs::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-color: transparent;
 }
@@ -591,8 +459,7 @@ html {
 
 #fight-page .gameActions .gameLogs::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #020402ff;
 }
 
@@ -656,16 +523,14 @@ html {
     font-size: 24px;
   }
   #choose-page .choosePagePlayers {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
   #choose-page .choosePagePlayers img {
     max-width: 8vh;
     margin: 2vh;
   }
   #choose-page #pokemonList {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
   #choose-page #pokemonList img {
     max-height: 10vh;
@@ -681,40 +546,24 @@ html {
     font-size: 2.4rem;
   }
   #fight-page .battleArea {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   #fight-page .battleArea .pokemonDetails {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-flow: column;
+    align-items: center;
   }
   #fight-page .battleArea .pokemonDetails #pokemon-player2 {
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
+    order: 0;
   }
   #fight-page .gameActions {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row;
-            flex-flow: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    flex-flow: row;
+    justify-content: space-evenly;
   }
   #fight-page .gameActions .gameLogs {
     height: auto;
     max-height: 30vh;
     width: 45%;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    order: 2;
   }
   #fight-page .gameActions .buttonsContainer {
     width: 45%;
@@ -741,10 +590,8 @@ footer {
   position: fixed;
   top: 50%;
   margin-left: .5em;
-  -webkit-transform: rotate(-90deg) translate(-50%);
-          transform: rotate(-90deg) translate(-50%);
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
+  transform: rotate(-90deg) translate(-50%);
+  transform-origin: top left;
   white-space: nowrap;
 }
 
@@ -756,8 +603,7 @@ footer {
   margin: 0.5em;
   border-radius: 1em;
   font-size: 0.9em;
-  -webkit-box-shadow: 1px 1px 3px #020402ff;
-          box-shadow: 1px 1px 3px #020402ff;
+  box-shadow: 1px 1px 3px #020402ff;
   text-transform: uppercase;
   cursor: pointer;
 }
