@@ -1,4 +1,8 @@
-//Uncomment to see the choose pokemon page
-//const newTemplate = document.querySelector('#choose-page-template')!;
-//const app = document.querySelector('#app')!;
-//app.innerHTML = newTemplate.innerHTML
+function renderChoosePokemonScreen(appDiv: HTMLDivElement){
+  const playButton = document.querySelector("#start-game-btn") as HTMLDivElement;
+  playButton?.addEventListener("click", () => {
+    const choosePokemonScreen = document.querySelector("#choose-page-template") as HTMLTemplateElement;
+    appDiv.innerHTML = choosePokemonScreen.innerHTML;
+  });
+}
+
