@@ -1,4 +1,6 @@
 import { showModal, hideModal } from "./modalPopUpFunctions";
+import { renderChoosePage } from "./choosePokemonsPage"
+import { Player } from "./playerClass";
 
 const renderStartingPage = (appDiv: HTMLDivElement) => {
   const startingPage = document.querySelector(
@@ -31,4 +33,12 @@ const renderApp = () => {
   createHowToPlayButton();
 };
 
-setTimeout(renderApp, 2000);
+// setTimeout(renderApp, 2000);
+
+
+  const choosePage = document.querySelector(
+    "#choose-page-template"
+  ) as HTMLTemplateElement;
+  (document.querySelector("#app") as HTMLDivElement).innerHTML = choosePage.innerHTML;
+
+renderChoosePage(new Player('Ola', []), new Player ('Łuki', []));
