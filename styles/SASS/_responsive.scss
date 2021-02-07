@@ -1,9 +1,6 @@
 // Placeholder for @media-query-breakpoints
 // Mobile first! So mobile view is default. Here you design other views
 @include desktop {
-  #loading-view {
-    //no style needed
-  }
   
   #starting-page {
     #header-with-enter-name-manu {
@@ -41,7 +38,7 @@
                 width: 160px;
                 height: 160px;
 
-                #start-game-btn {
+                #start-game-button {
                     width: 130px;
                     height: 130px;
 
@@ -57,10 +54,15 @@
           height: 35vh;
           
           .start-page-button {
-              font-size: 1.3em;
+              font-size: 1em;
           }
       } 
     }
+  }
+
+  .popupScreen {
+    width: 70vw;
+    margin-left: -35vw;
   }
 
     #choose-page {
