@@ -22,22 +22,27 @@ const createHowToPlayButton = () => {
   howToPlayButton.addEventListener("click", () => {
     showModal(infoModal, "flex");
   });
-    hideModal(infoModal);
+  hideModal(infoModal);
 };
 
-function renderChoosePokemonScreen(appDiv: HTMLDivElement){
-  const playButton = document.querySelector("#start-game-btn") as HTMLDivElement;
+const renderChoosePokemonScreen = (appDiv: HTMLDivElement) => {
+  const playButton = document.querySelector(
+    "#start-game-button"
+  ) as HTMLDivElement;
   playButton?.addEventListener("click", () => {
-    const choosePokemonScreen = document.querySelector("#choose-page-template") as HTMLTemplateElement;
+    const choosePokemonScreen = document.querySelector(
+      "#choose-page-template"
+    ) as HTMLTemplateElement;
     appDiv.innerHTML = choosePokemonScreen.innerHTML;
   });
-}
+};
 
 const renderApp = () => {
   const app = document.querySelector("#app") as HTMLDivElement;
   renderStartingPage(app);
   renderHowToPlayModal(app);
   createHowToPlayButton();
+  renderChoosePokemonScreen(app);
 };
 
 setTimeout(renderApp, 2000);
