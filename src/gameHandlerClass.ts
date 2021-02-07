@@ -18,7 +18,7 @@ export class GameHandler {
   }
 
   private didPlayerLoose(player: Player): boolean {
-    return player.alivePokemons.length < 1;
+    return player.alivePokemons.length === 0;
   }
 
   isGameFinished(): boolean {
