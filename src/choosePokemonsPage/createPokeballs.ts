@@ -1,10 +1,6 @@
 import { Player } from "../playerClass";
 
-export const createPokeballs = (
-  playerOne: Player,
-  playerTwo: Player,
-  activePlayer: Player
-) => {
+export const createPokeballs = (playerOne: Player, activePlayer: Player) => {
   const playerPokeballs: HTMLImageElement[] =
     activePlayer === playerOne
       ? Array.from(document.querySelectorAll("#choosePagePlayer1 img"))

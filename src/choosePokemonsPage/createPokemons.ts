@@ -1,10 +1,10 @@
 import { Player } from "../playerClass";
 import { PokemonFactory } from "../pokemonFactory";
 import * as data from "../../assets/poke_data.json";
-import { createPokeballs } from "./createPokeballs";
-import { createActivePlayerName } from "./createActivePlayerName";
 import { startGameIfReady } from "./startGameIfReady";
 import { addChosenPokemon } from "./addChosenPokemon";
+import { createPokeballs } from "./createPokeballs";
+import { createActivePlayerName } from "./createActivePlayerName";
 
 export const createPokemons = (
   playerOne: Player,
@@ -23,7 +23,7 @@ export const createPokemons = (
       (e) => {
         if (activePlayer.pokemons.length === 3) return;
         addChosenPokemon(e, pokemonFactory, activePlayer);
-        createPokeballs(playerOne, playerTwo, activePlayer);
+        createPokeballs(playerOne, activePlayer);
         // change player
         activePlayer = activePlayer === playerOne ? playerTwo : playerOne;
         createActivePlayerName(activePlayer);

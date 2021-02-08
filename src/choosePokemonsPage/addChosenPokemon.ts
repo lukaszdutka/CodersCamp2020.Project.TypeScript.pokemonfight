@@ -7,9 +7,10 @@ export const addChosenPokemon = (
   factory: PokemonFactory,
   activePlayer: Player
 ) => {
-  const pokemonName = (event.target as HTMLImageElement).id;
+  const clickedPokemon = event.target as HTMLImageElement;
+  const pokemonName = clickedPokemon.id;
   const newPokemonObject: Pokemon = factory.getPokemonByName(pokemonName);
   activePlayer.addPokemon(newPokemonObject);
-  (event.target as HTMLImageElement).style.cursor = "default";
-  (event.target as HTMLImageElement).style.filter = "grayscale(100%)";
+  clickedPokemon.style.cursor = "default";
+  clickedPokemon.style.filter = "grayscale(100%)";
 };
