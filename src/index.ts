@@ -1,6 +1,7 @@
 import { showModal, hideModal } from "./modalPopUpFunctions";
-import { renderChoosePage } from "./choosePokemonsPage"
+import { createChoosePage } from "./choosePokemonsPage"
 import { Player } from "./playerClass";
+import { activateStart } from './activateStart';
 
 const renderStartingPage = (appDiv: HTMLDivElement) => {
   const startingPage = document.querySelector(
@@ -24,21 +25,44 @@ const createHowToPlayButton = () => {
   howToPlayButton.addEventListener("click", () => {
     showModal(infoModal, "flex");
   });
-    hideModal(infoModal);
+  hideModal(infoModal);
 };
+
+const activateStartButton = () => {
+  const player1NameInput = document.querySelector('#enter-player1-name') as HTMLInputElement;
+  const player2NameInput = document.querySelector('#enter-player2-name') as HTMLInputElement;
+  const startButton = document.querySelector("#start-game-button") as HTMLDivElement;
+  player1NameInput.addEventListener("keyup", () => {
+      activateStart(player1NameInput, player2NameInput, startButton)
+  })
+  player2NameInput.addEventListener("keyup", () => {
+      activateStart(player1NameInput, player2NameInput, startButton)
+  });
+};
+
+const renderChoosePokemonScreen = (appDiv: HTMLDivElement) => {
+  const playButton = document.querySelector(
+    "#start-game-button"
+  ) as HTMLDivElement;
+  playButton?.addEventListener("click", () => {
+    const player1NameInput = (document.querySelector('#enter-player1-name') as HTMLInputElement).value;
+    const player2NameInput = (document.querySelector('#enter-player2-name') as HTMLInputElement).value;
+    const choosePokemonScreen = document.querySelector(
+      "#choose-page-template"
+    ) as HTMLTemplateElement;
+    appDiv.innerHTML = choosePokemonScreen.innerHTML;
+    createChoosePage(new Player(player1NameInput, []), new Player(player2NameInput, []));
+  });
+}
+
 const renderApp = () => {
   const app = document.querySelector("#app") as HTMLDivElement;
   renderStartingPage(app);
   renderHowToPlayModal(app);
+  activateStartButton();
   createHowToPlayButton();
+  renderChoosePokemonScreen(app);
 };
 
-// setTimeout(renderApp, 2000);
+setTimeout(renderApp, 2000);
 
-
-  const choosePage = document.querySelector(
-    "#choose-page-template"
-  ) as HTMLTemplateElement;
-  (document.querySelector("#app") as HTMLDivElement).innerHTML = choosePage.innerHTML;
-
-renderChoosePage(new Player('Ola', []), new Player ('Łuki', []));

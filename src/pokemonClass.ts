@@ -50,6 +50,10 @@ export class Pokemon {
     return this._currentHP;
   }
 
+  get maxHP() {
+    return this._maxHP;
+  }
+
   subtractHP(pointsToSubtract: number): void {
     const newHP = this._currentHP - pointsToSubtract;
     if (newHP < 0) {
