@@ -5,7 +5,6 @@ import { PokemonType } from "../pokemonClass";
 import * as data from "../../assets/poke_data.json";
 
 describe("Test Game Handler class", () => {
-  
   const pokeData = data.pokemons;
   const getPlayerOne = (factory: PokemonFactory) => {
     return new Player("Wojtek", [
@@ -13,7 +12,7 @@ describe("Test Game Handler class", () => {
       factory.getPokemonByName("charmander"),
       factory.getPokemonByName("pikachu"),
     ]);
-  } 
+  };
 
   const getPlayerTwo = (factory: PokemonFactory) => {
     return new Player("Wojtek", [
@@ -21,7 +20,7 @@ describe("Test Game Handler class", () => {
       factory.getPokemonByName("charmander"),
       factory.getPokemonByName("pikachu"),
     ]);
-  }
+  };
 
   it("GameHandler.isGameFinished should return false if every player has at least one pokemon", () => {
     // Given
@@ -41,12 +40,11 @@ describe("Test Game Handler class", () => {
     // Given
     const factory = new PokemonFactory(pokeData);
     const playerOne = getPlayerOne(factory);
-    const playerTwo = getPlayerTwo(factory)
+    const playerTwo = getPlayerTwo(factory);
     const gameHandler = new GameHandler(playerOne, playerTwo);
 
     // When
-    playerOne.pokemons.forEach((pokemon) =>
-    pokemon.subtractHP(pokemon.maxHP));
+    playerOne.pokemons.forEach((pokemon) => pokemon.subtractHP(pokemon.maxHP));
     const isGameFinished = gameHandler.isGameFinished();
 
     // Then
@@ -56,11 +54,11 @@ describe("Test Game Handler class", () => {
     // Given
     const factory = new PokemonFactory(pokeData);
     const playerOne = getPlayerOne(factory);
-    const playerTwo = getPlayerTwo(factory)
+    const playerTwo = getPlayerTwo(factory);
     const gameHandler = new GameHandler(playerOne, playerTwo);
 
     // When
-    playerTwo.pokemons[1].subtractHP(playerTwo.pokemons[1].maxHP)
+    playerTwo.pokemons[1].subtractHP(playerTwo.pokemons[1].maxHP);
     const isGameFinished = gameHandler.isGameFinished();
 
     // Then
@@ -70,12 +68,11 @@ describe("Test Game Handler class", () => {
     // Given
     const factory = new PokemonFactory(pokeData);
     const playerOne = getPlayerOne(factory);
-    const playerTwo = getPlayerTwo(factory)
+    const playerTwo = getPlayerTwo(factory);
     const gameHandler = new GameHandler(playerOne, playerTwo);
 
     // When
-    const winner = () =>
-      gameHandler.getWinner();
+    const winner = () => gameHandler.getWinner();
 
     // Then
     expect(winner).toThrowError(
@@ -86,17 +83,14 @@ describe("Test Game Handler class", () => {
     // Given
     const factory = new PokemonFactory(pokeData);
     const playerOne = getPlayerOne(factory);
-    const playerTwo = getPlayerTwo(factory)
+    const playerTwo = getPlayerTwo(factory);
     const gameHandler = new GameHandler(playerOne, playerTwo);
 
-
     // When
-    playerTwo.pokemons.forEach((pokemon) =>
-    pokemon.subtractHP(pokemon.maxHP));
+    playerTwo.pokemons.forEach((pokemon) => pokemon.subtractHP(pokemon.maxHP));
     const winner = gameHandler.getWinner();
 
     // Then
     expect(winner).toStrictEqual(playerOne);
   });
 });
-

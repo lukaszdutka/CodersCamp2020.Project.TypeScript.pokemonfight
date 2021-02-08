@@ -1,4 +1,6 @@
 import { showModal, hideModal } from "./modalPopUpFunctions";
+import { createChoosePage } from "./choosePokemonsPage/choosePokemonsPage"
+import { Player } from "./playerClass";
 import { activateStart } from './activateStart';
 
 const renderStartingPage = (appDiv: HTMLDivElement) => {
@@ -35,7 +37,7 @@ const activateStartButton = () => {
   })
   player2NameInput.addEventListener("keyup", () => {
       activateStart(player1NameInput, player2NameInput, startButton)
-  })
+  });
 };
 
 const renderChoosePokemonScreen = (appDiv: HTMLDivElement) => {
@@ -43,10 +45,13 @@ const renderChoosePokemonScreen = (appDiv: HTMLDivElement) => {
     "#start-game-button"
   ) as HTMLDivElement;
   playButton?.addEventListener("click", () => {
+    const player1NameInput = (document.querySelector('#enter-player1-name') as HTMLInputElement).value;
+    const player2NameInput = (document.querySelector('#enter-player2-name') as HTMLInputElement).value;
     const choosePokemonScreen = document.querySelector(
       "#choose-page-template"
     ) as HTMLTemplateElement;
     appDiv.innerHTML = choosePokemonScreen.innerHTML;
+    createChoosePage(new Player(player1NameInput, []), new Player(player2NameInput, []));
   });
 }
 
@@ -60,3 +65,4 @@ const renderApp = () => {
 };
 
 setTimeout(renderApp, 2000);
+
