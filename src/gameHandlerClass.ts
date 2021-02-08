@@ -35,4 +35,11 @@ export class GameHandler {
       ? this._playerTwo
       : this._playerOne;
   }
+
+  useMango(): void | Error{
+    if (this.getCurrentPlayer().mango == 0)
+      throw new Error("You cannot use mango. You use all mangos");
+    this.getCurrentPlayer().reduceNumberMango();
+    this.getCurrentPlayer().getActivePokemon.heal();
+  }
 }
