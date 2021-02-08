@@ -6,13 +6,21 @@ export class GameHandler {
     private readonly _playerTwo: Player
   ) {}
 
-  _currentPlayer: Player = this._playerOne;
+  private _currentPlayer: Player = this._playerOne;
 
-  getCurrentPlayer(): Player {
+  get playerOne () {
+    return this._playerOne;
+  }
+
+  get playerTwo() {
+    return this._playerTwo;
+  }
+
+  get currentPlayer(): Player {
     return this._currentPlayer;
   }
 
-  getOpponentPlayer(): Player {
+  get opponentPlayer(): Player {
     if (this._currentPlayer === this._playerOne) return this._playerTwo;
     return this._playerOne;
   }
