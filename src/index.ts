@@ -1,5 +1,5 @@
 import { showModal, hideModal } from "./modalPopUpFunctions";
-import { createChoosePage } from "./choosePokemonsPage"
+import { createChoosePage } from "./choosePokemonsPage/choosePokemonsPage"
 import { Player } from "./playerClass";
 import { activateStart } from './activateStart';
 
