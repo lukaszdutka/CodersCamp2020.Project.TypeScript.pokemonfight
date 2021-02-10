@@ -29,7 +29,7 @@ const createHowToPlayButton = () => {
 const activateStartButton = () => {
   const player1NameInput = document.querySelector('#enter-player1-name') as HTMLInputElement;
   const player2NameInput = document.querySelector('#enter-player2-name') as HTMLInputElement;
-  const startButton = document.querySelector("#start-game-button") as HTMLDivElement;
+  const startButton = document.querySelector("#start-game-button") as HTMLButtonElement;
   player1NameInput.addEventListener("keyup", () => {
       activateStart(player1NameInput, player2NameInput, startButton)
   })
@@ -41,7 +41,7 @@ const activateStartButton = () => {
 const renderChoosePokemonScreen = (appDiv: HTMLDivElement) => {
   const playButton = document.querySelector(
     "#start-game-button"
-  ) as HTMLDivElement;
+  ) as HTMLButtonElement;
   playButton?.addEventListener("click", () => {
     const choosePokemonScreen = document.querySelector(
       "#choose-page-template"
