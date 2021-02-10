@@ -4,7 +4,7 @@ export class Player {
   private _name: string;
   private _pokemons: Pokemon[];
   private _indexOfActivePokemon: number;
-  private _mango: Number;
+  private _hasMango: Boolean;
   constructor(name: string, pokemons: Pokemon[]) {
     if (name.length > 8) {
       throw new Error("Too long name");
@@ -15,7 +15,7 @@ export class Player {
     this._name = name;
     this._pokemons = pokemons;
     this._indexOfActivePokemon = 0;
-    this._mango=1;
+    this._hasMango = true;
   }
 
   get name(): string {
@@ -40,11 +40,11 @@ export class Player {
   }
 
   reduceNumberMango(): void {
-    this._mango = <any>this._mango - 1;
+    this._hasMango = false;
   }
 
-  get mango() {
-    return this._mango;
+  get hasMango() {
+    return this._hasMango;
   }
 
   addPokemon(pokemon: Pokemon): void {
