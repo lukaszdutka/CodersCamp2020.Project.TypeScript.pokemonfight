@@ -43,4 +43,13 @@ export class GameHandler {
       ? this._playerTwo
       : this._playerOne;
   }
+
+  switchPlayer(): void {
+    this._currentPlayer = this._currentPlayer === this._playerOne ? this._playerTwo : this._playerOne;
+  };
+
+  switchPokemon(pokemonName: string) {
+    this._currentPlayer.indexOfActivePokemon = this._currentPlayer.pokemons.findIndex(pokemon => pokemon.name === pokemonName);
+  }
+
 }
