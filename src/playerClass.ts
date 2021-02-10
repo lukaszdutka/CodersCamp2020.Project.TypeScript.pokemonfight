@@ -39,7 +39,9 @@ export class Player {
     return alivePokemonsTab;
   }
 
-  reduceNumberMango(): void {
+  useMango(): void | Error {
+    if (!this._hasMango)
+      throw new Error("You cannot use mango. You use all mangos");
     this._hasMango = false;
   }
 
