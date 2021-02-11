@@ -46,6 +46,7 @@ export class GameHandler {
   }
 
   generateActionButtons(player: Player): void {
+    console.log('Start - action modal');
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="attackButton">attack</div>
@@ -55,6 +56,7 @@ export class GameHandler {
   }
 
   generateAttackButtons(player: Player): void {
+    console.log('Attack choose modal');
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="attackButtonOne">${player.pokemons[0].moves[0].moveName}</div>
@@ -64,6 +66,7 @@ export class GameHandler {
   }
 
   generateSwitchButtons(player: Player): void {
+    console.log('Switch choose modal');
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="switchButtonOne">${player.pokemons[1].name}</div>
