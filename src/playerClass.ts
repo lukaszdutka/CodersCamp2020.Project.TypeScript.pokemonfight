@@ -53,4 +53,10 @@ export class Player {
   addPokemon(pokemon: Pokemon): void {
     this._pokemons.push(pokemon);
   }
+
+  get notActivePokemons(): Pokemon[] {
+    return this.pokemons.filter(
+      (pokemon) => pokemon.name !== this.getActivePokemon.name
+    );
+  }
 }

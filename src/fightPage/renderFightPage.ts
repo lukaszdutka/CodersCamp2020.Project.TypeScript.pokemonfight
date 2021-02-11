@@ -30,5 +30,5 @@ export const createFightPage = (
   createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
   createFightPagePokeballs(gameHandler);
   // generate choose action buttons
-  gameHandler.generateActionButtons(gameHandler.currentPlayer);
+  gameHandler.generateActionButtons();
 };

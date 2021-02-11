@@ -434,9 +434,9 @@ html {
 }
 
 #fight-page .playersContainer .playerDetails h2 {
-  font-family: 'Pokemon Solid';
+  font-family: "Pokemon Solid";
   font-size: 1.8rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   grid-column: span 3;
 }
 
@@ -508,10 +508,10 @@ html {
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo h2 {
-  font-family: 'Pokemon Solid';
+  font-family: "Pokemon Solid";
   font-size: 1.8rem;
   line-height: 1;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   text-align: center;
   width: 100%;
   text-align: center;
@@ -542,7 +542,7 @@ html {
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarHighLevel {
-  background-color: #0C9300;
+  background-color: #0c9300;
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarLowLevel {

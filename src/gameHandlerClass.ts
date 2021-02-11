@@ -1,5 +1,9 @@
 import { Player } from "./playerClass";
-import { actionsButtonEventListener, attacksButtonEventListener, switchButtonEventListener } from "./fightPage/buttonsEventListeners";
+import {
+  actionsButtonEventListener,
+  attacksButtonEventListener,
+  switchButtonEventListener,
+} from "./fightPage/buttonsEventListeners";
 
 export class GameHandler {
   constructor(
@@ -9,7 +13,7 @@ export class GameHandler {
 
   private _currentPlayer: Player = this._playerOne;
 
-  get playerOne () {
+  get playerOne() {
     return this._playerOne;
   }
 
@@ -45,33 +49,49 @@ export class GameHandler {
       : this._playerOne;
   }
 
-  generateActionButtons(player: Player): void {
-    console.log('Start - action modal');
+  switchPlayer(): void {
+    this._currentPlayer =
+      this._currentPlayer === this._playerOne
+        ? this._playerTwo
+        : this._playerOne;
+  }
+
+  switchPokemon(pokemonName: string) {
+    this._currentPlayer.indexOfActivePokemon = this._currentPlayer.pokemons.findIndex(
+      (pokemon) => pokemon.name === pokemonName
+    );
+  }
+
+  generateActionButtons(): void {
+    const player = this.currentPlayer;
+    console.log("Start - action modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="attackButton">attack</div>
                     <div class="button battleButton" id="switchButton">switch</div>
                     <div class="button battleButton" id="mangoButton">use mango (<span id="mango">1</span>)</div>`;
-    actionsButtonEventListener(player, this);
+    actionsButtonEventListener(this);
   }
 
-  generateAttackButtons(player: Player): void {
-    console.log('Attack choose modal');
+  generateAttackButtons(): void {
+    const player = this.currentPlayer;
+    console.log("Attack choose modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
-                    <div class="button battleButton" id="attackButtonOne">${player.pokemons[0].moves[0].moveName}</div>
-                    <div class="button battleButton" id="attackButtonTwo">${player.pokemons[0].moves[1].moveName}</div>
+                    <div class="button battleButton" id="attackButtonOne">${player.getActivePokemon.moves[0].moveName}</div>
+                    <div class="button battleButton" id="attackButtonTwo">${player.getActivePokemon.moves[1].moveName}</div>
                     <div class="button battleButton" id="backButton">back</div>`;
-    attacksButtonEventListener(player, this);
+    attacksButtonEventListener(this);
   }
 
-  generateSwitchButtons(player: Player): void {
-    console.log('Switch choose modal');
+  generateSwitchButtons(): void {
+    const player = this.currentPlayer;
+    console.log("Switch choose modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
-                    <div class="button battleButton" id="switchButtonOne">${player.pokemons[1].name}</div>
-                    <div class="button battleButton" id="switchButtonTwo">${player.pokemons[2].name}</div>
+                    <div class="button battleButton" id="switchButtonOne">${player.notActivePokemons[0].name}</div>
+                    <div class="button battleButton" id="switchButtonTwo">${player.notActivePokemons[1].name}</div>
                     <div class="button battleButton" id="backButton">back</div>`;
-    switchButtonEventListener(player, this);
+    switchButtonEventListener(this);
   }
 }
