@@ -10,11 +10,19 @@ export const actionsButtonEventListener = (player: Player, gameHandler: GameHand
   const mangoButton = document.querySelector("#mangoButton")! as HTMLDivElement;
   const mango = document.querySelector("#mango")! as HTMLDivElement;
 
+  animationButtonsEntry(battleButtons);
+
   attackButton.addEventListener('click', () => {
-    gameHandler.generateAttackButtons(player);
+    animationButtonsExit(battleButtons);
+    setTimeout( ()=> {
+      gameHandler.generateAttackButtons(player);
+    }, 1000);
   });
   switchButton.addEventListener('click', () => {
-    gameHandler.generateSwitchButtons(player);
+    animationButtonsExit(battleButtons);
+    setTimeout( ()=> {
+      gameHandler.generateSwitchButtons(player);
+    }, 1000);
   });
 
   if(true) { //gameHandler.canUseMango()
@@ -37,6 +45,8 @@ export const attacksButtonEventListener = (player: Player, gameHandler: GameHand
   const battleButtons = document.getElementsByClassName("battleButton")! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
+  animationButtonsEntry(battleButtons);
+
   magicFunction(attackButtonOne, battleButtons, player, gameHandler, attack);
   magicFunction(attackButtonTwo, battleButtons, player, gameHandler, attack);
   magicFunction(backButton, battleButtons, player, gameHandler);
@@ -48,6 +58,8 @@ export const attacksButtonEventListener = (player: Player, gameHandler: GameHand
   const switchButtonTwo = document.querySelector("#switchButtonTwo")! as HTMLDivElement;
   const battleButtons = document.getElementsByClassName("battleButton")! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
+
+  animationButtonsEntry(battleButtons)
 
   magicFunction(switchButtonOne, battleButtons, player, gameHandler, switchPoke);
   magicFunction(switchButtonTwo, battleButtons, player, gameHandler, switchPoke);
@@ -61,14 +73,25 @@ const magicFunction = (button: HTMLDivElement, buttons: HTMLCollectionOf<HTMLEle
     if (functionToCall) { functionToCall(); } // ??
     setTimeout( ()=> {
       gameHandler.generateActionButtons(player);
-    }, 500);
+    }, 1000);
     //also change player function 
-    for(let i = 0; i < buttons.length; i++) {
-      buttons[i].style.backgroundColor = 'green';
-    }
+    animationButtonsExit(buttons);
   } );
 }
 
+const animationButtonsEntry = (buttons: HTMLCollectionOf<HTMLElement>) => {
+  for(let i = 0; i < buttons.length; i++) {
+    buttons[i].style.animation = "scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+    buttons[i].style.animationDelay = `${i * 0.15}s`
+  }
+}
+
+const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
+  for(let i = 0; i < buttons.length; i++) {
+    buttons[i].style.animation = "scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both";
+    buttons[i].style.animationDelay = `${i * 0.15}s`
+  }
+}
 
 // funcions just for check if its works should be replaced with gameHandler > use attack or switch Pokemon functions
 const attack = () => {
