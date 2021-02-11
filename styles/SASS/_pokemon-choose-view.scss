@@ -47,6 +47,10 @@
             max-height: 8.5vh;
             padding: 0.8vh 0.5vh;
             cursor: pointer;
+
+            &:hover {
+                transform: scale(1.25);
+            }
         }
     }
 }    

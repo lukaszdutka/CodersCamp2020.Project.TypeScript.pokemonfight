@@ -11,6 +11,9 @@ export const addChosenPokemon = (
   const pokemonName = clickedPokemon.id;
   const newPokemonObject: Pokemon = factory.getPokemonByName(pokemonName);
   activePlayer.addPokemon(newPokemonObject);
-  clickedPokemon.style.cursor = "default";
-  clickedPokemon.style.filter = "grayscale(100%)";
+  setTimeout(() => {
+    clickedPokemon.style.cursor = "default";
+    clickedPokemon.style.filter = "grayscale(100%)";
+  }, 500);
+  clickedPokemon.style.animation = "heartbeat 1s ease-in-out both";
 };
