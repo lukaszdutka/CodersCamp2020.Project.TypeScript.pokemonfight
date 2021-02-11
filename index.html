@@ -83,18 +83,18 @@
             <h1 class='fancyFont' id='pokemonListHeader'>POKEMON LIST</h1>
             <p class='smallFont' id='pokemonListParagraph'>Click on a pokemon to choose the best one for you!</p>
             <div id='pokemonList'>
-                <img src='./assets/sandshrew.png' alt='sandshrew'>
-                <img src='./assets/pikachu.png' alt='pikachu'>
-                <img src='./assets/abra.png' alt='abra'>
-                <img src='./assets/pidgey.png' alt='pidgey'>
-                <img src='./assets/bulbasaur.png' alt='bulbasaur'>
-                <img src='./assets/squirtle.png' alt='squirtle'>
-                <img src='./assets/machop.png' alt='machop'>
-                <img src='./assets/rattata.png' alt='rattata'>
-                <img src='./assets/charmander.png' alt='charmander'>
-                <img src='./assets/clefairy.png' alt='clefairy'>
-                <img src='./assets/geodude.png' alt='geodude'>
-                <img src='./assets/weedle.png' alt='weedle'>
+                <img src='./assets/sandshrew.png' alt='sandshrew' id='sandshrew'>
+                <img src='./assets/pikachu.png' alt='pikachu' id='pikachu'>
+                <img src='./assets/abra.png' alt='abra' id='abra'>
+                <img src='./assets/pidgey.png' alt='pidgey' id='pidgey'>
+                <img src='./assets/bulbasaur.png' alt='bulbasaur' id='bulbasaur'>
+                <img src='./assets/squirtle.png' alt='squirtle' id='squirtle'>
+                <img src='./assets/machop.png' alt='machop' id='machop'>
+                <img src='./assets/rattata.png' alt='rattata' id='rattata'>
+                <img src='./assets/charmander.png' alt='charmander' id='charmander'>
+                <img src='./assets/clefairy.png' alt='clefairy' id='clefairy'>
+                <img src='./assets/geodude.png' alt='geodude'id='geodude'>
+                <img src='./assets/weedle.png' alt='weedle' id='weedle'>
             </div>
         </div>
     </template>
@@ -106,13 +106,13 @@
                     <h2 id='fight-page-player1-name'>Ash</h2>
                     <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
                     <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                </div>
-                <div class='playerDetails' id='fight-page-player1'>
-                    <h2 id='fight-page-player1-name'>Misty</h2>
                     <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                </div>
+                <div class='playerDetails' id='fight-page-player2'>
+                    <h2 id='fight-page-player2-name'>Misty</h2>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
                 </div>
             </div>
             <div class="activePlayerInfo" id="active-player-info">
@@ -120,9 +120,9 @@
             </div>
             <div class="battleArea">
                 <div class="pokemonDetails">
-                    <img id="pokemon-player1" src='./assets/pikachu.png' alt='Pokemon'>
+                    <img id="pokemon-image-player1" src='./assets/pikachu.png' alt='Pokemon'>
                     <div class="pokemonInfo">
-                        <h2>Pikachu</h2>
+                        <h2 id='pokemon-name-player1'>Pikachu</h2>
                         <div class="hpProgressBar">
                             <h2>HP:</h2>
                             <div class="hpBar" id="hp-bar-player1"></div>
@@ -130,9 +130,9 @@
                     </div>
                 </div>
                 <div class="pokemonDetails">
-                    <img id="pokemon-player2" src='./assets/bulbasaur.png' alt='Pokemon'>
+                    <img id="pokemon-image-player2" src='./assets/bulbasaur.png' alt='Pokemon'>
                     <div class="pokemonInfo">
-                        <h2>Bulbasaur</h2>
+                        <h2 id='pokemon-name-player2'>Bulbasaur</h2>
                         <div class="hpProgressBar">
                             <h2>HP:</h2>
                             <div class="hpBar" id="hp-bar-player2"></div>
@@ -157,10 +157,10 @@
                     <p>Pikachu used Thunder Shock!</p>
                     <p>Bulbasaur used Mango</p>
                 </div>
-                <div class="buttonsContainer">
-                    <div class="button battleButton">attack</div>
+                <div class="buttonsContainer" id="actionModals">
+                    <!-- <div class="button battleButton">attack</div>
                     <div class="button battleButton">switch</div>
-                    <div class="button battleButton disabledButton">use mango (<span id="mango">0</span>)</div>
+                    <div class="button battleButton disabledButton">use mango (<span id="mango">0</span>)</div> -->
                 </div>
             </div>
             

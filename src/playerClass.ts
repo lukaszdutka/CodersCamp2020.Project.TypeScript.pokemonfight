@@ -8,7 +8,7 @@ export class Player {
     if (name.length > 8) {
       throw new Error("Too long name");
     }
-    if (pokemons.length != 3) {
+    if (pokemons.length > 3) {
       throw new Error("Wrong number of pokemons");
     }
     this._name = name;
@@ -35,5 +35,9 @@ export class Player {
       pokemon.isAlive()
     );
     return alivePokemonsTab;
+  }
+
+  addPokemon(pokemon: Pokemon): void {
+    this._pokemons.push(pokemon);
   }
 }

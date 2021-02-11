@@ -46,6 +46,7 @@ footer {
 .battleButton {
     background-color: $color-bg;
     color: $color-text;
+    @include transition-ease;
 }
 
 .disabledButton {
