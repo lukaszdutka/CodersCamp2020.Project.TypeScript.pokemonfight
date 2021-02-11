@@ -4,6 +4,7 @@ export class Player {
   private _name: string;
   private _pokemons: Pokemon[];
   private _indexOfActivePokemon: number;
+  private _hasMango: Boolean;
   constructor(name: string, pokemons: Pokemon[]) {
     if (name.length > 8) {
       throw new Error("Too long name");
@@ -14,6 +15,7 @@ export class Player {
     this._name = name;
     this._pokemons = pokemons;
     this._indexOfActivePokemon = 0;
+    this._hasMango = true;
   }
 
   get name(): string {
@@ -35,6 +37,17 @@ export class Player {
       pokemon.isAlive()
     );
     return alivePokemonsTab;
+  }
+
+  useMango(): void | Error {
+    if (!this._hasMango)
+      throw new Error("You cannot use mango. You use all mangos");
+    this._hasMango = false;
+    this.getActivePokemon.heal();
+  }
+
+  get hasMango() {
+    return this._hasMango;
   }
 
   addPokemon(pokemon: Pokemon): void {
