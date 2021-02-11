@@ -32,17 +32,17 @@
                     <p class="gameTitle">Pokemon Fight</p>
                     <p class="startInstruction">Enter yours names to start the Fight!</p>
                     <div id="enter-name-area">
-                        <input id="enter-player1-name" class="playerNameInput" placeholder="Player 1"/>
-                        <input id="enter-player2-name" class="playerNameInput" placeholder="Player 2"/>
+                        <input id="enter-player1-name" class="playerNameInput" placeholder="Player 1" maxlength="8"/>
+                        <input id="enter-player2-name" class="playerNameInput" placeholder="Player 2" maxlength="8"/>
                     </div>
                 </div>
             </div>
             <div id="start-game-border">
                 <div id="start-game-bg1">
                     <div id="start-game-bg2">
-                        <div id="start-game-button" class="button-disabled">
+                        <button id="start-game-button" class="button-disabled" disabled>
                             Start
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -106,13 +106,13 @@
                     <h2 id='fight-page-player1-name'>Ash</h2>
                     <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
                     <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                </div>
-                <div class='playerDetails' id='fight-page-player1'>
-                    <h2 id='fight-page-player1-name'>Misty</h2>
                     <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
-                    <img class="pokeballWithPokemon disabledPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                </div>
+                <div class='playerDetails' id='fight-page-player2'>
+                    <h2 id='fight-page-player2-name'>Misty</h2>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
                 </div>
             </div>
             <div class="activePlayerInfo" id="active-player-info">
@@ -120,9 +120,9 @@
             </div>
             <div class="battleArea">
                 <div class="pokemonDetails">
-                    <img id="pokemon-player1" src='./assets/pikachu.png' alt='Pokemon'>
+                    <img id="pokemon-image-player1" src='./assets/pikachu.png' alt='Pokemon'>
                     <div class="pokemonInfo">
-                        <h2>Pikachu</h2>
+                        <h2 id='pokemon-name-player1'>Pikachu</h2>
                         <div class="hpProgressBar">
                             <h2>HP:</h2>
                             <div class="hpBar" id="hp-bar-player1"></div>
@@ -130,9 +130,9 @@
                     </div>
                 </div>
                 <div class="pokemonDetails">
-                    <img id="pokemon-player2" src='./assets/bulbasaur.png' alt='Pokemon'>
+                    <img id="pokemon-image-player2" src='./assets/bulbasaur.png' alt='Pokemon'>
                     <div class="pokemonInfo">
-                        <h2>Bulbasaur</h2>
+                        <h2 id='pokemon-name-player2'>Bulbasaur</h2>
                         <div class="hpProgressBar">
                             <h2>HP:</h2>
                             <div class="hpBar" id="hp-bar-player2"></div>
@@ -157,10 +157,10 @@
                     <p>Pikachu used Thunder Shock!</p>
                     <p>Bulbasaur used Mango</p>
                 </div>
-                <div class="buttonsContainer">
-                    <div class="button battleButton">attack</div>
+                <div class="buttonsContainer" id="actionModals">
+                    <!-- <div class="button battleButton">attack</div>
                     <div class="button battleButton">switch</div>
-                    <div class="button battleButton disabledButton">use mango (<span id="mango">0</span>)</div>
+                    <div class="button battleButton disabledButton">use mango (<span id="mango">0</span>)</div> -->
                 </div>
             </div>
             

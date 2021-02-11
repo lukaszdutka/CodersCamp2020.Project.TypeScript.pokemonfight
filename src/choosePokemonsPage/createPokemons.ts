@@ -27,7 +27,6 @@ export const createPokemons = (
         // change player
         activePlayer = activePlayer === playerOne ? playerTwo : playerOne;
         createActivePlayerName(activePlayer);
-        console.log(playerOne, playerTwo);
         startGameIfReady(playerOne, playerTwo);
       },
       { once: true }
