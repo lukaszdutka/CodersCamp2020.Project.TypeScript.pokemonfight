@@ -1,4 +1,5 @@
 import { Player } from "./playerClass";
+import { actionsButtonEventListener, attacksButtonEventListener, switchButtonEventListener } from "./fightPage/buttonsEventListeners";
 
 export class GameHandler {
   constructor(
@@ -42,5 +43,35 @@ export class GameHandler {
     return this.didPlayerLoose(this._playerOne) === true
       ? this._playerTwo
       : this._playerOne;
+  }
+
+  generateActionButtons(player: Player): void {
+    console.log('Start - action modal');
+    const actionContainer = document.querySelector("#actionModals")!;
+    actionContainer.innerHTML = `
+                    <div class="button battleButton" id="attackButton">attack</div>
+                    <div class="button battleButton" id="switchButton">switch</div>
+                    <div class="button battleButton" id="mangoButton">use mango (<span id="mango">1</span>)</div>`;
+    actionsButtonEventListener(player, this);
+  }
+
+  generateAttackButtons(player: Player): void {
+    console.log('Attack choose modal');
+    const actionContainer = document.querySelector("#actionModals")!;
+    actionContainer.innerHTML = `
+                    <div class="button battleButton" id="attackButtonOne">${player.pokemons[0].moves[0].moveName}</div>
+                    <div class="button battleButton" id="attackButtonTwo">${player.pokemons[0].moves[1].moveName}</div>
+                    <div class="button battleButton" id="backButton">back</div>`;
+    attacksButtonEventListener(player, this);
+  }
+
+  generateSwitchButtons(player: Player): void {
+    console.log('Switch choose modal');
+    const actionContainer = document.querySelector("#actionModals")!;
+    actionContainer.innerHTML = `
+                    <div class="button battleButton" id="switchButtonOne">${player.pokemons[1].name}</div>
+                    <div class="button battleButton" id="switchButtonTwo">${player.pokemons[2].name}</div>
+                    <div class="button battleButton" id="backButton">back</div>`;
+    switchButtonEventListener(player, this);
   }
 }

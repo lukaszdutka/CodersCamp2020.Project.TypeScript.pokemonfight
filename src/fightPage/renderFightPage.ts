@@ -29,4 +29,6 @@ export const createFightPage = (
   createActivePokemon(gameHandler);
   createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
   createFightPagePokeballs(gameHandler);
+  // generate choose action buttons
+  gameHandler.generateActionButtons(gameHandler.currentPlayer);
 };
