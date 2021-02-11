@@ -122,8 +122,6 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
   }
 };
 
-// funcions just for check if its works should be replaced with gameHandler > use attack or switch Pokemon functions
-
 const attack = (gameHandler: GameHandler) => {
   console.log("bum bum bach!");
 };
