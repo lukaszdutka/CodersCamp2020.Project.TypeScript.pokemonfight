@@ -98,8 +98,6 @@ const magicFunction = (
       createActivePlayer(gameHandler);
     }
     setTimeout(() => {
-      gameHandler.generateAttackButtons();
-      gameHandler.generateSwitchButtons();
       gameHandler.generateActionButtons();
     }, 1000);
     animationButtonsExit(buttons);
