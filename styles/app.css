@@ -205,7 +205,6 @@ html {
   text-align: center;
   font-family: 'Pokemon Solid';
   font-size: 1em;
-  padding-top: 15%;
 }
 
 #starting-page #start-game-border #start-game-bg1 #start-game-bg2 #start-game-button:hover {
@@ -435,9 +434,9 @@ html {
 }
 
 #fight-page .playersContainer .playerDetails h2 {
-  font-family: 'Pokemon Solid';
+  font-family: "Pokemon Solid";
   font-size: 1.8rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   grid-column: span 3;
 }
 
@@ -509,10 +508,10 @@ html {
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo h2 {
-  font-family: 'Pokemon Solid';
+  font-family: "Pokemon Solid";
   font-size: 1.8rem;
   line-height: 1;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   text-align: center;
   width: 100%;
   text-align: center;
@@ -543,7 +542,7 @@ html {
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarHighLevel {
-  background-color: #0C9300;
+  background-color: #0c9300;
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarLowLevel {
@@ -608,6 +607,58 @@ html {
 
 #fight-page .gameActions .buttonsContainer {
   width: 80%;
+}
+
+@-webkit-keyframes scale-out-horizontal {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-out-horizontal {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scale-in-hor-center {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-hor-center {
+  0% {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -779,6 +830,8 @@ footer {
 .battleButton {
   background-color: #e8f1f2ff;
   color: #020402ff;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .disabledButton {
