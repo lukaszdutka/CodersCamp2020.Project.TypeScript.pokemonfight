@@ -59,12 +59,7 @@ export class Pokemon {
 
   subtractHP(pointsToSubtract: number): void {
     const newHP: number = this._currentHP - pointsToSubtract;
-    if (newHP < 0) {
-      this._currentHP = 0;
-    } else {
-      this._currentHP = newHP;
-    }
-    
+    this._currentHP = Math.max(newHP, 0)
   }
 
   heal(): void {

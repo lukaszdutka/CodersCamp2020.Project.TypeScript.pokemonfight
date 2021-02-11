@@ -38,7 +38,7 @@ export class Fight {
     private _calcualteDamage(attackingPokemon: Pokemon, deffendingPokemon: Pokemon, move: PokemonMove): number {
         const minimumDamage = 5;
         const baseDamage: number = attackingPokemon.attackPoints - deffendingPokemon.defensePoints;
-        return (baseDamage > minimumDamage ? baseDamage : minimumDamage) * this.calculateAttackEffectiveness(move.moveType, deffendingPokemon.types);
+        return Math.max(baseDamage, minimumDamage) * this.calculateAttackEffectiveness(move.moveType, deffendingPokemon.types);
     }
 
     calculateAttackEffectiveness(attackType: PokemonType, pokemonDefenceTypes: PokemonType[]): number {
