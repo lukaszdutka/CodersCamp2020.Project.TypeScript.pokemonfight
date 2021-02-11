@@ -1,11 +1,15 @@
 import { GameHandler } from "../gameHandlerClass";
-import { createFightPage } from "./renderFightPage";
+import { createChoosePage } from "../choosePokemonsPage/choosePokemonsPage"
 import { Player } from "../playerClass";
 
 export const showResultModal = (
     screenToDisplay: HTMLDivElement,
-    startingPosition: string
+    startingPosition: string,
+    GameHandler: GameHandler
   ) => {
+    const winnerName = GameHandler.getWinner()
+    const resultHeader = screenToDisplay.querySelector('.modalHeader')!
+    resultHeader.innerHTML = `${winnerName} won!`
     screenToDisplay.style.display = startingPosition;
   };
   
@@ -15,8 +19,6 @@ export const playAgainModal = (
     playerTwo: Player) => {
     const playAgainButton = screenToDisplay.querySelector(".modalPlayAgainButton");
     playAgainButton?.addEventListener("click", () => {
-        const app = document.querySelector("#app") as HTMLDivElement;
-        const game = new GameHandler(playerOne, playerTwo);
-        setTimeout(() => createFightPage(app, game), 2000);
+        setTimeout(() => createChoosePage(playerOne, playerTwo), 2000);
     });
   };
