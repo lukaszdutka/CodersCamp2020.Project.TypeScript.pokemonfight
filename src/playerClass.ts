@@ -43,6 +43,7 @@ export class Player {
     if (!this._hasMango)
       throw new Error("You cannot use mango. You use all mangos");
     this._hasMango = false;
+    this.getActivePokemon.heal();
   }
 
   get hasMango() {
