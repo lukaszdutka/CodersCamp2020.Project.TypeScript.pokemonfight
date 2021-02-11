@@ -36,14 +36,8 @@ export const actionsButtonEventListener = (
     }, 1000);
   });
 
-  if (true) {
-    //gameHandler.canUseMango()
-    mangoButton.addEventListener("click", () => {
-      //gameHandler.useMango();
-      console.log("mango used! mnia mnia mnia..."); //needs to be deleted
-      mango.innerHTML = "0";
-      mangoButton.classList.add("disabledButton");
-    });
+  if (gameHandler.currentPlayer.hasMango) {
+    magicFunction(mangoButton, battleButtons, gameHandler, eatMango);
   } else {
     mango.innerHTML = "0";
     mangoButton.classList.add("disabledButton");
@@ -97,11 +91,17 @@ const magicFunction = (
     console.log(`${button.innerText} used!`);
     if (functionToCall) {
       functionToCall(gameHandler, e);
-    } // ??
+      createActivePokemon(gameHandler);
+      createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
+      createFightPagePokeballs(gameHandler);
+      gameHandler.switchPlayer();
+      createActivePlayer(gameHandler);
+    }
     setTimeout(() => {
+      gameHandler.generateAttackButtons();
+      gameHandler.generateSwitchButtons();
       gameHandler.generateActionButtons();
     }, 1000);
-    //also change player function
     animationButtonsExit(buttons);
   });
 };
@@ -123,24 +123,21 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
 };
 
 // funcions just for check if its works should be replaced with gameHandler > use attack or switch Pokemon functions
-const updateView = (gameHandler: GameHandler) => {
-  createActivePokemon(gameHandler);
-  createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
-  createFightPagePokeballs(gameHandler);
-  gameHandler.switchPlayer();
-  createActivePlayer(gameHandler);
-  gameHandler.generateActionButtons();
-  gameHandler.generateAttackButtons();
-  gameHandler.generateSwitchButtons();
-};
 
 const attack = (gameHandler: GameHandler) => {
   console.log("bum bum bach!");
-  updateView(gameHandler);
 };
+
 const switchPoke = (gameHandler: GameHandler, event: Event) => {
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
   gameHandler.switchPokemon(nameOfChosenPokemon!);
-  updateView(gameHandler);
+};
+
+const eatMango = (gameHandler: GameHandler) => {
+  const mangoButton = document.querySelector("#mangoButton")! as HTMLDivElement;
+  const mango = document.querySelector("#mango")! as HTMLDivElement;
+  gameHandler.currentPlayer.useMango();
+  mango.innerHTML = "0";
+  mangoButton.classList.add("disabledButton");
 };
