@@ -14,6 +14,7 @@
     justify-content: space-evenly;
 
     .playerDetails {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       align-items: center;
@@ -35,23 +36,23 @@
       .disabledPokemon {
         filter: grayscale(100%);
       }
+
+      #underline1, #underline2 {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        display: none;
+      }
     }
 
     .activePlayer {
       color: $color-primary;
-      // border-bottom: 3px solid $color-primary;
 
-      &:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: $color-primary;
-        height: 4px;
-        border-radius: 50%;
-        animation: scale-in-hor-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      #underline1, #underline2 {
+        display: block;
       }
     }
   }

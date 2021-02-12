@@ -428,6 +428,7 @@ html {
 }
 
 #fight-page .playersContainer .playerDetails {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[6];
@@ -457,24 +458,22 @@ html {
           filter: grayscale(100%);
 }
 
-#fight-page .playersContainer .activePlayer {
-  color: #9b1d20ff;
-  -webkit-transform: perspective(1px) translateZ(0);
-          transform: perspective(1px) translateZ(0);
+#fight-page .playersContainer .playerDetails #underline1, #fight-page .playersContainer .playerDetails #underline2 {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #9b1d20ff;
+  display: none;
 }
 
-#fight-page .playersContainer .activePlayer:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #9b1d20ff;
-  height: 4px;
-  border-radius: 50%;
-  -webkit-animation: scale-in-hor-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: scale-in-hor-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+#fight-page .playersContainer .activePlayer {
+  color: #9b1d20ff;
+}
+
+#fight-page .playersContainer .activePlayer #underline1, #fight-page .playersContainer .activePlayer #underline2 {
+  display: block;
 }
 
 #fight-page .activePlayerInfo {
