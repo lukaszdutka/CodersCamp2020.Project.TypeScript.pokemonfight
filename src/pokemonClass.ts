@@ -13,16 +13,19 @@ export type PokemonType =
   | "fighting"
   | "rock";
 
+
+export type PokemonMove = { moveName: string; moveType: PokemonType }
+
 export class Pokemon {
 
-  readonly _name: string;
-  readonly _image: string;
-  readonly _maxHP: number;
+  private readonly _name: string;
+  private readonly _image: string;
+  private readonly _maxHP: number;
   private _currentHP: number;
-  readonly _attackPoints: number;
-  readonly _defensePoints: number;
-  readonly _types: PokemonType[];
-  readonly _moves: { moveName: string; moveType: PokemonType }[];
+  private readonly _attackPoints: number;
+  private readonly _defensePoints: number;
+  private readonly _types: PokemonType[];
+  private readonly _moves: PokemonMove[];
 
   constructor(name: string, image: string, maxHP: number, attackPoints: number,
     defensePoints: number, types: PokemonType[], moves: { moveName: string; moveType: PokemonType }[]) {
@@ -55,11 +58,8 @@ export class Pokemon {
   }
 
   subtractHP(pointsToSubtract: number): void {
-    const newHP = this._currentHP - pointsToSubtract;
-    if (newHP < 0) {
-      this._currentHP = 0;
-    }
-    this._currentHP = newHP;
+    const newHP: number = this._currentHP - pointsToSubtract;
+    this._currentHP = Math.max(newHP, 0)
   }
 
   heal(): void {
