@@ -5,6 +5,8 @@ import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
 import { updateMovesList } from "./updateMovesList";
+import { Fight } from "../fightClass"
+import { PokemonMove } from "../pokemonClass";
 
 export const actionsButtonEventListener = (
   //player: Player,
@@ -57,9 +59,12 @@ export const attacksButtonEventListener = (gameHandler: GameHandler) => {
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
+  const moveOne = gameHandler.currentPlayer.getActivePokemon.moves[0];
+  const moveTwo = gameHandler.currentPlayer.getActivePokemon.moves[1];
+  
   animationButtonsEntry(battleButtons);
-  magicFunction(attackButtonOne, battleButtons, gameHandler, attack);
-  magicFunction(attackButtonTwo, battleButtons, gameHandler, attack);
+  magicFunction(attackButtonOne, battleButtons, gameHandler, attack, moveOne);
+  magicFunction(attackButtonTwo, battleButtons, gameHandler, attack, moveTwo);
   magicFunction(backButton, battleButtons, gameHandler);
 };
 
@@ -86,12 +91,15 @@ const magicFunction = (
   button: HTMLDivElement,
   buttons: HTMLCollectionOf<HTMLElement>,
   gameHandler: GameHandler,
-  functionToCall?: any
+  functionToCall?: any,
+  additionalParameter?: any
 ) => {
   button.addEventListener("click", (e) => {
     console.log(`${button.innerText} used!`);
     if (functionToCall) {
-      functionToCall(gameHandler, e);
+      additionalParameter
+        ? functionToCall(gameHandler, additionalParameter, e)
+        : functionToCall(gameHandler, e);
       updateMovesList(gameHandler, functionToCall, e);
       createActivePokemon(gameHandler);
       createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
@@ -122,8 +130,15 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
   }
 };
 
-export const attack = (gameHandler: GameHandler) => {
+export const attack = (gameHandler: GameHandler, move: PokemonMove) => {
   console.log("bum bum bach!");
+  const fight = new Fight()
+  const attackingPoke = gameHandler.currentPlayer.getActivePokemon;
+  const defendingPoke = gameHandler.opponentPlayer.getActivePokemon;
+  console.log("Before attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
+  const damage: number = fight.fight(attackingPoke, defendingPoke, move)
+  console.log(`${attackingPoke.name} did ${damage} with ${move.moveName} to ${defendingPoke.name}`);
+  console.log("After attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
