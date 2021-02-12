@@ -68,6 +68,7 @@
     width: 90%;
 
     .pokemonDetails {
+      position: relative;
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -75,10 +76,19 @@
       img {
         width: fit-content;
         animation: bounce-in-fwd 1.1s both;
+        @include transition-ease;
       }
 
       #pokemon-image-player2 {
         order: 2;
+      }
+
+      .boom-player1 {
+        @include boom;
+      }
+
+      .boom-player2 {
+        @include boom;
       }
 
       .pokemonInfo {

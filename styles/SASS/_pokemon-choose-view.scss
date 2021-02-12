@@ -52,5 +52,11 @@
                 transform: scale(1.25);
             }
         }
+
+        #disabledImg {
+            filter: grayscale(100%);
+            cursor: not-allowed;
+            transform: scale(.85);
+        }
     }
 }    
