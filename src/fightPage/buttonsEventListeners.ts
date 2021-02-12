@@ -77,7 +77,7 @@ export const switchButtonEventListener = (gameHandler: GameHandler) => {
 
   magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
   magicFunction(switchButtonTwo, battleButtons, gameHandler, switchPoke);
-  magicFunction(backButton, battleButtons, gameHandler);
+  if (backButton) magicFunction(backButton, battleButtons, gameHandler);
 };
 
 const magicFunction = (
@@ -99,7 +99,7 @@ const magicFunction = (
       createActivePlayer(gameHandler);
     }
     setTimeout(() => {
-      gameHandler.generateActionButtons();
+      gameHandler.currentPlayer.getActivePokemon.isAlive() ? gameHandler.generateActionButtons() : gameHandler.generateSwitchButtons();     
     }, 1000);
     animationButtonsExit(buttons);
   });

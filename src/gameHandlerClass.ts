@@ -90,8 +90,10 @@ export class GameHandler {
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="switchButtonOne">${player.notActivePokemons[0].name}</div>
-                    <div class="button battleButton" id="switchButtonTwo">${player.notActivePokemons[1].name}</div>
-                    <div class="button battleButton" id="backButton">back</div>`;
+                    <div class="button battleButton" id="switchButtonTwo">${player.notActivePokemons[1].name}</div>`;
+    if (this.currentPlayer.getActivePokemon.isAlive()) {
+      actionContainer.innerHTML += `<div class="button battleButton" id="backButton">back</div>`;
+    }
     switchButtonEventListener(this);
   }
 }

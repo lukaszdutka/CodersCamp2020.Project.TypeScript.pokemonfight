@@ -5,7 +5,6 @@ export const showResultModal = (GameHandler: GameHandler) => {
     "#gameresult-modal-screen"
   ) as HTMLDivElement;
   const winnerName = GameHandler.getWinner().name;
-  console.log(winnerName);
   const resultHeader = screenToDisplay.querySelector("#modal-header")!;
   resultHeader.textContent = `${winnerName} won!`;
   const playAgainButton = screenToDisplay.querySelector(
