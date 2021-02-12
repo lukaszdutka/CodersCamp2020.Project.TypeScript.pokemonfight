@@ -1,6 +1,5 @@
 import { GameHandler } from "../gameHandlerClass";
-import { createChoosePage } from "../choosePokemonsPage/choosePokemonsPage"
-import { Player } from "../playerClass";
+import { renderApp } from "../index"
 
 export const showResultModal = (
     screenToDisplay: HTMLDivElement,
@@ -14,11 +13,10 @@ export const showResultModal = (
   };
   
 export const playAgainModal = (
-    screenToDisplay: HTMLDivElement,
-    playerOne: Player,
-    playerTwo: Player) => {
-    const playAgainButton = screenToDisplay.querySelector(".modalPlayAgainButton");
-    playAgainButton?.addEventListener("click", () => {
-        setTimeout(() => createChoosePage(playerOne, playerTwo), 2000);
+    screenToDisplay: HTMLDivElement
+    ) => {
+    const playAgainButton = screenToDisplay.querySelector(".modalPlayAgainButton") as HTMLDivElement;
+    playAgainButton.addEventListener("click", () => {
+        setTimeout(renderApp, 2000);
     });
   };

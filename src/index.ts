@@ -55,7 +55,7 @@ const renderChoosePokemonScreen = (appDiv: HTMLDivElement) => {
   });
 }
 
-const renderApp = () => {
+export const renderApp = () => {
   const app = document.querySelector("#app") as HTMLDivElement;
   renderStartingPage(app);
   renderHowToPlayModal(app);
