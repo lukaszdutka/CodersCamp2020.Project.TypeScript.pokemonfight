@@ -609,6 +609,81 @@ html {
   width: 80%;
 }
 
+.popupScreenResult {
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  background-color: #e8f1f2ff;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  width: 80vw;
+  max-height: 15em;
+  min-height: 12em;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  margin-left: -40vw;
+  margin-bottom: -20vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  z-index: 2;
+  border: 1px solid red;
+}
+
+.popupScreenResult .exitButton, .popupScreenResult .modalHeader, .popupScreenResult .modalParagraph, .popupScreenResult .modalPlayAgainButton {
+  font-family: 'Pokemon Solid';
+}
+
+.popupScreenResult .exitButton {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  line-height: 1;
+  margin: 2vh;
+  color: #020402ff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.popupScreenResult .modalHeader {
+  text-shadow: 1px 1px 3px #020402ff;
+  font-size: 1.6em;
+  line-height: 1;
+  color: #9b1d20ff;
+}
+
+.popupScreenResult .modalParagraph {
+  line-height: 1.8;
+  font-size: 0.5em;
+  color: #020402ff;
+  text-align: center;
+  margin: 1em;
+}
+
+.popupScreenResult .modalPlayAgainButton {
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  line-height: 1.8;
+  font-size: 0.7em;
+  background-color: #020402ff;
+  color: #e8f1f2ff;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.5em;
+  border-radius: 1em;
+}
+
 @-webkit-keyframes scale-out-horizontal {
   0% {
     -webkit-transform: scaleX(1);
@@ -778,6 +853,37 @@ html {
   }
   #fight-page .gameActions .buttonsContainer {
     width: 45%;
+  }
+  .popupScreenResult {
+    width: 50vw;
+    margin-left: -25vw;
+    max-height: 18em;
+    min-height: 12em;
+  }
+  .popupScreenResult .modalHeader {
+    text-shadow: 1px 1px 3px #020402ff;
+    font-size: 2.6em;
+    line-height: 1;
+    color: #9b1d20ff;
+  }
+  .popupScreenResult .modalParagraph {
+    line-height: 1.8;
+    font-size: 0.9em;
+    color: #020402ff;
+    text-align: center;
+    margin: 1.4em;
+  }
+  .popupScreenResult .modalPlayAgainButton {
+    -webkit-box-shadow: 1px 1px 3px #020402ff;
+            box-shadow: 1px 1px 3px #020402ff;
+    line-height: 1.8;
+    font-size: 0.7em;
+    background-color: #020402ff;
+    color: #e8f1f2ff;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+    border-radius: 1em;
   }
 }
 

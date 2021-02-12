@@ -1,15 +1,15 @@
 import { GameHandler } from "../gameHandlerClass";
-import { renderApp } from "../index"
 
 export const showResultModal = (
-    screenToDisplay: HTMLDivElement,
-    startingPosition: string,
     GameHandler: GameHandler
   ) => {
-    const winnerName = GameHandler.getWinner()
-    const resultHeader = screenToDisplay.querySelector('.modalHeader')!
-    resultHeader.innerHTML = `${winnerName} won!`
+    const screenToDisplay = document.querySelector('#gameresult-modal-screen') as HTMLDivElement;
+    const winnerName = GameHandler.getWinner().name;
+    console.log(winnerName)
+    const resultHeader = screenToDisplay.querySelector('#modal-header')!
+    resultHeader.textContent = `${winnerName} won!`
     const playAgainButton = screenToDisplay.querySelector(".modalPlayAgainButton") as HTMLDivElement;
-    playAgainButton.addEventListener("click", document.location.reload);
-    screenToDisplay.style.display = startingPosition;
+    playAgainButton.addEventListener("click", () =>
+    document.location.reload());
+    screenToDisplay.style.display = 'flex';
   };

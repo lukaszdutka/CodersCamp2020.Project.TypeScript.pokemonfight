@@ -12,7 +12,6 @@ export const updateMovesList = (
   const pokemonName = gameHandler.currentPlayer.getActivePokemon.name;
   const buttonContent = (event.currentTarget as HTMLDivElement).textContent;
   const playerName = gameHandler.currentPlayer.name;
-  console.log();
   switch (calledFunction) {
     case attack:
       newMoveText.nodeValue = `${playerName}: ${pokemonName} used ${buttonContent}!`;
@@ -26,7 +25,6 @@ export const updateMovesList = (
     default:
       console.log("No move found");
   }
-  console.log(newMove);
   newMove.append(newMoveText);
   moveList.insertBefore(newMove, moveList.firstChild);
 };

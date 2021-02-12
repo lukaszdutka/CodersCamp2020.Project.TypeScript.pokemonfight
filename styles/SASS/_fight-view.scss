@@ -167,7 +167,7 @@
 .popupScreenResult {
   @include boxshadow;
   background-color: $color-bg;
-  display: flex;
+  display: none;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
@@ -183,6 +183,7 @@
   padding-top: 5vh;
   padding-bottom: 5vh;
   z-index: 2;
+  border: 1px solid red;
 
   .exitButton, .modalHeader, .modalParagraph, .modalPlayAgainButton {
     font-family: 'Pokemon Solid';
