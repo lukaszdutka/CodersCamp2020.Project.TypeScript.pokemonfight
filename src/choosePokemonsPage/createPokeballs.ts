@@ -11,7 +11,7 @@ export const createPokeballs = (playerOne: Player, activePlayer: Player) => {
   const numberOfLastPokemon: number = activePlayer.pokemons.length - 1;
   playerPokeballs[numberOfLastPokemon].setAttribute(
     "src",
-    `./assets/${playerLastPokemonName}.png` // `./${playerLastPokemonName}.eadfd35a.png` For Abra works :D
+    `./${playerLastPokemonName}.png`
   );
   playerPokeballs[numberOfLastPokemon].style.animation = "bounce-in-fwd 1.1s both";
 };
