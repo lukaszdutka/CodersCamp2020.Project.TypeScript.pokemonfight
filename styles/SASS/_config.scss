@@ -23,6 +23,10 @@ $mobile: 768px;
     box-shadow: 1px 1px 3px $color-text;
 }
 
+@mixin textshadow {
+  text-shadow: 1px 1px 3px $color-text;
+}
+
 @mixin dropshadow {
   filter: drop-shadow(1px 1px 3px $color-text);
 }

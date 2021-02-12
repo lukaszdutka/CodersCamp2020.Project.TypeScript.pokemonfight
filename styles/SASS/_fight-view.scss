@@ -161,4 +161,66 @@
       width: 80%;
     }
   }
+
+}
+
+.popupScreenResult {
+  @include boxshadow;
+  background-color: $color-bg;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  width: 80vw;
+  max-height: 15em;
+  min-height: 12em;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  margin-left: -40vw;
+  margin-bottom: -20vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  z-index: 2;
+
+  .exitButton, .modalHeader, .modalParagraph, .modalPlayAgainButton {
+    font-family: 'Pokemon Solid';
+  }
+
+  .exitButton {
+    align-self:flex-end;
+    line-height: 1;
+    margin: 2vh;
+    color: $color-text;
+    user-select: none;
+    cursor: pointer;         
+  }
+
+  .modalHeader {
+    @include textshadow;
+    font-size: 1.6em;
+    line-height: 1;
+    color: $color-primary;
+  }
+
+  .modalParagraph {
+    line-height: 1.8;
+    font-size: 0.5em;
+    color: $color-text;
+    text-align: center;
+    margin: 1em;
+  }
+
+  .modalPlayAgainButton {
+    @include boxshadow;
+    line-height: 1.8;
+    font-size: 0.7em;
+    background-color: $color-text;
+    color: $color-bg;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+    border-radius: 1em;
+  }
 }
