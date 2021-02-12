@@ -20,7 +20,7 @@ export const createActivePokemon = (gameHandler: GameHandler) => {
     nameArea: HTMLHeadingElement
   ) => {
     const pokemonName = player.getActivePokemon.name;
-    imageArea.setAttribute("src", `./assets/${pokemonName.toLowerCase()}.png`);
+    imageArea.setAttribute("src", `./${pokemonName.toLowerCase()}.png`);
     nameArea.textContent = pokemonName;
   };
   createPokemon(
