@@ -4,6 +4,7 @@ import { createActivePokemon } from "./createActivePokemon";
 import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
+import { updateMovesList } from "./updateMovesList";
 
 export const actionsButtonEventListener = (
   //player: Player,
@@ -91,6 +92,7 @@ const magicFunction = (
     console.log(`${button.innerText} used!`);
     if (functionToCall) {
       functionToCall(gameHandler, e);
+      updateMovesList(gameHandler, functionToCall, e);
       createActivePokemon(gameHandler);
       createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
       createFightPagePokeballs(gameHandler);
@@ -120,17 +122,17 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
   }
 };
 
-const attack = (gameHandler: GameHandler) => {
+export const attack = (gameHandler: GameHandler) => {
   console.log("bum bum bach!");
 };
 
-const switchPoke = (gameHandler: GameHandler, event: Event) => {
+export const switchPoke = (gameHandler: GameHandler, event: Event) => {
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
   gameHandler.switchPokemon(nameOfChosenPokemon!);
 };
 
-const eatMango = (gameHandler: GameHandler) => {
+export const eatMango = (gameHandler: GameHandler) => {
   const mangoButton = document.querySelector("#mangoButton")! as HTMLDivElement;
   const mango = document.querySelector("#mango")! as HTMLDivElement;
   gameHandler.currentPlayer.useMango();
