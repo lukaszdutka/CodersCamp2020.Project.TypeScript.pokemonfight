@@ -5,11 +5,9 @@ import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
 import { updateMovesList } from "./updateMovesList";
-import { showResultModal } from "./resultModalPopUpFunctions"
+import { showResultModal } from "./resultModalPopUpFunctions";
 
-export const actionsButtonEventListener = (
-  gameHandler: GameHandler
-) => {
+export const actionsButtonEventListener = (gameHandler: GameHandler) => {
   const battleButtons = document.getElementsByClassName(
     "battleButton"
   )! as HTMLCollectionOf<HTMLElement>;
@@ -92,7 +90,7 @@ const magicFunction = (
     console.log(`${button.innerText} used!`);
     if (functionToCall) {
       functionToCall(gameHandler, e);
-      checkIfGameIsOver(gameHandler)
+      checkIfGameIsOver(gameHandler);
       updateMovesList(gameHandler, functionToCall, e);
       createActivePokemon(gameHandler);
       createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
@@ -125,7 +123,7 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
 
 const checkIfGameIsOver = (gameHandler: GameHandler) => {
   if (gameHandler.isGameFinished() === true) showResultModal(gameHandler);
-}
+};
 
 export const attack = (gameHandler: GameHandler) => {
   console.log("bum bum bach!");
