@@ -670,10 +670,21 @@ html {
   justify-items: first;
 }
 
+#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarBackground {
+  position: relative;
+  background-color: lightgrey;
+  grid-column: span 5;
+  width: 100%;
+  height: 1.8rem;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBar {
-  position: absolute;
-  top: 0;
-  left: 0;
   grid-column: span 5;
   width: 100%;
   height: 1.8rem;
@@ -692,20 +703,6 @@ html {
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarLowLevel {
   background-color: #9b1d20ff;
-}
-
-#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarBackground {
-  position: relative;
-  background-color: lightgrey;
-  grid-column: span 5;
-  width: 100%;
-  height: 1.8rem;
-  -webkit-box-shadow: 1px 1px 3px #020402ff;
-          box-shadow: 1px 1px 3px #020402ff;
-  -webkit-transform-origin: left center;
-          transform-origin: left center;
-  border-radius: 10px;
-  margin-top: 1rem;
 }
 
 #fight-page .gameActions {
@@ -801,10 +798,6 @@ html {
   font-family: 'Pokemon Solid';
 }
 
-.popupScreenResult .modalPlayAgainButton {
-  cursor: pointer;
-}
-
 .popupScreenResult .exitButton {
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -844,6 +837,7 @@ html {
   padding-right: 2em;
   padding-bottom: 0.5em;
   border-radius: 1em;
+  cursor: pointer;
 }
 
 @-webkit-keyframes scale-out-horizontal {

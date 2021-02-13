@@ -19,15 +19,24 @@ export const createActivePokemon = (gameHandler: GameHandler) => {
     imageArea: HTMLImageElement,
     nameArea: HTMLHeadingElement
   ) => {
-    const pokemonName = player.getActivePokemon.name;
-    imageArea.setAttribute("src", `./${pokemonName.toLowerCase()}.png`);
-    nameArea.textContent = pokemonName;
+    if(player.getActivePokemon.isAlive()){
+      const pokemonName = player.getActivePokemon.name;
+      imageArea.style.display='block';
+      nameArea.style.display='block';
+      imageArea.setAttribute("src", `./${pokemonName.toLowerCase()}.png`);
+      nameArea.textContent = pokemonName;
+    }else{
+      imageArea.style.display='none';
+      nameArea.style.display='none';
+    }
+    
   };
   createPokemon(
     gameHandler.playerOne,
     playerOneActivePokemonImageArea,
     playerOneActivePokemonNameArea
   );
+  
   createPokemon(
     gameHandler.playerTwo,
     playerTwoActivePokemonImageArea,
