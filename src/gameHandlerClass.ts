@@ -84,14 +84,25 @@ export class GameHandler {
     attacksButtonEventListener(this);
   }
 
-  generateSwitchButtons(): void {
+  generateSwitchButtons(backEnabled: boolean): void {
     const player = this.currentPlayer;
     console.log("Switch choose modal");
+    
     const actionContainer = document.querySelector("#actionModals")!;
-    actionContainer.innerHTML = `
-                    <div class="button battleButton" id="switchButtonOne">${player.notActivePokemons[0].name}</div>
-                    <div class="button battleButton" id="switchButtonTwo">${player.notActivePokemons[1].name}</div>
-                    <div class="button battleButton" id="backButton">back</div>`;
-    switchButtonEventListener(this);
+    let innHTML: string = "";
+    const buttonIds: string[] = ["switchButtonOne", "switchButtonTwo"];
+    let pokeId: number = 0;
+    for (let pokemon of player.notActivePokemons) {
+      if (pokemon.isAlive()) {
+        innHTML += `<div class="button battleButton" id="${[buttonIds[pokeId]]}">${pokemon.name}</div>`
+        pokeId++
+      }
+    }
+    if (backEnabled) {
+      innHTML += `<div class='button battleButton" id="backButton">back</div>`
+      innHTML += `<div class='button battleButton" id="backButton">back</div>`
+    }
+    actionContainer.innerHTML = innHTML;
+    switchButtonEventListener(this, backEnabled);
   }
 }
