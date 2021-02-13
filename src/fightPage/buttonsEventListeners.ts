@@ -5,6 +5,7 @@ import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
 import { updateMovesList } from "./updateMovesList";
+import { animationShowCurrentPokemon, animationHittedPokemon, animationSwitchPokemonExit, animationSwitchPokemonEntry } from "./animations";
 
 export const actionsButtonEventListener = (
   //player: Player,
@@ -22,6 +23,7 @@ export const actionsButtonEventListener = (
   const mangoButton = document.querySelector("#mangoButton")! as HTMLDivElement;
   const mango = document.querySelector("#mango")! as HTMLDivElement;
 
+  // animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
 
   attackButton.addEventListener("click", () => {
@@ -57,6 +59,7 @@ export const attacksButtonEventListener = (gameHandler: GameHandler) => {
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
+  // animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
   magicFunction(attackButtonOne, battleButtons, gameHandler, attack);
   magicFunction(attackButtonTwo, battleButtons, gameHandler, attack);
@@ -75,6 +78,7 @@ export const switchButtonEventListener = (gameHandler: GameHandler) => {
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
+  // animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
 
   magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
@@ -89,15 +93,17 @@ const magicFunction = (
   functionToCall?: any
 ) => {
   button.addEventListener("click", (e) => {
-    console.log(`${button.innerText} used!`);
+    // console.log(`${button.innerText} used!`);
     if (functionToCall) {
       functionToCall(gameHandler, e);
-      updateMovesList(gameHandler, functionToCall, e);
-      createActivePokemon(gameHandler);
-      createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
-      createFightPagePokeballs(gameHandler);
-      gameHandler.switchPlayer();
-      createActivePlayer(gameHandler);
+        updateMovesList(gameHandler, functionToCall, e);
+      setTimeout(() => {
+        createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
+        createFightPagePokeballs(gameHandler);
+        gameHandler.switchPlayer();
+        createActivePlayer(gameHandler);
+        createActivePokemon(gameHandler);
+      }, 1500);
     }
     setTimeout(() => {
       gameHandler.generateActionButtons();
@@ -123,13 +129,19 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
 };
 
 export const attack = (gameHandler: GameHandler) => {
-  console.log("bum bum bach!");
+  setTimeout(()=>{
+    animationHittedPokemon(gameHandler);
+  }, 500);
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
+  animationSwitchPokemonExit(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
-  gameHandler.switchPokemon(nameOfChosenPokemon!);
+  setTimeout(()=>{
+    gameHandler.switchPokemon(nameOfChosenPokemon!);
+    animationSwitchPokemonEntry(gameHandler);
+  }, 1500)
 };
 
 export const eatMango = (gameHandler: GameHandler) => {
@@ -139,3 +151,4 @@ export const eatMango = (gameHandler: GameHandler) => {
   mango.innerHTML = "0";
   mangoButton.classList.add("disabledButton");
 };
+
