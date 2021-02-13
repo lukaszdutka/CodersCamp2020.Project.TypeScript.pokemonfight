@@ -79,8 +79,8 @@ export const switchButtonEventListener = (gameHandler: GameHandler) => {
   // animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
 
-  magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
-  magicFunction(switchButtonTwo, battleButtons, gameHandler, switchPoke);
+  if (switchButtonOne) magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
+  if (switchButtonTwo) magicFunction(switchButtonTwo, battleButtons, gameHandler, switchPoke);
   if (backButton) magicFunction(backButton, battleButtons, gameHandler);
 };
 
@@ -137,6 +137,7 @@ export const attack = (gameHandler: GameHandler) => {
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
+  console.log('Switched!')
   animationSwitchPokemonExit(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;

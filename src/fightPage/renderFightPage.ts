@@ -3,6 +3,7 @@ import { createActivePokemon } from "./createActivePokemon";
 import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
+import { Pokemon } from "../pokemonClass";
 
 const createPlayerFightNames = (gameHandler: GameHandler) => {
   const playerOneName = document.querySelector(
@@ -31,4 +32,7 @@ export const createFightPage = (
   createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
   createFightPagePokeballs(gameHandler);
   gameHandler.generateActionButtons();
+
+  gameHandler.playerTwo.pokemons[0].subtractHP(gameHandler.playerTwo.pokemons[0].maxHP);
+  gameHandler.playerTwo.pokemons[1].subtractHP(gameHandler.playerTwo.pokemons[1].maxHP);
 };
