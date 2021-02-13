@@ -3,6 +3,7 @@ import { createActivePokemon } from "./createActivePokemon";
 import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
+import { Pokemon } from "../pokemonClass";
 
 const createPlayerFightNames = (gameHandler: GameHandler) => {
   const playerOneName = document.querySelector(
