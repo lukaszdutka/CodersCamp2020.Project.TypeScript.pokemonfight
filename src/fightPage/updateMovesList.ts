@@ -12,9 +12,13 @@ export const updateMovesList = (
   const pokemonName = gameHandler.currentPlayer.getActivePokemon.name;
   const buttonContent = (event.currentTarget as HTMLDivElement).textContent;
   const playerName = gameHandler.currentPlayer.name;
+  const opponentPlayerPokemonName = gameHandler.opponentPlayer.getActivePokemon.name;
   switch (calledFunction) {
     case attack:
       newMoveText.nodeValue = `${playerName}: ${pokemonName} used ${buttonContent}!`;
+      if (!gameHandler.opponentPlayer.getActivePokemon.isAlive()) {
+      newMoveText.nodeValue += ` ${opponentPlayerPokemonName} is defeated!`;
+      }
       break;
     case switchPoke:
       newMoveText.nodeValue = `${playerName} changed Pokemon: ${pokemonName} comes into play!`;

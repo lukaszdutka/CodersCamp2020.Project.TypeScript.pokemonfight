@@ -4,7 +4,7 @@ export const createActivePlayer = (gameHandler: GameHandler) => {
   const activePlayerArea = document.querySelector(
     "#active-player-info"
   ) as HTMLDivElement;
-  activePlayerArea.textContent = `${gameHandler.currentPlayer.name} now is your turn. Get the revenge!`;
+  activePlayerArea.innerHTML = `<span>${gameHandler.currentPlayer.name}</span> now is your turn. Get the revenge!`;
   const playerOneUnderlineArea = document.querySelector("#fight-page-player1");
   const playerTwoUnderlineArea = document.querySelector("#fight-page-player2");
   const underlineOne = document.querySelector("#underline1") as HTMLDivElement;

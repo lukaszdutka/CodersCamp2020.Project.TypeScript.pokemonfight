@@ -491,6 +491,10 @@ html {
   margin: 25px auto;
 }
 
+#fight-page .activePlayerInfo span {
+  font-family: 'Pokemon Solid';
+}
+
 #fight-page .battleArea {
   width: 90%;
 }
