@@ -1,3 +1,4 @@
+import { Player } from "../playerClass";
 import { GameHandler } from "../gameHandlerClass";
 import { createActivePokemon } from "./createActivePokemon";
 import { createActivePlayer } from "./createActivePlayer";
@@ -132,9 +133,7 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
 
 const checkIfGameIsOver = (gameHandler: GameHandler) => {
   if (gameHandler.isGameFinished() === true) {
-    setTimeout(() => {
-      showResultModal(gameHandler);
-    }, 1500)
+    showResultModal(gameHandler);
   }
 };
 
@@ -158,7 +157,6 @@ export const attack = (gameHandler: GameHandler, e: Event) => {
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
-  console.log('Switched!')
   animationSwitchPokemonExit(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;

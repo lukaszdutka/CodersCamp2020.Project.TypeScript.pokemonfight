@@ -205,6 +205,7 @@ html {
   text-align: center;
   font-family: 'Pokemon Solid';
   font-size: 1em;
+  cursor: pointer;
 }
 
 #starting-page #start-game-border #start-game-bg1 #start-game-bg2 #start-game-button:hover {
@@ -468,7 +469,7 @@ html {
 
 #fight-page .playersContainer .playerDetails #underline1, #fight-page .playersContainer .playerDetails #underline2 {
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   width: 50%;
   height: 5px;
   border-radius: 50%;
@@ -670,6 +671,32 @@ html {
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  grid-column: span 5;
+  width: 100%;
+  height: 1.8rem;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  border-radius: 10px;
+  -webkit-transition: width 0.8s ease-out;
+  transition: width 0.8s ease-out;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarHighLevel {
+  background-color: #0c9300;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarLowLevel {
+  background-color: #9b1d20ff;
+}
+
+#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarBackground {
+  position: relative;
+  background-color: lightgrey;
   grid-column: span 5;
   width: 100%;
   height: 1.8rem;
@@ -679,14 +706,6 @@ html {
           transform-origin: left center;
   border-radius: 10px;
   margin-top: 1rem;
-}
-
-#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarHighLevel {
-  background-color: #0c9300;
-}
-
-#fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBarLowLevel {
-  background-color: #9b1d20ff;
 }
 
 #fight-page .gameActions {
@@ -780,6 +799,10 @@ html {
 
 .popupScreenResult .exitButton, .popupScreenResult .modalHeader, .popupScreenResult .modalParagraph, .popupScreenResult .modalPlayAgainButton {
   font-family: 'Pokemon Solid';
+}
+
+.popupScreenResult .modalPlayAgainButton {
+  cursor: pointer;
 }
 
 .popupScreenResult .exitButton {
