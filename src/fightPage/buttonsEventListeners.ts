@@ -9,9 +9,8 @@ import { PokemonMove } from "../pokemonClass";
 import { showResultModal } from "./resultModalPopUpFunctions";
 import {
   animationHittedPokemon,
-  animationSwitchPokemon,
-  animationEatMango,
-  animationDead
+  animationSwitchPokemonExit,
+  animationSwitchPokemonEntry,
 } from "./animations";
 
 export const actionsButtonEventListener = (gameHandler: GameHandler) => {
@@ -109,8 +108,7 @@ const magicFunction = (
     setTimeout(() => {
       gameHandler.currentPlayer.getActivePokemon.isAlive()
         ? gameHandler.generateActionButtons()
-        : (gameHandler.generateSwitchButtons(),
-        animationDead(gameHandler));
+        : gameHandler.generateSwitchButtons();
     }, 1000);
     animationButtonsExit(buttons);
   });
@@ -160,15 +158,14 @@ export const attack = (gameHandler: GameHandler, e: Event) => {
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
-  console.log('Switched!')
-  animationSwitchPokemon(gameHandler);
+  animationSwitchPokemonExit(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
   gameHandler.switchPokemon(nameOfChosenPokemon!);
+  animationSwitchPokemonEntry(gameHandler);
 };
 
 export const eatMango = (gameHandler: GameHandler) => {
-  animationEatMango(gameHandler);
   const mangoButton = document.querySelector("#mangoButton")! as HTMLDivElement;
   const mango = document.querySelector("#mango")! as HTMLDivElement;
   gameHandler.currentPlayer.useMango();

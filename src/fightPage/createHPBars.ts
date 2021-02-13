@@ -28,10 +28,10 @@ export const createHPBars = (playerOne: Player, playerTwo: Player) => {
     "#hp-bar-player2"
   ) as HTMLDivElement;
   const playerOneHeadingHP = document.querySelector(
-    "#headingHP-player1"
+    "#hpProgressBarPlayer1"
   ) as HTMLHeadingElement;
   const playerTwoHeadingHP = document.querySelector(
-    "#headingHP-player2"
+    "#hpProgressBarPlayer2"
   ) as HTMLHeadingElement;
   createBar(playerOne, playerOneHPBar, playerOneHeadingHP);
   createBar(playerTwo, playerTwoHPBar, playerTwoHeadingHP);
