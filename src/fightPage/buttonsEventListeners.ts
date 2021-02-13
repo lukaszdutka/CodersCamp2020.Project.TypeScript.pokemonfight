@@ -158,7 +158,6 @@ export const attack = (gameHandler: GameHandler, e: Event) => {
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
-  console.log('Switched!')
   animationSwitchPokemonExit(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
