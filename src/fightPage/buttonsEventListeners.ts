@@ -66,15 +66,6 @@ export const attacksButtonEventListener = (gameHandler: GameHandler) => {
   magicFunction(backButton, battleButtons, gameHandler);
 };
 
-const checkIfPokeWasDefeated = (
-  gameHandler: GameHandler
-) => {
-  if (gameHandler.currentPlayer.getActivePokemon.isAlive()) {
-    return false
-  }
-  return true
-}
-
 
 export const switchButtonEventListener = (
   gameHandler: GameHandler
@@ -147,7 +138,8 @@ const checkIfGameIsOver = (gameHandler: GameHandler) => {
 };
 
 export const attack = (gameHandler: GameHandler, e: Event) => {
-  console.log("bum bum bach!");
+  animationHittedPokemon(gameHandler);
+  
   const fight = new Fight()
   const pokemon = gameHandler.currentPlayer.getActivePokemon;
   if (e !== null) {
