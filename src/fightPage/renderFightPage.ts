@@ -1,9 +1,9 @@
-import { Player } from "../playerClass";
 import { GameHandler } from "../gameHandlerClass";
 import { createActivePokemon } from "./createActivePokemon";
 import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
+import { Pokemon } from "../pokemonClass";
 
 const createPlayerFightNames = (gameHandler: GameHandler) => {
   const playerOneName = document.querySelector(
@@ -23,12 +23,13 @@ export const createFightPage = (
   const fightPage = document.querySelector(
     "#fight-page-template"
   ) as HTMLTemplateElement;
+  const resultsModal = document.querySelector("#gameresult-modal-template");
   appDiv.innerHTML = fightPage.innerHTML;
+  appDiv.innerHTML += resultsModal?.innerHTML;
   createPlayerFightNames(gameHandler);
   createActivePlayer(gameHandler);
   createActivePokemon(gameHandler);
   createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
   createFightPagePokeballs(gameHandler);
-  // generate choose action buttons
   gameHandler.generateActionButtons();
 };

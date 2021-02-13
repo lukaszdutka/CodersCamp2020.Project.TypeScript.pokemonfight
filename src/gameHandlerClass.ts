@@ -64,7 +64,6 @@ export class GameHandler {
 
   generateActionButtons(): void {
     const player = this.currentPlayer;
-    console.log("Start - action modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="attackButton">attack</div>
@@ -75,7 +74,6 @@ export class GameHandler {
 
   generateAttackButtons(): void {
     const player = this.currentPlayer;
-    console.log("Attack choose modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="attackButtonOne">${player.getActivePokemon.moves[0].moveName}</div>
@@ -84,25 +82,17 @@ export class GameHandler {
     attacksButtonEventListener(this);
   }
 
-  generateSwitchButtons(backEnabled: boolean): void {
+  generateSwitchButtons(): void {
     const player = this.currentPlayer;
-    console.log("Switch choose modal");
-    
     const actionContainer = document.querySelector("#actionModals")!;
-    let innHTML: string = "";
-    const buttonIds: string[] = ["switchButtonOne", "switchButtonTwo"];
-    let pokeId: number = 0;
-    for (let pokemon of player.notActivePokemons) {
-      if (pokemon.isAlive()) {
-        innHTML += `<div class="button battleButton" id="${[buttonIds[pokeId]]}">${pokemon.name}</div>`
-        pokeId++
-      }
+    const pokemonOne = player.notActivePokemons[0];
+    const pokemonTwo = player.notActivePokemons[1];
+    actionContainer.innerHTML = ""
+    if (pokemonOne.isAlive()) actionContainer.innerHTML += `<div class="button battleButton" id="switchButtonOne">${pokemonOne.name}</div>`;
+    if (pokemonTwo.isAlive()) actionContainer.innerHTML += `<div class="button battleButton" id="switchButtonTwo">${pokemonTwo.name}</div>`;
+    if (this.currentPlayer.getActivePokemon.isAlive()) {
+      actionContainer.innerHTML += `<div class="button battleButton" id="backButton">back</div>`;
     }
-    if (backEnabled) {
-      innHTML += `<div class='button battleButton" id="backButton">back</div>`
-      innHTML += `<div class='button battleButton" id="backButton">back</div>`
-    }
-    actionContainer.innerHTML = innHTML;
-    switchButtonEventListener(this, backEnabled);
+    switchButtonEventListener(this);
   }
 }

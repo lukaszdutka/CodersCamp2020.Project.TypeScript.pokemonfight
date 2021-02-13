@@ -7,29 +7,17 @@ import { createFightPagePokeballs } from "./createFightPagePokeballs";
 import { updateMovesList } from "./updateMovesList";
 import { Fight } from "../fightClass"
 import { PokemonMove } from "../pokemonClass";
-import { showResultModal } from "./resultModalPopUpFunctions"
+import { showResultModal } from "./resultModalPopUpFunctions";
+import {
+  animationHittedPokemon,
+  animationSwitchPokemonExit,
+  animationSwitchPokemonEntry,
+} from "./animations";
 
-export const actionsButtonEventListener = (
-  //player: Player,
-  gameHandler: GameHandler
-) => {
+export const actionsButtonEventListener = (gameHandler: GameHandler) => {
   const battleButtons = document.getElementsByClassName(
     "battleButton"
   )! as HTMLCollectionOf<HTMLElement>;
-  animationButtonsEntry(battleButtons);
-  if (checkIfPokeWasDefeated(gameHandler)) {
-    console.log("Defeated");
-    gameHandler.generateSwitchButtons(false)
-  } else {
-    prepareActions(gameHandler, battleButtons)
-  };
-}
-
-const prepareActions = (
-  gameHandler: GameHandler,
-  battleButtons: HTMLCollectionOf<HTMLElement>
-) => {
-
   const attackButton = document.querySelector(
     "#attackButton"
   )! as HTMLDivElement;
@@ -39,17 +27,16 @@ const prepareActions = (
   const mangoButton = document.querySelector("#mangoButton")! as HTMLDivElement;
   const mango = document.querySelector("#mango")! as HTMLDivElement;
 
+  // animationShowCurrentPokemon(gameHandler);
+  animationButtonsEntry(battleButtons);
+
   attackButton.addEventListener("click", () => {
     animationButtonsExit(battleButtons);
-    setTimeout(() => {
-      gameHandler.generateAttackButtons();
-    }, 1000);
+    gameHandler.generateAttackButtons();
   });
   switchButton.addEventListener("click", () => {
     animationButtonsExit(battleButtons);
-    setTimeout(() => {
-      gameHandler.generateSwitchButtons(true);
-    }, 1000);
+    gameHandler.generateSwitchButtons();
   });
 
   if (gameHandler.currentPlayer.hasMango) {
@@ -58,7 +45,7 @@ const prepareActions = (
     mango.innerHTML = "0";
     mangoButton.classList.add("disabledButton");
   }
-}
+};
 
 export const attacksButtonEventListener = (gameHandler: GameHandler) => {
   const attackButtonOne = document.querySelector(
@@ -72,6 +59,7 @@ export const attacksButtonEventListener = (gameHandler: GameHandler) => {
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
+  // animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
   magicFunction(attackButtonOne, battleButtons, gameHandler, attack);
   magicFunction(attackButtonTwo, battleButtons, gameHandler, attack);
@@ -89,8 +77,7 @@ const checkIfPokeWasDefeated = (
 
 
 export const switchButtonEventListener = (
-  gameHandler: GameHandler,
-  backEnabled: boolean
+  gameHandler: GameHandler
 ) => {
   const switchButtonOne = document.querySelector(
     "#switchButtonOne"
@@ -103,16 +90,12 @@ export const switchButtonEventListener = (
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
+  // animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
-  if (switchButtonOne !== null) {
-    magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
-  }
-  if (switchButtonTwo !== null) {
-    magicFunction(switchButtonTwo, battleButtons, gameHandler, switchPoke);
-  }
-  if (backButton !== null && backEnabled) {
-    magicFunction(backButton, battleButtons, gameHandler);
-  }
+
+  if (switchButtonOne) magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
+  if (switchButtonTwo) magicFunction(switchButtonTwo, battleButtons, gameHandler, switchPoke);
+  if (backButton) magicFunction(backButton, battleButtons, gameHandler);
 };
 
 const magicFunction = (
@@ -122,18 +105,20 @@ const magicFunction = (
   functionToCall?: any
 ) => {
   button.addEventListener("click", (e) => {
-    console.log(`${button.innerText} used!`);
     if (functionToCall) {
-      functionToCall(gameHandler, e)
+      functionToCall(gameHandler, e);
+      checkIfGameIsOver(gameHandler);
       updateMovesList(gameHandler, functionToCall, e);
-      createActivePokemon(gameHandler);
       createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
       createFightPagePokeballs(gameHandler);
       gameHandler.switchPlayer();
       createActivePlayer(gameHandler);
+      createActivePokemon(gameHandler);
     }
     setTimeout(() => {
-      gameHandler.generateActionButtons();
+      gameHandler.currentPlayer.getActivePokemon.isAlive()
+        ? gameHandler.generateActionButtons()
+        : gameHandler.generateSwitchButtons();
     }, 1000);
     animationButtonsExit(buttons);
   });
@@ -152,6 +137,12 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
     buttons[i].style.animation =
       "scale-out-horizontal 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both";
     buttons[i].style.animationDelay = `${i * 0.15}s`;
+  }
+};
+
+const checkIfGameIsOver = (gameHandler: GameHandler) => {
+  if (gameHandler.isGameFinished() === true) {
+    showResultModal(gameHandler);
   }
 };
 
@@ -174,9 +165,12 @@ export const attack = (gameHandler: GameHandler, e: Event) => {
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
+  console.log('Switched!')
+  animationSwitchPokemonExit(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
   gameHandler.switchPokemon(nameOfChosenPokemon!);
+  animationSwitchPokemonEntry(gameHandler);
 };
 
 export const eatMango = (gameHandler: GameHandler) => {
