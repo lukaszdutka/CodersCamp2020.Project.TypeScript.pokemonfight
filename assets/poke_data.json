@@ -3,9 +3,9 @@
         "name": "bulbasaur",
         "types": ["grass", "poison"],
         "stats": {
-            "hp": 45,
+            "hp": 5,
             "attack": 49,
-            "defense": 49
+            "defense": 30
         },
         "moves": [{
             "name": "razor-wind",
@@ -32,9 +32,9 @@
         "name": "charmander",
         "types": ["fire"],
         "stats": {
-            "hp": 39,
+            "hp": 9,
             "attack": 52,
-            "defense": 43
+            "defense": 29
         },
         "moves": [{
             "name": "mega-punch",
@@ -61,9 +61,9 @@
         "name": "squirtle",
         "types": ["water"],
         "stats": {
-            "hp": 44,
+            "hp": 4,
             "attack": 48,
-            "defense": 65
+            "defense": 31
         },
         "moves": [{
             "name": "mega-kick",
@@ -121,7 +121,7 @@
         "stats": {
             "hp": 40,
             "attack": 45,
-            "defense": 40
+            "defense": 28
         },
         "moves": [{
             "name": "razor-wind",
@@ -150,7 +150,7 @@
         "stats": {
             "hp": 30,
             "attack": 56,
-            "defense": 35
+            "defense": 30
         },
         "moves": [{
             "name": "body-slam",
@@ -179,7 +179,7 @@
         "stats": {
             "hp": 35,
             "attack": 55,
-            "defense": 40
+            "defense": 25
         },
         "moves": [{
             "name": "slam",
@@ -208,7 +208,7 @@
         "stats": {
             "hp": 50,
             "attack": 75,
-            "defense": 85
+            "defense": 36
         },
         "moves": [{
             "name": "headbutt",
@@ -237,7 +237,7 @@
         "stats": {
             "hp": 70,
             "attack": 45,
-            "defense": 48
+            "defense": 33
         },
         "moves": [{
             "name": "fire-punch",
@@ -264,9 +264,9 @@
         "name": "abra",
         "types": ["psychic"],
         "stats": {
-            "hp": 25,
+            "hp": 45,
             "attack": 20,
-            "defense": 15
+            "defense": 25
         },
         "moves": [{
             "name": "mega-punch",
@@ -295,7 +295,7 @@
         "stats": {
             "hp": 70,
             "attack": 80,
-            "defense": 50
+            "defense": 36
         },
         "moves": [{
             "name": "karate-chop",
@@ -324,7 +324,7 @@
         "stats": {
             "hp": 40,
             "attack": 80,
-            "defense": 100
+            "defense": 40
         },
         "moves": [{
             "name": "headbutt",

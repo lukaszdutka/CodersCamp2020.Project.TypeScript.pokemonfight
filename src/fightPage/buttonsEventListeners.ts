@@ -7,6 +7,7 @@ import { createFightPagePokeballs } from "./createFightPagePokeballs";
 import { updateMovesList } from "./updateMovesList";
 import { Fight } from "../fightClass"
 import { PokemonMove } from "../pokemonClass";
+import { showResultModal } from "./resultModalPopUpFunctions"
 
 export const actionsButtonEventListener = (
   //player: Player,
@@ -16,13 +17,18 @@ export const actionsButtonEventListener = (
     "battleButton"
   )! as HTMLCollectionOf<HTMLElement>;
 
-  animationButtonsEntry(battleButtons);
-  if (checkIfPokeWasDefeated(gameHandler)) {
-    console.log("Defeated");
-    gameHandler.generateSwitchButtons(false)
+  if (gameHandler.isGameFinished()) {
+    console.log("Game is finished");
+    // showResultModal()
   } else {
-    prepareActions(gameHandler, battleButtons)
-  };
+    animationButtonsEntry(battleButtons);
+    if (checkIfPokeWasDefeated(gameHandler)) {
+      console.log("Defeated");
+      gameHandler.generateSwitchButtons(false)
+    } else {
+      prepareActions(gameHandler, battleButtons)
+    };
+  }
 }
 
 const prepareActions = (

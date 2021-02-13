@@ -7,9 +7,9 @@ export const showResultModal = (
     GameHandler: GameHandler
   ) => {
     const winnerName = GameHandler.getWinner()
-    const resultHeader = screenToDisplay.querySelector('.modalHeader')!
+    const resultHeader = screenToDisplay.querySelector('.modal-header')!
     resultHeader.innerHTML = `${winnerName} won!`
-    const playAgainButton = screenToDisplay.querySelector(".modalPlayAgainButton") as HTMLDivElement;
+    const playAgainButton = screenToDisplay.querySelector(".modal-playagain-button") as HTMLDivElement;
     playAgainButton.addEventListener("click", document.location.reload);
     screenToDisplay.style.display = startingPosition;
   };
