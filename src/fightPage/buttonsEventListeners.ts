@@ -5,12 +5,14 @@ import { createActivePlayer } from "./createActivePlayer";
 import { createHPBars } from "./createHPBars";
 import { createFightPagePokeballs } from "./createFightPagePokeballs";
 import { updateMovesList } from "./updateMovesList";
-import { animationShowCurrentPokemon, animationHittedPokemon, animationSwitchPokemonExit, animationSwitchPokemonEntry } from "./animations";
+import { showResultModal } from "./resultModalPopUpFunctions";
+import {
+  animationHittedPokemon,
+  animationSwitchPokemonExit,
+  animationSwitchPokemonEntry,
+} from "./animations";
 
-export const actionsButtonEventListener = (
-  //player: Player,
-  gameHandler: GameHandler
-) => {
+export const actionsButtonEventListener = (gameHandler: GameHandler) => {
   const battleButtons = document.getElementsByClassName(
     "battleButton"
   )! as HTMLCollectionOf<HTMLElement>;
@@ -28,15 +30,11 @@ export const actionsButtonEventListener = (
 
   attackButton.addEventListener("click", () => {
     animationButtonsExit(battleButtons);
-    setTimeout(() => {
-      gameHandler.generateAttackButtons();
-    }, 1000);
+    gameHandler.generateAttackButtons();
   });
   switchButton.addEventListener("click", () => {
     animationButtonsExit(battleButtons);
-    setTimeout(() => {
-      gameHandler.generateSwitchButtons();
-    }, 1000);
+    gameHandler.generateSwitchButtons();
   });
 
   if (gameHandler.currentPlayer.hasMango) {
@@ -83,7 +81,7 @@ export const switchButtonEventListener = (gameHandler: GameHandler) => {
 
   magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
   magicFunction(switchButtonTwo, battleButtons, gameHandler, switchPoke);
-  magicFunction(backButton, battleButtons, gameHandler);
+  if (backButton) magicFunction(backButton, battleButtons, gameHandler);
 };
 
 const magicFunction = (
@@ -93,20 +91,20 @@ const magicFunction = (
   functionToCall?: any
 ) => {
   button.addEventListener("click", (e) => {
-    // console.log(`${button.innerText} used!`);
     if (functionToCall) {
       functionToCall(gameHandler, e);
-        updateMovesList(gameHandler, functionToCall, e);
-      setTimeout(() => {
-        createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
-        createFightPagePokeballs(gameHandler);
-        gameHandler.switchPlayer();
-        createActivePlayer(gameHandler);
-        createActivePokemon(gameHandler);
-      }, 1500);
+      checkIfGameIsOver(gameHandler);
+      updateMovesList(gameHandler, functionToCall, e);
+      createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
+      createFightPagePokeballs(gameHandler);
+      gameHandler.switchPlayer();
+      createActivePlayer(gameHandler);
+      createActivePokemon(gameHandler);
     }
     setTimeout(() => {
-      gameHandler.generateActionButtons();
+      gameHandler.currentPlayer.getActivePokemon.isAlive()
+        ? gameHandler.generateActionButtons()
+        : gameHandler.generateSwitchButtons();
     }, 1000);
     animationButtonsExit(buttons);
   });
@@ -128,20 +126,22 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
   }
 };
 
+const checkIfGameIsOver = (gameHandler: GameHandler) => {
+  if (gameHandler.isGameFinished() === true) {
+    showResultModal(gameHandler);
+  }
+};
+
 export const attack = (gameHandler: GameHandler) => {
-  setTimeout(()=>{
-    animationHittedPokemon(gameHandler);
-  }, 500);
+  animationHittedPokemon(gameHandler);
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
   animationSwitchPokemonExit(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
-  setTimeout(()=>{
-    gameHandler.switchPokemon(nameOfChosenPokemon!);
-    animationSwitchPokemonEntry(gameHandler);
-  }, 1500)
+  gameHandler.switchPokemon(nameOfChosenPokemon!);
+  animationSwitchPokemonEntry(gameHandler);
 };
 
 export const eatMango = (gameHandler: GameHandler) => {
@@ -151,4 +151,3 @@ export const eatMango = (gameHandler: GameHandler) => {
   mango.innerHTML = "0";
   mangoButton.classList.add("disabledButton");
 };
-

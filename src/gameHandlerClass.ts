@@ -64,7 +64,6 @@ export class GameHandler {
 
   generateActionButtons(): void {
     const player = this.currentPlayer;
-    // console.log("Start - action modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="attackButton">attack</div>
@@ -75,7 +74,6 @@ export class GameHandler {
 
   generateAttackButtons(): void {
     const player = this.currentPlayer;
-    // console.log("Attack choose modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="attackButtonOne">${player.getActivePokemon.moves[0].moveName}</div>
@@ -86,12 +84,13 @@ export class GameHandler {
 
   generateSwitchButtons(): void {
     const player = this.currentPlayer;
-    // console.log("Switch choose modal");
     const actionContainer = document.querySelector("#actionModals")!;
     actionContainer.innerHTML = `
                     <div class="button battleButton" id="switchButtonOne">${player.notActivePokemons[0].name}</div>
-                    <div class="button battleButton" id="switchButtonTwo">${player.notActivePokemons[1].name}</div>
-                    <div class="button battleButton" id="backButton">back</div>`;
+                    <div class="button battleButton" id="switchButtonTwo">${player.notActivePokemons[1].name}</div>`;
+    if (this.currentPlayer.getActivePokemon.isAlive()) {
+      actionContainer.innerHTML += `<div class="button battleButton" id="backButton">back</div>`;
+    }
     switchButtonEventListener(this);
   }
 }
