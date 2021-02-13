@@ -8,7 +8,7 @@ export class PokemonFactory {
     constructor(pokeData: {
         name: string; types: string[];
         stats: { hp: number; attack: number; defense: number; };
-        moves: { name: string; accuracy: number; power: number; type: string; }[]
+        moves: { name: string; type: string; }[]
     }[]) {
         this._pokemons = [];
 
