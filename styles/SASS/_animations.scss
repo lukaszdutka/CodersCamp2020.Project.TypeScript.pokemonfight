@@ -431,3 +431,15 @@
        75%{transform:scale(-2,-2);}
       100%{opacity:0;}
     }
+
+/// MANGO #animation-div{ animation: eatMango 1s infinite; width:243px; height:322px; }
+
+
+@keyframes eatMango{
+   0%  {background-image: url("../assets/mango1.png");}
+   20% {background-image: url("../assets/mango2.png");}
+   40% {background-image: url("../assets/mango3.png");}
+   60% {background-image: url("../assets/mango4.png");}
+   80% {background-image: url("../assets/mango5.png");}
+   100% {background-image: url("../assets/mango6.png");}
+}

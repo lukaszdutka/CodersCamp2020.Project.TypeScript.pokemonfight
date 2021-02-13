@@ -83,6 +83,25 @@
         order: 2;
       }
 
+      .animation-div-player1, .animation-div-player2{ 
+        display: none;
+        position: absolute;
+        top: 0;
+        animation: eatMango 1.5s infinite; 
+        background-size: cover;
+        width: 48.6px; 
+        height: 64.4px; 
+      }
+
+      .animation-div-player1 {
+        // left: 20%;
+        left: 25%;
+      }
+
+      .animation-div-player2 {
+        right: 25%;
+      }
+
       .boom-player1 {
         @include boom;
       }
@@ -156,11 +175,12 @@
 
       p {
         margin: 10px auto;
-        color: $color-text;
-        font-weight: bold;
+        color: $color-disable;
 
-        &:nth-child(2n) {
-          color: $color-primary;
+        &:first-child {
+          color: $color-text;
+          font-weight: bold;
+          font-size: 2rem;
         }
       }
 
