@@ -13,4 +13,5 @@ export const createPokeballs = (playerOne: Player, activePlayer: Player) => {
     "src",
     `./${playerLastPokemonName}.png`
   );
+  playerPokeballs[numberOfLastPokemon].style.animation = "bounce-in-fwd 1.1s both";
 };

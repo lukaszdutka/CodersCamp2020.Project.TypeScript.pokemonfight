@@ -14,6 +14,7 @@
     justify-content: space-evenly;
 
     .playerDetails {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       align-items: center;
@@ -35,11 +36,24 @@
       .disabledPokemon {
         filter: grayscale(100%);
       }
+
+      #underline1, #underline2 {
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        display: none;
+      }
     }
 
     .activePlayer {
       color: $color-primary;
-      border-bottom: 3px solid $color-primary;
+
+      #underline1, #underline2 {
+        display: block;
+      }
     }
   }
 
@@ -54,16 +68,27 @@
     width: 90%;
 
     .pokemonDetails {
+      position: relative;
       width: 100%;
       display: flex;
       justify-content: space-between;
 
       img {
         width: fit-content;
+        animation: bounce-in-fwd 1.1s both;
+        @include transition-ease;
       }
 
-      #pokemon-player2 {
+      #pokemon-image-player2 {
         order: 2;
+      }
+
+      .boom-player1 {
+        @include boom;
+      }
+
+      .boom-player2 {
+        @include boom;
       }
 
       .pokemonInfo {
