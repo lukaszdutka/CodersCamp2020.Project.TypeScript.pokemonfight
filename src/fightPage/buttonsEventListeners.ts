@@ -16,19 +16,13 @@ export const actionsButtonEventListener = (
   const battleButtons = document.getElementsByClassName(
     "battleButton"
   )! as HTMLCollectionOf<HTMLElement>;
-
-  if (gameHandler.isGameFinished()) {
-    console.log("Game is finished");
-    // showResultModal()
+  animationButtonsEntry(battleButtons);
+  if (checkIfPokeWasDefeated(gameHandler)) {
+    console.log("Defeated");
+    gameHandler.generateSwitchButtons(false)
   } else {
-    animationButtonsEntry(battleButtons);
-    if (checkIfPokeWasDefeated(gameHandler)) {
-      console.log("Defeated");
-      gameHandler.generateSwitchButtons(false)
-    } else {
-      prepareActions(gameHandler, battleButtons)
-    };
-  }
+    prepareActions(gameHandler, battleButtons)
+  };
 }
 
 const prepareActions = (
@@ -78,11 +72,9 @@ export const attacksButtonEventListener = (gameHandler: GameHandler) => {
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
-  const moveOne = gameHandler.currentPlayer.getActivePokemon.moves[0];
-  const moveTwo = gameHandler.currentPlayer.getActivePokemon.moves[1];
   animationButtonsEntry(battleButtons);
-  magicFunction(attackButtonOne, battleButtons, gameHandler, attack, moveOne);
-  magicFunction(attackButtonTwo, battleButtons, gameHandler, attack, moveTwo);
+  magicFunction(attackButtonOne, battleButtons, gameHandler, attack);
+  magicFunction(attackButtonTwo, battleButtons, gameHandler, attack);
   magicFunction(backButton, battleButtons, gameHandler);
 };
 
@@ -127,15 +119,12 @@ const magicFunction = (
   button: HTMLDivElement,
   buttons: HTMLCollectionOf<HTMLElement>,
   gameHandler: GameHandler,
-  functionToCall?: any,
-  additionalParameter?: any
+  functionToCall?: any
 ) => {
   button.addEventListener("click", (e) => {
     console.log(`${button.innerText} used!`);
     if (functionToCall) {
-      additionalParameter
-        ? functionToCall(gameHandler, additionalParameter, e)
-        : functionToCall(gameHandler, e);
+      functionToCall(gameHandler, e)
       updateMovesList(gameHandler, functionToCall, e);
       createActivePokemon(gameHandler);
       createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
@@ -166,15 +155,22 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
   }
 };
 
-export const attack = (gameHandler: GameHandler, move: PokemonMove) => {
+export const attack = (gameHandler: GameHandler, e: Event) => {
   console.log("bum bum bach!");
   const fight = new Fight()
-  const attackingPoke = gameHandler.currentPlayer.getActivePokemon;
-  const defendingPoke = gameHandler.opponentPlayer.getActivePokemon;
-  console.log("Before attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
-  const damage: number = fight.fight(attackingPoke, defendingPoke, move)
-  console.log(`${attackingPoke.name} did ${damage} with ${move.moveName} to ${defendingPoke.name}`);
-  console.log("After attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
+  const pokemon = gameHandler.currentPlayer.getActivePokemon;
+  if (e !== null) {
+    const target: HTMLDivElement = e.target as HTMLDivElement
+
+    const move: PokemonMove = pokemon.moves.find(move => move.moveName === target.textContent) as PokemonMove
+    const attackingPoke = gameHandler.currentPlayer.getActivePokemon;
+    const defendingPoke = gameHandler.opponentPlayer.getActivePokemon;
+  
+    console.log("Before attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
+    const damage: number = fight.fight(attackingPoke, defendingPoke, move as PokemonMove)
+    console.log(`${attackingPoke.name} did ${damage} with ${move.moveName} to ${defendingPoke.name}`);
+    console.log("After attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
+  }
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
