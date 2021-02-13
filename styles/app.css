@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -302,7 +303,7 @@ html {
 }
 
 .popupScreen .exitButton, .popupScreen .modalHeader, .popupScreen .modalParagraph {
-  font-family: 'Pokemon Solid';
+  font-family: 'Ranchers', cursive;
   color: #020402ff;
 }
 
@@ -319,7 +320,7 @@ html {
 }
 
 .popupScreen .modalHeader {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .popupScreen .modalParagraph {

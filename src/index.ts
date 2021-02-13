@@ -15,6 +15,21 @@ const renderHowToPlayModal = (appDiv: HTMLDivElement) => {
   ) as HTMLTemplateElement;
   appDiv.innerHTML += infoModal.innerHTML;
 };
+
+const renderAuthorsModal = (appDiv: HTMLDivElement) => {
+  const authorsModal = document.querySelector(
+    "#authors-modal-template"
+  ) as HTMLTemplateElement;
+  appDiv.innerHTML += authorsModal.innerHTML;
+};
+
+const renderAboutModal = (appDiv: HTMLDivElement) => {
+  const aboutModal = document.querySelector(
+    "#about-modal-template"
+  ) as HTMLTemplateElement;
+  appDiv.innerHTML += aboutModal.innerHTML;
+};
+
 const createHowToPlayButton = () => {
   const howToPlayButton = document.querySelector(
     "#how-to-play-button"
@@ -26,6 +41,32 @@ const createHowToPlayButton = () => {
     showModal(infoModal, "flex");
   });
   hideModal(infoModal);
+};
+
+const createAuthorsButton = () => {
+  const authorsButton = document.querySelector(
+    "#authors-button"
+  ) as HTMLUListElement;
+  const authorsModal = document.querySelector(
+    "#authors-modal-screen"
+  ) as HTMLDivElement;
+  authorsButton.addEventListener("click", () => {
+    showModal(authorsModal, "flex");
+  });
+  hideModal(authorsModal);
+};
+
+const createAboutButton = () => {
+  const aboutButton = document.querySelector(
+    "#about-button"
+  ) as HTMLUListElement;
+  const aboutModal = document.querySelector(
+    "#about-modal-screen"
+  ) as HTMLDivElement;
+  aboutButton.addEventListener("click", () => {
+    showModal(aboutModal, "flex");
+  });
+  hideModal(aboutModal);
 };
 
 const activateStartButton = () => {
@@ -59,8 +100,12 @@ export const renderApp = () => {
   const app = document.querySelector("#app") as HTMLDivElement;
   renderStartingPage(app);
   renderHowToPlayModal(app);
+  renderAuthorsModal(app);
+  renderAboutModal(app);
   activateStartButton();
   createHowToPlayButton();
+  createAuthorsButton();
+  createAboutButton();
   renderChoosePokemonScreen(app);
 };
 
