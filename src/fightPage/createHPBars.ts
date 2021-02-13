@@ -1,7 +1,7 @@
 import { Player } from "../playerClass";
 
 export const createHPBars = (playerOne: Player, playerTwo: Player) => {
-  const createBar = (player: Player, HPBar: HTMLDivElement) => {
+  const createBar = (player: Player, HPBar: HTMLDivElement, headingHP: HTMLHeadingElement) => {
     const maxHP = player.getActivePokemon.maxHP;
     const currentHP = player.getActivePokemon.currentHP;
     const HPInPercent = (currentHP / maxHP) * 100;
@@ -15,6 +15,11 @@ export const createHPBars = (playerOne: Player, playerTwo: Player) => {
       HPClassList.remove("hpBarLowLevel");
       HPClassList.add("hpBarHighLevel");
     }
+
+    player.getActivePokemon.isAlive()
+      ? headingHP.style.display = 'block'
+      : headingHP.style.display = 'none';
+
   };
   const playerOneHPBar = document.querySelector(
     "#hp-bar-player1"
@@ -22,6 +27,12 @@ export const createHPBars = (playerOne: Player, playerTwo: Player) => {
   const playerTwoHPBar = document.querySelector(
     "#hp-bar-player2"
   ) as HTMLDivElement;
-  createBar(playerOne, playerOneHPBar);
-  createBar(playerTwo, playerTwoHPBar);
+  const playerOneHeadingHP = document.querySelector(
+    "#headingHP-player1"
+  ) as HTMLHeadingElement;
+  const playerTwoHeadingHP = document.querySelector(
+    "#headingHP-player2"
+  ) as HTMLHeadingElement;
+  createBar(playerOne, playerOneHPBar, playerOneHeadingHP);
+  createBar(playerTwo, playerTwoHPBar, playerTwoHeadingHP);
 };
