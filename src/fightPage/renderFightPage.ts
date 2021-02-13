@@ -32,7 +32,4 @@ export const createFightPage = (
   createHPBars(gameHandler.playerOne, gameHandler.playerTwo);
   createFightPagePokeballs(gameHandler);
   gameHandler.generateActionButtons();
-
-  gameHandler.playerTwo.pokemons[0].subtractHP(gameHandler.playerTwo.pokemons[0].maxHP);
-  gameHandler.playerTwo.pokemons[1].subtractHP(gameHandler.playerTwo.pokemons[1].maxHP);
 };
