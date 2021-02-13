@@ -3,145 +3,75 @@
         "name": "bulbasaur",
         "types": ["grass", "poison"],
         "stats": {
-            "hp": 5,
-            "attack": 49,
-            "defense": 30
+            "hp": 40,
+            "attack": 51,
+            "defense": 39
         },
         "moves": [{
             "name": "razor-wind",
-            "accuracy": 100,
-            "power": 80,
             "type": "normal"
         }, {
-            "name": "vine-whip",
-            "accuracy": 100,
-            "power": 45,
-            "type": "grass"
-        }, {
-            "name": "mega-drain",
-            "accuracy": 100,
-            "power": 40,
-            "type": "grass"
-        }, {
             "name": "razor-leaf",
-            "accuracy": 95,
-            "power": 55,
             "type": "grass"
         }]
     }, {
         "name": "charmander",
         "types": ["fire"],
         "stats": {
-            "hp": 9,
-            "attack": 52,
-            "defense": 29
+            "hp": 34,
+            "attack": 55,
+            "defense": 38
         },
         "moves": [{
             "name": "mega-punch",
-            "accuracy": 85,
-            "power": 80,
             "type": "normal"
         }, {
             "name": "ember",
-            "accuracy": 100,
-            "power": 40,
             "type": "fire"
-        }, {
-            "name": "flamethrower",
-            "accuracy": 100,
-            "power": 90,
-            "type": "fire"
-        }, {
-            "name": "submission",
-            "accuracy": 80,
-            "power": 80,
-            "type": "fighting"
         }]
     }, {
         "name": "squirtle",
         "types": ["water"],
         "stats": {
-            "hp": 4,
-            "attack": 48,
-            "defense": 31
+            "hp": 39,
+            "attack": 53,
+            "defense": 29
         },
         "moves": [{
             "name": "mega-kick",
-            "accuracy": 75,
-            "power": 120,
             "type": "normal"
         }, {
             "name": "water-gun",
-            "accuracy": 100,
-            "power": 40,
             "type": "water"
-        }, {
-            "name": "hydro-pump",
-            "accuracy": 80,
-            "power": 110,
-            "type": "water"
-        }, {
-            "name": "blizzard",
-            "accuracy": 70,
-            "power": 110,
-            "type": "ice"
         }]
     }, {
         "name": "weedle",
         "types": ["bug", "poison"],
         "stats": {
-            "hp": 40,
-            "attack": 35,
-            "defense": 30
+            "hp": 35,
+            "attack": 40,
+            "defense": 35
         },
         "moves": [{
             "name": "poison-sting",
-            "accuracy": 100,
-            "power": 15,
             "type": "poison"
         }, {
             "name": "string-shot",
-            "accuracy": 95,
-            "power": 0,
             "type": "poison"
-        }, {
-            "name": "bug-bite",
-            "accuracy": 100,
-            "power": 60,
-            "type": "bug"
-        }, {
-            "name": "electroweb",
-            "accuracy": 95,
-            "power": 55,
-            "type": "electric"
         }]
     }, {
         "name": "pidgey",
         "types": ["normal", "flying"],
         "stats": {
-            "hp": 40,
-            "attack": 45,
-            "defense": 28
+            "hp": 35,
+            "attack": 42,
+            "defense": 35
         },
         "moves": [{
             "name": "razor-wind",
-            "accuracy": 100,
-            "power": 80,
             "type": "normal"
         }, {
-            "name": "wing-attack",
-            "accuracy": 100,
-            "power": 60,
-            "type": "flying"
-        }, {
-            "name": "fly",
-            "accuracy": 95,
-            "power": 90,
-            "type": "flying"
-        }, {
             "name": "sky-attack",
-            "accuracy": 90,
-            "power": 140,
             "type": "flying"
         }]
     }, {
@@ -149,202 +79,104 @@
         "types": ["normal"],
         "stats": {
             "hp": 30,
-            "attack": 56,
-            "defense": 30
+            "attack": 45,
+            "defense": 35
         },
         "moves": [{
             "name": "body-slam",
-            "accuracy": 100,
-            "power": 85,
             "type": "normal"
         }, {
-            "name": "bite",
-            "accuracy": 100,
-            "power": 60,
-            "type": "dark"
-        }, {
-            "name": "bubble-beam",
-            "accuracy": 100,
-            "power": 65,
-            "type": "water"
-        }, {
             "name": "dig",
-            "accuracy": 100,
-            "power": 80,
             "type": "ground"
         }]
     }, {
         "name": "pikachu",
         "types": ["electric"],
         "stats": {
-            "hp": 35,
-            "attack": 55,
-            "defense": 25
+            "hp": 33,
+            "attack": 54,
+            "defense": 33
         },
         "moves": [{
             "name": "slam",
-            "accuracy": 75,
-            "power": 80,
             "type": "normal"
         }, {
             "name": "thunder-punch",
-            "accuracy": 100,
-            "power": 75,
-            "type": "electric"
-        }, {
-            "name": "thunderbolt",
-            "accuracy": 100,
-            "power": 90,
-            "type": "electric"
-        }, {
-            "name": "thunder",
-            "accuracy": 70,
-            "power": 110,
             "type": "electric"
         }]
     }, {
         "name": "sandshrew",
         "types": ["ground"],
         "stats": {
-            "hp": 50,
-            "attack": 75,
-            "defense": 36
+            "hp": 45,
+            "attack": 42,
+            "defense": 37
         },
         "moves": [{
             "name": "headbutt",
-            "accuracy": 100,
-            "power": 70,
-            "type": "normal"
-        }, {
-            "name": "body-slam",
-            "accuracy": 100,
-            "power": 85,
             "type": "normal"
         }, {
             "name": "earthquake",
-            "accuracy": 100,
-            "power": 100,
-            "type": "ground"
-        }, {
-            "name": "dig",
-            "accuracy": 100,
-            "power": 80,
             "type": "ground"
         }]
     }, {
         "name": "clefairy",
         "types": ["fairy"],
         "stats": {
-            "hp": 70,
-            "attack": 45,
-            "defense": 33
+            "hp": 40,
+            "attack": 43,
+            "defense": 38
         },
         "moves": [{
             "name": "fire-punch",
-            "accuracy": 100,
-            "power": 75,
             "type": "fire"
         }, {
             "name": "ice-punch",
-            "accuracy": 100,
-            "power": 75,
             "type": "ice"
-        }, {
-            "name": "thunder-punch",
-            "accuracy": 100,
-            "power": 75,
-            "type": "electric"
-        }, {
-            "name": "water-gun",
-            "accuracy": 100,
-            "power": 40,
-            "type": "water"
         }]
     }, {
         "name": "abra",
         "types": ["psychic"],
         "stats": {
-            "hp": 45,
-            "attack": 20,
-            "defense": 25
+            "hp": 38,
+            "attack": 45,
+            "defense": 35
         },
         "moves": [{
             "name": "mega-punch",
-            "accuracy": 85,
-            "power": 80,
             "type": "normal"
         }, {
-            "name": "ice-punch",
-            "accuracy": 100,
-            "power": 75,
-            "type": "ice"
-        }, {
-            "name": "thunder-punch",
-            "accuracy": 100,
-            "power": 75,
-            "type": "electric"
-        }, {
             "name": "psychic",
-            "accuracy": 100,
-            "power": 90,
             "type": "psychic"
         }]
     }, {
         "name": "machop",
         "types": ["fighting"],
         "stats": {
-            "hp": 70,
-            "attack": 80,
-            "defense": 36
+            "hp": 44,
+            "attack": 55,
+            "defense": 29
         },
         "moves": [{
             "name": "karate-chop",
-            "accuracy": 100,
-            "power": 50,
             "type": "fighting"
-        }, {
-            "name": "mega-kick",
-            "accuracy": 75,
-            "power": 120,
-            "type": "normal"
         }, {
             "name": "rolling-kick",
-            "accuracy": 85,
-            "power": 60,
-            "type": "fighting"
-        }, {
-            "name": "submission",
-            "accuracy": 80,
-            "power": 80,
             "type": "fighting"
         }]
     }, {
         "name": "geodude",
         "types": ["rock", "ground"],
         "stats": {
-            "hp": 40,
-            "attack": 80,
-            "defense": 40
+            "hp": 37,
+            "attack": 45,
+            "defense": 37
         },
         "moves": [{
-            "name": "headbutt",
-            "accuracy": 100,
-            "power": 70,
-            "type": "normal"
-        }, {
             "name": "rock-throw",
-            "accuracy": 90,
-            "power": 50,
             "type": "rock"
         }, {
             "name": "earthquake",
-            "accuracy": 100,
-            "power": 100,
-            "type": "ground"
-        }, {
-            "name": "dig",
-            "accuracy": 100,
-            "power": 80,
             "type": "ground"
         }]
     }]

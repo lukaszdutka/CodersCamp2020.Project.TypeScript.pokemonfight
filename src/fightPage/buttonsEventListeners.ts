@@ -1,4 +1,3 @@
-import { Player } from "../playerClass";
 import { GameHandler } from "../gameHandlerClass";
 import { createActivePokemon } from "./createActivePokemon";
 import { createActivePlayer } from "./createActivePlayer";
@@ -133,7 +132,9 @@ const animationButtonsExit = (buttons: HTMLCollectionOf<HTMLElement>) => {
 
 const checkIfGameIsOver = (gameHandler: GameHandler) => {
   if (gameHandler.isGameFinished() === true) {
-    showResultModal(gameHandler);
+    setTimeout(() => {
+      showResultModal(gameHandler);
+    }, 1500)
   }
 };
 
