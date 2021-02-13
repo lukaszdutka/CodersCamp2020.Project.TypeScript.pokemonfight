@@ -39,7 +39,7 @@
 
       #underline1, #underline2 {
         position: absolute;
-        bottom: -3px;
+        bottom: 0;
         width: 50%;
         height: 5px;
         border-radius: 50%;
@@ -115,9 +115,6 @@
           justify-items: first;
 
           .hpBar {
-            position: absolute;
-            top: 0;
-            left: 0;
             grid-column: span 5;
             width: 100%;
             height: 1.8rem;
@@ -133,18 +130,6 @@
 
           .hpBarLowLevel {
             background-color: $color-primary;
-          }
-
-          .hpBarBackground {
-            position: relative;
-            background-color: lightgrey;
-            grid-column: span 5;
-            width: 100%;
-            height: 1.8rem;
-            @include boxshadow;
-            transform-origin: left center;
-            border-radius: 10px;
-            margin-top: 1rem;
           }
         }
       }
@@ -226,10 +211,6 @@
 
   .exitButton, .modalHeader, .modalParagraph, .modalPlayAgainButton {
     font-family: 'Pokemon Solid';
-  }
-
-  .modalPlayAgainButton {
-    cursor: pointer;
   }
 
   .exitButton {
