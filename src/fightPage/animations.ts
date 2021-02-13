@@ -49,8 +49,8 @@ export const animationHittedPokemon = (gameHandler: GameHandler) => {
 
 export const animationSwitchPokemon = (gameHandler: GameHandler) => {
  const pokemonImage = selectPokemonImage();
- pokemonImage[0].style.visibility = "visible";
- pokemonImage[1].style.visibility = "visible";
+ pokemonImage[0].style.filter = "none";
+ pokemonImage[1].style.filter = "none";
  if(gameHandler.playerOne.name === gameHandler.currentPlayer.name) {
     pokemonImage[0].style.animation = "bounce-in-fwd 1s both";
  } else {
@@ -81,8 +81,8 @@ export const animationEatMango = (gameHandler: GameHandler) => {
   const pokemonImage = selectPokemonImage();
   console.log("animation dead");
   if(gameHandler.playerOne.name === gameHandler.currentPlayer.name) {
-    pokemonImage[0].style.visibility = "hidden";
+    pokemonImage[0].style.filter = "grayscale(100%)";
   } else {
-    pokemonImage[1].style.visibility = "hidden";
+    pokemonImage[1].style.filter = "grayscale(100%)";
   }
  }
