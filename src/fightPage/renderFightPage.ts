@@ -1,4 +1,3 @@
-import { Player } from "../playerClass";
 import { GameHandler } from "../gameHandlerClass";
 import { createActivePokemon } from "./createActivePokemon";
 import { createActivePlayer } from "./createActivePlayer";
