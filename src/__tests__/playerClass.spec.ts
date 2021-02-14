@@ -41,6 +41,25 @@ describe("Test Player class", () => {
         // Then
         expect(playerWithTooMuchPokemens).toThrow("Wrong number of pokemons")
     });
+
+    it("Should throw error when player has not mango", () => {
+        // Given
+        const player = () => {
+            return new Player("Mark", [
+                factory.getPokemonByName("bulbasaur"),
+                factory.getPokemonByName("charmander"),
+                factory.getPokemonByName("pikachu")
+            ])
+        };
+    
+        // When
+        const playerOne = player()
+        const useMango = () => playerOne.useMango()
+        useMango()
+    
+        // Then
+        expect(useMango).toThrow("You cannot use mango. You use all mangos")
+    });
     
     
 
