@@ -128,6 +128,22 @@
                 #pokemon-image-player2 {
                 order: 0;
                 }
+
+                .boom-player1 {
+                  @include boom;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                }
+            
+                .boom-player2 {
+                  @include boom;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                }
             }
         }
         .gameActions {

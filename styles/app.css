@@ -1256,6 +1256,92 @@ html {
   #fight-page .battleArea .pokemonDetails #pokemon-image-player2 {
     order: 0;
   }
+  #fight-page .battleArea .pokemonDetails .boom-player1 {
+    z-index: 99;
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    margin: auto;
+    box-shadow: 0px -9px 0 #000, 50px 10px 0 -6px #fff, 55px 5px 0 -6px #000, 60px 60px 0 -4px #fff, 66px 64px 0 -4px #000, -3px 65px 0 5px #fff, -4px 72px 0 5px #000, -50px 10px 0 -10px #fff, -54px 5px 0 -10px #000, -50px 50px 0 -15px #fff, -54px 53px 0 -15px #000;
+    animation: c1 .3s infinite;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  #fight-page .battleArea .pokemonDetails .boom-player1:before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 10px;
+    top: 75px;
+    margin: auto;
+    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
+    animation: c2 .6s infinite;
+  }
+  #fight-page .battleArea .pokemonDetails .boom-player1:after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 80px;
+    top: -5px;
+    margin: auto;
+    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
+    animation: c3 .5s infinite;
+  }
+  #fight-page .battleArea .pokemonDetails .boom-player2 {
+    z-index: 99;
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    margin: auto;
+    box-shadow: 0px -9px 0 #000, 50px 10px 0 -6px #fff, 55px 5px 0 -6px #000, 60px 60px 0 -4px #fff, 66px 64px 0 -4px #000, -3px 65px 0 5px #fff, -4px 72px 0 5px #000, -50px 10px 0 -10px #fff, -54px 5px 0 -10px #000, -50px 50px 0 -15px #fff, -54px 53px 0 -15px #000;
+    animation: c1 .3s infinite;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  #fight-page .battleArea .pokemonDetails .boom-player2:before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 10px;
+    top: 75px;
+    margin: auto;
+    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
+    animation: c2 .6s infinite;
+  }
+  #fight-page .battleArea .pokemonDetails .boom-player2:after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 80px;
+    top: -5px;
+    margin: auto;
+    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
+    animation: c3 .5s infinite;
+  }
   #fight-page .gameActions {
     flex-flow: row;
     justify-content: space-evenly;
