@@ -652,8 +652,9 @@ html {
   z-index: 2;
 }
 
-.popupScreenResult .exitButton, .popupScreenResult .modalHeader, .popupScreenResult .modalParagraph, .popupScreenResult .modalPlayAgainButton {
+.popupScreenResult .exitButton, .popupScreenResult .modalHeader, .popupScreenResult .modalPlayAgainButton {
   font-family: 'Pokemon Solid';
+  letter-spacing: .2em;
 }
 
 .popupScreenResult .exitButton {
@@ -674,7 +675,7 @@ html {
 
 .popupScreenResult .modalParagraph {
   line-height: 1.8;
-  font-size: 0.5em;
+  font-size: 2em;
   color: #020402ff;
   text-align: center;
   margin: 1em;
