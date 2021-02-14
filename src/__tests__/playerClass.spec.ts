@@ -21,12 +21,25 @@ describe("Test Player class", () => {
         const playerWithTooLongName = () => player(name)
     
         // Then
-        try {
-            playerWithTooLongName();
-        } catch (error) {
-            expect(error).toBeInstanceOf(Error);
-            expect(error).toHaveProperty('message', 'Too long name');
-        }
+        expect(playerWithTooLongName).toThrow("Too long name")
+    });
+
+    it("Should throw error when list of pokemons is longer than 3", () => {
+        // Given
+        const player = () => {
+            return new Player("Mark", [
+                factory.getPokemonByName("bulbasaur"),
+                factory.getPokemonByName("charmander"),
+                factory.getPokemonByName("pikachu"),
+                factory.getPokemonByName("squirtle")
+            ])
+        };
+    
+        // When
+        const playerWithTooMuchPokemens = () => player()
+    
+        // Then
+        expect(playerWithTooMuchPokemens).toThrow("Wrong number of pokemons")
     });
     
     
