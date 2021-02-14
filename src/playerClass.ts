@@ -1,6 +1,15 @@
 import { Pokemon } from "./pokemonClass";
 
-export class Player {
+interface IPlayer{
+  name: string;
+  pokemons: Pokemon[];
+  indexOfActivePokemon: number;
+  hasMango: Boolean;
+  useMango(): void | Error;
+  addPokemon(pokemon: Pokemon): void;
+}
+
+export class Player implements IPlayer {
   private _name: string;
   private _pokemons: Pokemon[];
   private _indexOfActivePokemon: number;
