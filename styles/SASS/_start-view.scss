@@ -63,6 +63,11 @@
                 
                 .playerNameInput {
                     width: 40%;
+                    border-radius: 50px;
+
+                    &::placeholder {
+                        color: $color-text;
+                    }
                 }
 
             }

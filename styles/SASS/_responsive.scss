@@ -121,6 +121,7 @@
             display: flex;
         
             .pokemonDetails {
+                min-height: 160px;
                 flex-flow: column;
                 align-items: center;
         

@@ -32,10 +32,12 @@
         justify-items: center;
         .choosePagePlayersName {
             grid-column: span 3;
+            letter-spacing: .2em;
         }
         img {
             max-width: 7vh;
             padding: 0 0.8vh;
+            @include dropshadow;
         }
     }
 

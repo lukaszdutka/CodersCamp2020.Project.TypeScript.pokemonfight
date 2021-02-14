@@ -17,7 +17,7 @@ export const createHPBars = (playerOne: Player, playerTwo: Player) => {
     }
 
     player.getActivePokemon.isAlive()
-      ? headingHP.style.display = 'block'
+      ? headingHP.style.display = 'grid'
       : headingHP.style.display = 'none';
 
   };

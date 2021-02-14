@@ -15,12 +15,12 @@ export const animationShowCurrentPokemon = (gameHandler: GameHandler) => {
  const pokemonImage = selectPokemonImage();
  if(gameHandler.playerOne.name === gameHandler.currentPlayer.name) {
    //Active Player 1
-   pokemonImage[0].style.backgroundColor = "green";
-   pokemonImage[1].style.backgroundColor = "transparent";
+   pokemonImage[0].style.filter = "brightness(110%)";
+   pokemonImage[1].style.filter = "brightness(90%)";
  } else {
    //Active Player 2
-   pokemonImage[0].style.backgroundColor = "transparent";
-   pokemonImage[1].style.backgroundColor = "green";
+   pokemonImage[0].style.filter= "brightness(90%)";
+   pokemonImage[1].style.filter = "brightness(110%)";
  }
 } 
 
@@ -68,21 +68,11 @@ export const animationEatMango = (gameHandler: GameHandler) => {
     pokemonImage[4].style.display = "block";
     setTimeout(() => {
       pokemonImage[4].style.display = "none";
-    },1500);
+    },1000);
   } else {
     pokemonImage[5].style.display = "block";
     setTimeout(() => {
       pokemonImage[5].style.display = "none";
-    },1500);
-  }
- }
-
- export const animationDead = (gameHandler: GameHandler) => {
-  const pokemonImage = selectPokemonImage();
-  console.log("animation dead");
-  if(gameHandler.playerOne.name === gameHandler.currentPlayer.name) {
-    pokemonImage[0].style.filter = "grayscale(100%)";
-  } else {
-    pokemonImage[1].style.filter = "grayscale(100%)";
+    },1000);
   }
  }

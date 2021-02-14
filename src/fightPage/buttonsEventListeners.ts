@@ -8,10 +8,10 @@ import { Fight } from "../fightClass"
 import { PokemonMove } from "../pokemonClass";
 import { showResultModal } from "./resultModalPopUpFunctions";
 import {
+  animationShowCurrentPokemon,
   animationHittedPokemon,
   animationSwitchPokemon,
-  animationEatMango,
-  animationDead
+  animationEatMango
 } from "./animations";
 
 export const actionsButtonEventListener = (gameHandler: GameHandler) => {
@@ -27,7 +27,7 @@ export const actionsButtonEventListener = (gameHandler: GameHandler) => {
   const mangoButton = document.querySelector("#mangoButton")! as HTMLDivElement;
   const mango = document.querySelector("#mango")! as HTMLDivElement;
 
-  // animationShowCurrentPokemon(gameHandler);
+  animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
 
   attackButton.addEventListener("click", () => {
@@ -59,7 +59,7 @@ export const attacksButtonEventListener = (gameHandler: GameHandler) => {
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
-  // animationShowCurrentPokemon(gameHandler);
+  animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
   magicFunction(attackButtonOne, battleButtons, gameHandler, attack);
   magicFunction(attackButtonTwo, battleButtons, gameHandler, attack);
@@ -81,7 +81,7 @@ export const switchButtonEventListener = (
   )! as HTMLCollectionOf<HTMLElement>;
   const backButton = document.querySelector("#backButton")! as HTMLDivElement;
 
-  // animationShowCurrentPokemon(gameHandler);
+  animationShowCurrentPokemon(gameHandler);
   animationButtonsEntry(battleButtons);
 
   if (switchButtonOne) magicFunction(switchButtonOne, battleButtons, gameHandler, switchPoke);
