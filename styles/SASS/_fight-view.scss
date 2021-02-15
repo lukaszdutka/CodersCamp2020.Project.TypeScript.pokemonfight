@@ -243,15 +243,13 @@
   align-items: center;
   border-radius: 25px;
   width: 80vw;
-  max-height: 15em;
+  max-height: fit-content;
   min-height: 12em;
   position: absolute;
   left: 50%;
-  bottom: 50%;
-  margin-left: -40vw;
-  margin-bottom: -20vh;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5vh 15px;
   z-index: 2;
 
   .exitButton, .modalHeader, .modalPlayAgainButton {
@@ -270,14 +268,15 @@
 
   .modalHeader {
     @include textshadow;
-    font-size: 1.6em;
+    font-size: 3rem;
     line-height: 1;
     color: $color-primary;
+    text-align: center;
   }
 
   .modalParagraph {
     line-height: 1.8;
-    font-size: 2em;
+    font-size: 1.4rem;
     color: $color-text;
     text-align: center;
     margin: 1em;

@@ -643,15 +643,13 @@ html {
   align-items: center;
   border-radius: 25px;
   width: 80vw;
-  max-height: 15em;
+  max-height: fit-content;
   min-height: 12em;
   position: absolute;
   left: 50%;
-  bottom: 50%;
-  margin-left: -40vw;
-  margin-bottom: -20vh;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5vh 15px;
   z-index: 2;
 }
 
@@ -671,14 +669,15 @@ html {
 
 .popupScreenResult .modalHeader {
   text-shadow: 1px 1px 3px #020402ff;
-  font-size: 1.6em;
+  font-size: 3rem;
   line-height: 1;
   color: #9b1d20ff;
+  text-align: center;
 }
 
 .popupScreenResult .modalParagraph {
   line-height: 1.8;
-  font-size: 2em;
+  font-size: 1.4rem;
   color: #020402ff;
   text-align: center;
   margin: 1em;
@@ -1360,8 +1359,7 @@ html {
   }
   .popupScreenResult {
     width: 50vw;
-    margin-left: -25vw;
-    max-height: 18em;
+    max-height: fit-content;
     min-height: 12em;
   }
   .popupScreenResult .modalHeader {

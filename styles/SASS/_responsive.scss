@@ -165,8 +165,7 @@
 
     .popupScreenResult {
         width: 50vw;
-        margin-left: -25vw;
-        max-height: 18em;
+        max-height: fit-content;
         min-height: 12em;
       
         .modalHeader {
