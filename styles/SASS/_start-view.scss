@@ -182,7 +182,7 @@
         z-index: 2;
 
         .exitButton, .modalHeader, .modalParagraph {
-            font-family: 'Pokemon Solid';
+            font-family: 'Ranchers', cursive;
             color: $color-text;
         }
 
@@ -195,11 +195,13 @@
         }
 
         .modalHeader {
-            font-size: 1em;
+            font-size: 1.5em;
         }
 
         .modalParagraph {
-            font-size: 0.3em;
+            padding: 0 8vw 20vh 8vw;
+            font-size: 0.8em;
+            text-align: center;
         }
     }
 
