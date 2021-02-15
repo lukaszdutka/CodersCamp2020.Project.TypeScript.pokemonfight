@@ -6,14 +6,17 @@ Aplikacja została stworzona w oparciu o JavaScript z TypeScriptem.
 
 # [DEMO](https://lukaszdutka.github.io/CodersCamp2020.Project.TypeScript.pokemonfight/)
 
-**Pokemon Figth** wzorowany był na popularnej grze Pokemon. Design projekty: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)
+**Pokemon Figth** wzorowany był na popularnej grze Pokemon.<br>
+Design projekty: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)<br>
 Projekt jest ukończony.
 
-![Pokemon Fight - loading screen](./.github/images/1.png)
-![Pokemon Fight - start screen](./.github/images/2.gif)
-![Pokemon Fight - choose screen](./.github/images/3.gif)
-![Pokemon Fight - fight screen](./.github/images/4.gif)
-![Pokemon Fight - end screen](./.github/images/5.png)
+Pokemon Fight - start screen|[Pokemon Fight - choose screen
+:-------------------------:|:-------------------------:
+![Pokemon Fight - start screen](./.github/images/2.gif)  |  ![Pokemon Fight - choose screen](./.github/images/3.gif)
+
+Pokemon Fight - fight screen|Pokemon Fight - end screen
+:-------------------------:|:-------------------------:
+![Pokemon Fight - fight screen](./.github/images/4.gif)  |  ![Pokemon Fight - end screen](./.github/images/5.png)
 
 ### Zespół projektowy
 Mentor:
@@ -46,9 +49,9 @@ Uczestnicy:
 4. Ekran walki - jedno menu dla obu graczy, zmieniają się imiona. Gracz pierwszy zaczyna. 
     - w jednym czasie walczą tylko dwa pokemony (domyślnym, pierwszym pokemonem jest ten wybrany przez gracza jako pierwszy)
     - menu wyboru akcji: 3 buttony
-        > atak (wyświetla dwie opcje wyboru ataku oraz jedną powrotu do menu wyboru akcji)
-        > switch (wyświetla dostępne opcje zmiany pokemona na inny oraz jedną powtoru do menu wyboru akcji)
-        > heal - "eat mango" (bezpośrednia akcja odnawiająca życie aktywnego pokemona do maximum HP - gracz może skorzystać z tej akcj tylko jeden raz w ciągu gry)
+        - atak (wyświetla dwie opcje wyboru ataku oraz jedną powrotu do menu wyboru akcji)
+        - switch (wyświetla dostępne opcje zmiany pokemona na inny oraz jedną powtoru do menu wyboru akcji)
+        - heal - "eat mango" (bezpośrednia akcja odnawiająca życie aktywnego pokemona do maximum HP - gracz może skorzystać z tej akcj tylko jeden raz w ciągu gry)
 5. UI - czytelny, interaktywny i responsywny 
 6. Pokemon posiada:
     - Punkty Życia/HP
