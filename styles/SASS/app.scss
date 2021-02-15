@@ -20,6 +20,16 @@ body {
     color: $color-text;
 }
 
+a {
+    color: $color-text;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
 #app {
     height: 100vh;
     width: 100%;
@@ -57,4 +67,3 @@ footer {
         background-color: $color-disable;
     }
 }
-
