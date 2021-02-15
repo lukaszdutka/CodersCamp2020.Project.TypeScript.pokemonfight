@@ -9,7 +9,7 @@ Aplikacja została stworzona w oparciu o TypeScriptem w ramach kursu CodersCamp2
 **Pokemon Figth** wzorowany był na popularnej grze Pokemon.<br>
 Design projektu: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)<br>
 
-Pokemon Fight - start screen|[Pokemon Fight - choose screen
+Pokemon Fight - start screen|Pokemon Fight - choose screen
 :-------------------------:|:-------------------------:
 ![Pokemon Fight - start screen](./.github/images/2.gif)  |  ![Pokemon Fight - choose screen](./.github/images/3.gif)
 
