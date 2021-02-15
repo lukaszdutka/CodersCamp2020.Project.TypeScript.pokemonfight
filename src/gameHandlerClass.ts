@@ -5,7 +5,18 @@ import {
   switchButtonEventListener,
 } from "./fightPage/buttonsEventListeners";
 
-export class GameHandler {
+interface IGameHandler{
+  currentPlayer: Player;
+  isGameFinished(): boolean;
+  getWinner(): Player | Error;
+  switchPlayer(): void;
+  switchPokemon(pokemonName: string):void;
+  generateActionButtons(): void;
+  generateAttackButtons(): void;
+  generateSwitchButtons(): void;
+}
+
+export class GameHandler implements IGameHandler{
   constructor(
     private readonly _playerOne: Player,
     private readonly _playerTwo: Player
