@@ -5,7 +5,6 @@ export const createHPBars = (playerOne: Player, playerTwo: Player) => {
     const maxHP = player.getActivePokemon.maxHP;
     const currentHP = player.getActivePokemon.currentHP;
     const HPInPercent = (currentHP / maxHP) * 100;
-    console.log(HPInPercent);
     HPBar.style.width = `${HPInPercent}%`;
     let HPClassList = HPBar.classList;
     if (HPInPercent < 20) {

@@ -151,15 +151,11 @@ export const attack = (gameHandler: GameHandler, e: Event) => {
     const attackingPoke = gameHandler.currentPlayer.getActivePokemon;
     const defendingPoke = gameHandler.opponentPlayer.getActivePokemon;
   
-    console.log("Before attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
     const damage: number = fight.fight(attackingPoke, defendingPoke, move as PokemonMove)
-    console.log(`${attackingPoke.name} did ${damage} with ${move.moveName} to ${defendingPoke.name}`);
-    console.log("After attack ", `${defendingPoke.name} has ${defendingPoke.currentHP}`);
   }
 };
 
 export const switchPoke = (gameHandler: GameHandler, event: Event) => {
-  console.log('Switched!')
   animationSwitchPokemon(gameHandler);
   const nameOfChosenPokemon = (event.currentTarget as HTMLDivElement)
     .textContent;
