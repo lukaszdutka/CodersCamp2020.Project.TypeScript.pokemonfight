@@ -1,7 +1,6 @@
 # CodersCamp 2020 - Projekt TypeScript
 ## Pokemon Fight
-Projekt prezentuje praktyczną znajomość różnych zagadnień związanych z TypeScript.<br>
-Aplikacja pozwala na walkę pokemon dwóch osób. Każdy z graczy może wybrać 3 stworki, które pomogą mu osiągnąć sukces w walce z przeciwnikiem. Ten, który przeprowadzić grę lepiej wygra - o ile drugi gracz mu na to pozwoli!
+Aplikacja pozwala na walkę pokemon dwóch osób. Każdy z graczy może wybrać 3 stworki, które pomogą mu osiągnąć sukces w walce z przeciwnikiem. Ten, który przeprowadzi grę lepiej wygra - o ile drugi gracz mu na to pozwoli!
 
 Aplikacja została stworzona w oparciu o TypeScript w ramach kursu CodersCamp2020.
 
