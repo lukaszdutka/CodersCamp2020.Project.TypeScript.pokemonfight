@@ -2,13 +2,12 @@
 ## Pokemon Fight
 Projekt prezentuje praktyczną znajomość różnych zagadnień związanych z TypeScript.
 
-Aplikacja została stworzona w oparciu o JavaScript z TypeScriptem. 
+Aplikacja została stworzona w oparciu o TypeScriptem w ramach kursu CodersCamp2020.
 
-# [DEMO](https://lukaszdutka.github.io/CodersCamp2020.Project.TypeScript.pokemonfight/)
+# [DEMO - kliknij by zagrać.](https://lukaszdutka.github.io/CodersCamp2020.Project.TypeScript.pokemonfight/)
 
 **Pokemon Figth** wzorowany był na popularnej grze Pokemon.<br>
-Design projekty: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)<br>
-Projekt jest ukończony.
+Design projektu: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)<br>
 
 Pokemon Fight - start screen|[Pokemon Fight - choose screen
 :-------------------------:|:-------------------------:
@@ -30,7 +29,7 @@ Uczestnicy:
 * [Mariusz Smarż](https://github.com/mariusz-sm) (Tech Lead)
 
 ### Wykorzystane technologie:
-- JavaScript z TypeScript
+- TypeScript
 - HTML
 - CSS - SASS
 
@@ -42,7 +41,6 @@ Uczestnicy:
 - Trello
 
 #### Wymagania funkcjonalne
-
 1. Ekran ładowania - śpiący Snorlax
 2. Ekran startowy - pola do wpisania imion graczy, którzy będą grają obok siebie na komputerze
 3. Ektan wyboru pokemonów - gracze wybierają po 3 pokemony z puli 12 pokemonów.
