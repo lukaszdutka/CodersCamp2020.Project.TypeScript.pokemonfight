@@ -1,22 +1,30 @@
-# CodersCamp 2020 - Projekt JavaScript
+# CodersCamp 2020 - Projekt TypeScript
 ## Pokemon Fight
 Projekt prezentuje praktyczną znajomość różnych zagadnień związanych z TypeScript.
+
+Aplikacja została stworzona w oparciu o JavaScript z TypeScriptem. 
+
+# [DEMO](https://lukaszdutka.github.io/CodersCamp2020.Project.TypeScript.pokemonfight/)
+
+**Pokemon Figth** wzorowany był na popularnej grze Pokemon. Design projekty: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)
+Projekt jest ukończony.
+
+![Pokemon Fight - loading screen](./github/images/1.png)
+![Pokemon Fight - start screen](./github/images/2.gif)
+![Pokemon Fight - choose screen](./github/images/3.gif)
+![Pokemon Fight - fight screen](./github/images/4.gif)
+![Pokemon Fight - end screen](./github/images/5.png)
 
 ### Zespół projektowy
 Mentor:
 [Łukasz Dutka](https://github.com/lukaszdutka)
 
 Uczestnicy:
-* [Kamil Arendarczyk](https://github.com/arendarczyk) 
 * [Aleksandra Cypko](https://github.com/AleksandraCyp) (Product Owner)
 * [Małgorzata Dziewit](https://github.com/memeraki) (UX Designer)
 * [Daria Dziubałtowska](https://github.com/daria305) 
 * [Agata Ludwiczyńska](https://github.com/AgataLudwiczynska) (Develepment Manager)
 * [Mariusz Smarż](https://github.com/mariusz-sm) (Tech Lead)
-
-#[DEMO](https://lukaszdutka.github.io/CodersCamp2020.Project.TypeScript.pokemonfight/)
-
-Aplikacja została stworzona w oparciu o czysty JavaScript. Nie korzysta z żadnych frameworków ani bibliotek styli. 
 
 ### Wykorzystane technologie:
 - JavaScript z TypeScript
@@ -27,47 +35,46 @@ Aplikacja została stworzona w oparciu o czysty JavaScript. Nie korzysta z żadn
 - Visual Studio Code
 - Git
 - GitHub Desktop
-- Figma - https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1
+- Figma
 - Trello
-
-**Pokemon Figth** wzorowany był na popularnej grze Pokemon. Design projekty: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)
-Projekt jest ukończony.
-
-![Pokemon Quiz - start screen](./static/assets/readme-images/startscreen.png)
-![Pokemon Quiz - game screen](./static/assets/readme-images/gamescreen.png)
-![Pokemon Quiz - help / summary / leaderboard screen](./static/assets/readme-images/modalsscreen.png)
 
 #### Wymagania funkcjonalne
 
-1. Tryb quizu (powinien zawierać pokemony z pierwszej generacji):
-    - Podane jest zdjęcie pokemona, gracz zaznacza nazwę – 4 opcje
-        - Modyfikacja - Trudniejsza wersja – zdjęcie ukazuje tylko kształt pokemona
-    - Podana jest nazwa pokemona, gracz ma za zadanie zaznaczyć prawidłowe zdjęcie. 
-2. Zasady dostępne w osobnym oknie, po naciśnięciu pojawią się zasady gry dla wszystkich trybów na raz.
-3. Zasady dla danego trybu:
-    - 2-3 zdania wyjaśnienia dla poszczególnego trybu
-4. Gracz podaje imię przed rozpoczęciem gry, na ekranie startowym. 
-    - Dopiero po podaniu imienia ma możliwość kliknięcia na `start` – rozpoczęcia gry. 
-    - Pole cały czas dostępne do edycji, zmiana imienia powinna być bezproblemowa i niezależna od wybranego trybu gry.
-5. Po rozpoczęciu gry rozpoczyna się odliczanie czasu (2 minuty).
-    - Czas nie jest ograniczony dla pojedynczych pytań.
-    - Jest ograniczona maksymalna liczba pytań - 30 (Aby uniknąć sytuacji w której gracz mógłby szybko przeklikać pytania z tą samą odpowiedzią i statystycznie otrzymałby 25% dobrych odpowiedzi, w łatwy sposób pokonując uczciwych graczy.
-    - W przypadku tej samej liczby punktów w rankingu brany jest pod uwagę czas ukończenia quizu.
-6. W trakcie trwania quizu ukazywany jest czas pozostały do końca quizu.
-7. Wybór odpowiedzi przez gracza.
-    - Kliknięcia na odpowiedź od razu powoduje jej zaznaczenie i udzielenie odpowiedzi.
-    - Po najechaniu na cały guzik/odpowiedź ma się on uwypuklać/podświetlać.
-8. Pod koniec podsumowanie pytań – użytkownik może sprawdzić swoje odpowiedzi
-    - Informacja personalizowana imieniem jakie podał gracz.
-    - Zdjęcie pikachu (opcjonalne).
-9. Generowanie pytań
-    - Pytania muszą być zabezpieczone przed powtarzaniem się, gracz nie może wylosować ponownie tego samego pytania.
-    - Zostaje pobrany losowy zasób z danego trybu.
-    - Zostanie pobrane dla wylosowanego zasobu zdjęcie.
-    - Losowane są 3 pozostałe nieprawidłowe odpowiedzi z zapytania do Pokemon API.
-10. Po ukończeniu czasu wynik gracza zapisywany jest w rankingu dla danej przeglądarki (LocalStorage).
-    - Osobne podsumowania dla trybów.
-    - Pokazywany jest ranking 3 najlepszych wyników.
-11. Brak opcji SETTINGS
-
-# **Pokemon! Gotta Catch ’Em All!**
+1. Ekran ładowania - śpiący Snorlax
+2. Ekran startowy - pola do wpisania imion graczy, którzy będą grają obok siebie na komputerze
+3. Ektan wyboru pokemonów - gracze wybierają po 3 pokemony z puli 12 pokemonów.
+4. Ekran walki - jedno menu dla obu graczy, zmieniają się imiona. Gracz pierwszy zaczyna. 
+    - w jednym czasie walczą tylko dwa pokemony (domyślnym, pierwszym pokemonem jest ten wybrany przez gracza jako pierwszy)
+    - menu wyboru akcji: 3 buttony
+        > atak (wyświetla dwie opcje wyboru ataku oraz jedną powrotu do menu wyboru akcji)
+        > switch (wyświetla dostępne opcje zmiany pokemona na inny oraz jedną powtoru do menu wyboru akcji)
+        > heal - "eat mango" (bezpośrednia akcja odnawiająca życie aktywnego pokemona do maximum HP - gracz może skorzystać z tej akcj tylko jeden raz w ciągu gry)
+5. UI - czytelny, interaktywny i responsywny 
+6. Pokemon posiada:
+    - Punkty Życia/HP
+    - Atak i Obrone 
+    - Typy (np. Bulbasaur: grass, poison) 
+    - Moves / Ruchy (ataki mają swoje typy np. tackle: normal, fire blast: fire)
+7. Algorytm obliczania obrażęń uwzględniający typ pokemona przeciwnika oraz typ ataku aktywnego pokemona
+    - obrażenia są normalne, mało skuteczne lub bardzo skuteczne - w zależności od typu pokemona i typu ataku
+8. Okno z informacjami o przebiegu gry
+9. Gra kończy się, kiedy wszystkie pokemony jednego z graczy będą niezdolne do walki (0 hp)
+10. Komunikat końcowy - kto wygrał, powrót do ekranu startowego
+11. Animacje:
+    - ataki - domyślna animacja wspólna dla wszystkich
+    - zmiana pokemona
+    - zaznaczanie aktywnego gracza
+12. Spójne kolory i czcionki oraz style dla przycisków i interfejsu.
+13. Wybrane pokemony do implemantacji (id, nazwa, typy):
+    - 1 Bulbasaur - Grass/Poison
+    - 4 Charmander - Fire
+    - 7 Squirtle - Water
+    - 13 Weedle - Bug
+    - 16 Pidgey - Normal/Flying
+    - 19 Rattata - Normal
+    - 25 Pikachu - Electric
+    - 27 Sandshrew - Ground
+    - 35 Clefairy - Fairy
+    - 63 Abra - Psychic
+    - 66 Machop - Fighting
+    - 73 Geodude - Rock/Ground
