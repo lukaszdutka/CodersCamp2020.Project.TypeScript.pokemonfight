@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 10px;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 @font-face {
@@ -25,10 +26,20 @@ html {
   margin: auto;
   padding: 10vw;
   background-color: #e8f1f2ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
@@ -36,11 +47,15 @@ html {
   max-width: 400px;
   text-align: center;
   margin-bottom: 1em;
+  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
 #loading-view img {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
@@ -53,10 +68,19 @@ html {
   width: 100%;
   height: 100vh;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #starting-page #header-with-enter-name-manu {
@@ -65,17 +89,30 @@ html {
   padding-right: 10vw;
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper {
   max-width: 500px;
   height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   padding-bottom: 100px;
   color: #e8f1f2ff;
 }
@@ -109,13 +146,28 @@ html {
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput {
   width: 40%;
   border-radius: 50px;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput::-webkit-input-placeholder {
+  color: #020402ff;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput:-ms-input-placeholder {
+  color: #020402ff;
+}
+
+#starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput::-ms-input-placeholder {
+  color: #020402ff;
 }
 
 #starting-page #header-with-enter-name-manu .headerWrapper #enter-name-area .playerNameInput::placeholder {
@@ -134,7 +186,8 @@ html {
   position: relative;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
   background-color: #020402ff;
   width: 160px;
@@ -145,7 +198,8 @@ html {
   position: relative;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
   background-color: #e8f1f2ff;
   width: 130px;
@@ -156,9 +210,11 @@ html {
   position: relative;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   border-radius: 50%;
-  box-shadow: 1px 1px 3px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   width: 110px;
   height: 110px;
   text-align: center;
@@ -168,7 +224,8 @@ html {
 }
 
 #starting-page #start-game-border #start-game-bg1 #start-game-bg2 #start-game-button:hover {
-  filter: drop-shadow(1px 1px 3px #020402ff);
+  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
+          filter: drop-shadow(1px 1px 3px #020402ff);
 }
 
 #starting-page #start-game-border #start-game-bg1 #start-game-bg2 .button-enabled {
@@ -187,18 +244,33 @@ html {
   padding-right: 10vw;
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #starting-page #info-menu #select-info-menu {
   width: 240px;
   height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-top: 80px;
 }
 
@@ -214,24 +286,36 @@ html {
 }
 
 #starting-page #info-menu #select-info-menu .start-page-button:hover {
-  box-shadow: 1px 1px 3px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   background-color: #9b1d20ff;
 }
 
 .popupScreen {
-  box-shadow: 1px 1px 3px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   background-color: #e8f1f2ff;
   display: none;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 25px;
   width: 80vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   padding: 15px;
   z-index: 2;
 }
@@ -243,10 +327,14 @@ html {
 }
 
 .popupScreen .exitButton {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   line-height: 1;
   color: #9b1d20ff;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -262,13 +350,25 @@ html {
   text-align: center;
 }
 
+.popupScreen .modalParagraph span {
+  font-weight: bold;
+}
+
 #choose-page {
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   line-height: 1.2;
   padding: 2vh;
 }
@@ -289,9 +389,13 @@ html {
 }
 
 #choose-page .choosePagePlayers {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
+  -ms-grid-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
 }
 
@@ -303,12 +407,15 @@ html {
 #choose-page .choosePagePlayers img {
   max-width: 7vh;
   padding: 0 0.8vh;
-  filter: drop-shadow(1px 1px 3px #020402ff);
+  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
+          filter: drop-shadow(1px 1px 3px #020402ff);
 }
 
 #choose-page #pokemonList {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
   justify-items: center;
 }
 
@@ -319,35 +426,56 @@ html {
 }
 
 #choose-page #pokemonList img:hover {
-  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
 }
 
 #choose-page #pokemonList #disabledImg {
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
   cursor: not-allowed;
-  transform: scale(0.85);
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
 }
 
 #fight-page {
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
 }
 
 #fight-page .playersContainer {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 #fight-page .playersContainer .playerDetails {
   position: relative;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
+  -ms-grid-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
 }
 
@@ -360,12 +488,14 @@ html {
 
 #fight-page .playersContainer .playerDetails .pokeballWithPokemon {
   width: 20px;
-  filter: drop-shadow(1px 1px 3px #020402ff);
+  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
+          filter: drop-shadow(1px 1px 3px #020402ff);
   margin: 0 2px;
 }
 
 #fight-page .playersContainer .playerDetails .disabledPokemon {
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 #fight-page .playersContainer .playerDetails #underline1, #fight-page .playersContainer .playerDetails #underline2 {
@@ -406,25 +536,37 @@ html {
   position: relative;
   width: 100%;
   min-height: 115px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #fight-page .battleArea .pokemonDetails img {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  object-fit: contain;
-  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
 #fight-page .battleArea .pokemonDetails #pokemon-image-player2 {
-  order: 2;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 
 #fight-page .battleArea .pokemonDetails .animation-div-player1, #fight-page .battleArea .pokemonDetails .animation-div-player2 {
   display: none;
   position: absolute;
-  filter: drop-shadow(1px 1px 3px #020402ff);
+  -webkit-filter: drop-shadow(1px 1px 3px #020402ff);
+          filter: drop-shadow(1px 1px 3px #020402ff);
   top: 0;
   width: 48.6px;
   height: 64.4px;
@@ -447,8 +589,30 @@ html {
   background: #fff;
   position: absolute;
   margin: auto;
-  box-shadow: 0px -9px 0 #000, 50px 10px 0 -6px #fff, 55px 5px 0 -6px #000, 60px 60px 0 -4px #fff, 66px 64px 0 -4px #000, -3px 65px 0 5px #fff, -4px 72px 0 5px #000, -50px 10px 0 -10px #fff, -54px 5px 0 -10px #000, -50px 50px 0 -15px #fff, -54px 53px 0 -15px #000;
-  animation: c1 .3s infinite;
+  -webkit-box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+          box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+  -webkit-animation: c1 .3s infinite;
+          animation: c1 .3s infinite;
   top: 0;
   left: 10px;
 }
@@ -463,23 +627,52 @@ html {
   left: 10px;
   top: 75px;
   margin: auto;
-  box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-  animation: c2 .6s infinite;
+  -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+          box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+  -webkit-animation: c2 .6s infinite;
+          animation: c2 .6s infinite;
 }
 
 #fight-page .battleArea .pokemonDetails .boom-player1:after {
   content: '';
   width: 50px;
   height: 50px;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   border-radius: 50%;
   background: #fff;
   position: absolute;
   left: 80px;
   top: -5px;
   margin: auto;
-  box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-  animation: c3 .5s infinite;
+  -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+          box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+  -webkit-animation: c3 .5s infinite;
+          animation: c3 .5s infinite;
 }
 
 #fight-page .battleArea .pokemonDetails .boom-player2 {
@@ -491,8 +684,30 @@ html {
   background: #fff;
   position: absolute;
   margin: auto;
-  box-shadow: 0px -9px 0 #000, 50px 10px 0 -6px #fff, 55px 5px 0 -6px #000, 60px 60px 0 -4px #fff, 66px 64px 0 -4px #000, -3px 65px 0 5px #fff, -4px 72px 0 5px #000, -50px 10px 0 -10px #fff, -54px 5px 0 -10px #000, -50px 50px 0 -15px #fff, -54px 53px 0 -15px #000;
-  animation: c1 .3s infinite;
+  -webkit-box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+          box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+  -webkit-animation: c1 .3s infinite;
+          animation: c1 .3s infinite;
   bottom: 0;
   right: 10px;
 }
@@ -507,31 +722,69 @@ html {
   left: 10px;
   top: 75px;
   margin: auto;
-  box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-  animation: c2 .6s infinite;
+  -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+          box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+  -webkit-animation: c2 .6s infinite;
+          animation: c2 .6s infinite;
 }
 
 #fight-page .battleArea .pokemonDetails .boom-player2:after {
   content: '';
   width: 50px;
   height: 50px;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   border-radius: 50%;
   background: #fff;
   position: absolute;
   left: 80px;
   top: -5px;
   margin: auto;
-  box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-  animation: c3 .5s infinite;
+  -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+          box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+  -webkit-animation: c3 .5s infinite;
+          animation: c3 .5s infinite;
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo {
   width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo h2 {
@@ -546,9 +799,13 @@ html {
 
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar {
   width: 70%;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
+  -ms-grid-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: first;
 }
 
@@ -558,7 +815,8 @@ html {
   grid-column: span 5;
   width: 100%;
   height: 1.8rem;
-  transform-origin: left center;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
   border-radius: 10px;
   margin-top: 1rem;
 }
@@ -566,9 +824,12 @@ html {
 #fight-page .battleArea .pokemonDetails .pokemonInfo .hpProgressBar .hpBar {
   width: 100%;
   height: 1.8rem;
-  box-shadow: 1px 1px 3px #020402ff;
-  transform-origin: left center;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
   border-radius: 10px;
+  -webkit-transition: width 0.8s ease-out;
   transition: width 0.8s ease-out;
 }
 
@@ -583,16 +844,24 @@ html {
 #fight-page .gameActions {
   width: 90%;
   max-height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 25px;
 }
 
 #fight-page .gameActions .gameLogs {
   height: 10vh;
   width: 100%;
-  box-shadow: 1px 1px 3px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   border-radius: 5px;
   padding: 5px;
   font-size: 1.6rem;
@@ -615,7 +884,8 @@ html {
 }
 
 #fight-page .gameActions .gameLogs::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   background-color: transparent;
 }
@@ -627,7 +897,8 @@ html {
 
 #fight-page .gameActions .gameLogs::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #020402ff;
 }
 
@@ -637,20 +908,31 @@ html {
 }
 
 .popupScreenResult {
-  box-shadow: 1px 1px 3px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   background-color: #e8f1f2ff;
   display: none;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 25px;
   width: 80vw;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
   max-height: fit-content;
   min-height: 12em;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   padding: 5vh 15px;
   z-index: 2;
 }
@@ -661,11 +943,15 @@ html {
 }
 
 .popupScreenResult .exitButton {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   line-height: 1;
   margin: 2vh;
   color: #020402ff;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -685,8 +971,13 @@ html {
   margin: 1em;
 }
 
+.popupScreenResult .modalParagraph span {
+  font-weight: bold;
+}
+
 .popupScreenResult .modalPlayAgainButton {
-  box-shadow: 1px 1px 3px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   line-height: 1.8;
   font-size: 0.7em;
   background-color: #020402ff;
@@ -1124,30 +1415,56 @@ html {
   }
 }
 
-@keyframes c1 {
+@-webkit-keyframes c1 {
   0% {
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   20% {
-    transform: scale(1.5, 1.5);
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
   }
   80% {
-    transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+            transform: scale(-1, -1);
   }
   100% {
-    transform: scale(-1.5, -1.5);
+    -webkit-transform: scale(-1.5, -1.5);
+            transform: scale(-1.5, -1.5);
   }
 }
 
-@keyframes c2 {
+@keyframes c1 {
   0% {
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  20% {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+  }
+  80% {
+    -webkit-transform: scale(-1, -1);
+            transform: scale(-1, -1);
+  }
+  100% {
+    -webkit-transform: scale(-1.5, -1.5);
+            transform: scale(-1.5, -1.5);
+  }
+}
+
+@-webkit-keyframes c2 {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   5% {
-    transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
   }
   49% {
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   80% {
     opacity: 0;
@@ -1157,15 +1474,57 @@ html {
   }
 }
 
-@keyframes c3 {
+@keyframes c2 {
   0% {
-    transform: scale(1.5, 1.5);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  5% {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+  }
+  49% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes c3 {
+  0% {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
   }
   50% {
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   75% {
-    transform: scale(-2, -2);
+    -webkit-transform: scale(-2, -2);
+            transform: scale(-2, -2);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes c3 {
+  0% {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+  }
+  50% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  75% {
+    -webkit-transform: scale(-2, -2);
+            transform: scale(-2, -2);
   }
   100% {
     opacity: 0;
@@ -1227,14 +1586,16 @@ html {
     font-size: 24px;
   }
   #choose-page .choosePagePlayers {
-    grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
   }
   #choose-page .choosePagePlayers img {
     max-width: 8vh;
     margin: 2vh;
   }
   #choose-page #pokemonList {
-    grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
   }
   #choose-page #pokemonList img {
     max-height: 10vh;
@@ -1250,15 +1611,24 @@ html {
     font-size: 2.4rem;
   }
   #fight-page .battleArea {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   #fight-page .battleArea .pokemonDetails {
     min-height: 160px;
-    flex-flow: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   #fight-page .battleArea .pokemonDetails #pokemon-image-player2 {
-    order: 0;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
   }
   #fight-page .battleArea .pokemonDetails .boom-player1 {
     z-index: 99;
@@ -1269,8 +1639,30 @@ html {
     background: #fff;
     position: absolute;
     margin: auto;
-    box-shadow: 0px -9px 0 #000, 50px 10px 0 -6px #fff, 55px 5px 0 -6px #000, 60px 60px 0 -4px #fff, 66px 64px 0 -4px #000, -3px 65px 0 5px #fff, -4px 72px 0 5px #000, -50px 10px 0 -10px #fff, -54px 5px 0 -10px #000, -50px 50px 0 -15px #fff, -54px 53px 0 -15px #000;
-    animation: c1 .3s infinite;
+    -webkit-box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+            box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+    -webkit-animation: c1 .3s infinite;
+            animation: c1 .3s infinite;
     top: 0;
     left: 0;
     bottom: 0;
@@ -1286,22 +1678,51 @@ html {
     left: 10px;
     top: 75px;
     margin: auto;
-    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-    animation: c2 .6s infinite;
+    -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+            box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+    -webkit-animation: c2 .6s infinite;
+            animation: c2 .6s infinite;
   }
   #fight-page .battleArea .pokemonDetails .boom-player1:after {
     content: '';
     width: 50px;
     height: 50px;
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
     border-radius: 50%;
     background: #fff;
     position: absolute;
     left: 80px;
     top: -5px;
     margin: auto;
-    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-    animation: c3 .5s infinite;
+    -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+            box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+    -webkit-animation: c3 .5s infinite;
+            animation: c3 .5s infinite;
   }
   #fight-page .battleArea .pokemonDetails .boom-player2 {
     z-index: 99;
@@ -1312,8 +1733,30 @@ html {
     background: #fff;
     position: absolute;
     margin: auto;
-    box-shadow: 0px -9px 0 #000, 50px 10px 0 -6px #fff, 55px 5px 0 -6px #000, 60px 60px 0 -4px #fff, 66px 64px 0 -4px #000, -3px 65px 0 5px #fff, -4px 72px 0 5px #000, -50px 10px 0 -10px #fff, -54px 5px 0 -10px #000, -50px 50px 0 -15px #fff, -54px 53px 0 -15px #000;
-    animation: c1 .3s infinite;
+    -webkit-box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+            box-shadow: 0px -9px 0 #000,
+ 50px 10px 0 -6px #fff,
+ 55px 5px 0 -6px #000,
+ 60px 60px 0 -4px #fff,
+ 66px 64px 0 -4px #000,
+ -3px 65px 0 5px #fff,
+ -4px 72px 0 5px #000,
+ -50px 10px 0 -10px #fff,
+ -54px 5px 0 -10px #000,
+ -50px 50px 0 -15px #fff,
+ -54px 53px 0 -15px #000;
+    -webkit-animation: c1 .3s infinite;
+            animation: c1 .3s infinite;
     top: 0;
     left: 0;
     bottom: 0;
@@ -1329,37 +1772,75 @@ html {
     left: 10px;
     top: 75px;
     margin: auto;
-    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-    animation: c2 .6s infinite;
+    -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+            box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+    -webkit-animation: c2 .6s infinite;
+            animation: c2 .6s infinite;
   }
   #fight-page .battleArea .pokemonDetails .boom-player2:after {
     content: '';
     width: 50px;
     height: 50px;
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
     border-radius: 50%;
     background: #fff;
     position: absolute;
     left: 80px;
     top: -5px;
     margin: auto;
-    box-shadow: -4px -5px 0 #000, 20px -8px 0 -2px #fff, 22px -13px 0 -2px #000, 28px 10px 0 -4px #fff, 32px 12px 0 -4px #000, 5px 20px 0 2px #fff, 2px 24px 0 2px #000;
-    animation: c3 .5s infinite;
+    -webkit-box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+            box-shadow: -4px -5px 0 #000,
+ 20px -8px 0 -2px #fff,
+ 22px -13px 0 -2px #000,
+ 28px 10px 0 -4px #fff,
+ 32px 12px 0 -4px #000,
+ 5px 20px 0 2px #fff,
+ 2px 24px 0 2px #000;
+    -webkit-animation: c3 .5s infinite;
+            animation: c3 .5s infinite;
   }
   #fight-page .gameActions {
-    flex-flow: row;
-    justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   #fight-page .gameActions .gameLogs {
     height: 30vh;
     width: 45%;
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
   #fight-page .gameActions .buttonsContainer {
     width: 45%;
   }
   .popupScreenResult {
     width: 50vw;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
     max-height: fit-content;
     min-height: 12em;
   }
@@ -1377,7 +1858,8 @@ html {
     margin: 1.4em;
   }
   .popupScreenResult .modalPlayAgainButton {
-    box-shadow: 1px 1px 3px #020402ff;
+    -webkit-box-shadow: 1px 1px 3px #020402ff;
+            box-shadow: 1px 1px 3px #020402ff;
     line-height: 1.8;
     font-size: 0.7em;
     background-color: #020402ff;
@@ -1419,8 +1901,10 @@ footer {
   position: fixed;
   top: 50%;
   margin-left: .5em;
-  transform: rotate(-90deg) translate(-50%);
-  transform-origin: top left;
+  -webkit-transform: rotate(-90deg) translate(-50%);
+          transform: rotate(-90deg) translate(-50%);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
   white-space: nowrap;
 }
 
@@ -1432,7 +1916,8 @@ footer {
   margin: 0.5em;
   border-radius: 1em;
   font-size: 0.9em;
-  box-shadow: 1px 1px 3px #020402ff;
+  -webkit-box-shadow: 1px 1px 3px #020402ff;
+          box-shadow: 1px 1px 3px #020402ff;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -1444,6 +1929,7 @@ footer {
 .battleButton {
   background-color: #e8f1f2ff;
   color: #020402ff;
+  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 

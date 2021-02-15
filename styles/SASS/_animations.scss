@@ -1,5 +1,3 @@
-// Placeholder for animations (keyframes)
-
 //Buttons EXIT
 
 @-webkit-keyframes scale-out-horizontal {
@@ -26,7 +24,6 @@
     opacity: 1;
   }
 }
-
 
 // Buttons ENTRY
 
@@ -55,7 +52,7 @@
   }
 }
 
-// ENTRY animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+// ENTRY animation
 
 @-webkit-keyframes scale-in-center {
         0% {
@@ -83,7 +80,7 @@
       }
       
 
-// Pokemon ENTRY animation: bounce-in-fwd 1.1s both;
+// Pokemon ENTRY
 
 @-webkit-keyframes bounce-in-fwd {
   0% {
@@ -190,7 +187,7 @@
   }
 }
 
-// Choosing POKEMON animation: heartbeat 1.5s ease-in-out both;
+// Choosing POKEMON
 
 @-webkit-keyframes heartbeat {
         from {
@@ -261,7 +258,7 @@
         }
       }
 
-/// Pokemon EXIT animation: bounce-out-bck 1.5s both;
+/// Pokemon EXIT
 
 @-webkit-keyframes bounce-out-bck {
         0% {
@@ -373,7 +370,7 @@
       }
       
 
-// Pokemon  animation: jello-horizontal 0.9s both;
+// Pokemon hit
 
 @-webkit-keyframes jello-horizontal {
         0% {
@@ -436,7 +433,7 @@
         }
       }
       
-/// FIGHT
+// FIGHT
 
 @keyframes c1{
         0%{transform:scale(1,1);}
