@@ -121,11 +121,28 @@
             display: flex;
         
             .pokemonDetails {
+                min-height: 160px;
                 flex-flow: column;
                 align-items: center;
         
                 #pokemon-image-player2 {
                 order: 0;
+                }
+
+                .boom-player1 {
+                  @include boom;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                }
+            
+                .boom-player2 {
+                  @include boom;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
                 }
             }
         }
@@ -148,8 +165,7 @@
 
     .popupScreenResult {
         width: 50vw;
-        margin-left: -25vw;
-        max-height: 18em;
+        max-height: fit-content;
         min-height: 12em;
       
         .modalHeader {
