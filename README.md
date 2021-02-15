@@ -9,11 +9,11 @@ Aplikacja została stworzona w oparciu o JavaScript z TypeScriptem.
 **Pokemon Figth** wzorowany był na popularnej grze Pokemon. Design projekty: [Figma](https://www.figma.com/file/q0IcE7FOL1GEi7sXvhE5WE/Pokemon-Fight?node-id=0%3A1)
 Projekt jest ukończony.
 
-![Pokemon Fight - loading screen](./github/images/1.png)
-![Pokemon Fight - start screen](./github/images/2.gif)
-![Pokemon Fight - choose screen](./github/images/3.gif)
-![Pokemon Fight - fight screen](./github/images/4.gif)
-![Pokemon Fight - end screen](./github/images/5.png)
+![Pokemon Fight - loading screen](./.github/images/1.png)
+![Pokemon Fight - start screen](./.github/images/2.gif)
+![Pokemon Fight - choose screen](./.github/images/3.gif)
+![Pokemon Fight - fight screen](./.github/images/4.gif)
+![Pokemon Fight - end screen](./.github/images/5.png)
 
 ### Zespół projektowy
 Mentor:
