@@ -1,0 +1,127 @@
+// Placeholder for variables, colors, mixins etc.
+
+// Example of variable
+$color-primary: #9b1d20ff;
+$color-text: #020402ff;
+$color-bg: #e8f1f2ff;
+$color-disable: #4D4D4D;
+
+$mobile: 768px;
+
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap');
+
+@font-face {
+  font-family: "Pokemon Solid";
+  src: url(../assets/PokemonSolid.ttf);
+} 
+
+@mixin transition-ease {
+    transition: all .5s ease-in-out;
+}
+  
+@mixin boxshadow {
+    box-shadow: 1px 1px 3px $color-text;
+}
+
+@mixin textshadow {
+  text-shadow: 1px 1px 3px $color-text;
+}
+
+@mixin dropshadow {
+  filter: drop-shadow(1px 1px 3px $color-text);
+}
+
+@mixin button {
+  text-align: center;
+  background-color: $color-text;
+  color: $color-bg;
+  padding: 0.3em;
+  margin: 0.5em;
+  border-radius: 1em;
+  font-size: 0.9em;
+  @include boxshadow;
+
+  &:hover {
+      background-color: $color-primary;
+  }  
+}
+
+@mixin desktop {
+    @media screen and (min-width: $mobile) {
+      @content;
+    }
+}
+
+@mixin centerpokeball {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+}
+
+//
+
+@mixin boom {
+    z-index: 99;
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    background: #fff;
+    position: absolute;
+    margin:auto;
+    box-shadow: 0px -9px 0 #000,
+                50px 10px 0 -6px #fff,
+                55px 5px 0 -6px #000,
+                60px 60px 0 -4px #fff,
+                66px 64px 0 -4px #000,
+                -3px 65px 0 5px #fff,
+                -4px 72px 0 5px #000,
+                -50px 10px 0 -10px #fff,
+                -54px 5px 0 -10px #000,
+                -50px 50px 0 -15px #fff,
+                -54px 53px 0 -15px #000;
+    animation:c1 .3s infinite;
+  
+  &:before{
+    content:'';
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    background: #fff;
+    position: absolute;
+    left: 10px;
+    top:75px;
+    margin:auto;
+    box-shadow: -4px -5px 0 #000,
+                20px -8px 0 -2px #fff,
+                22px -13px 0 -2px #000,
+                28px 10px 0 -4px #fff,
+                32px 12px 0 -4px #000,
+                5px 20px 0 2px #fff,
+                2px 24px 0 2px #000;
+    animation:c2 .6s infinite;
+  }
+  
+  &:after{
+    content:'';
+    width: 50px;
+    height: 50px;
+    transform:rotate(180deg);
+    border-radius:50%;
+    background: #fff;
+    position: absolute;
+    left: 80px;
+    top:-5px;
+    margin:auto;
+    box-shadow: -4px -5px 0 #000,
+                20px -8px 0 -2px #fff,
+                22px -13px 0 -2px #000,
+                28px 10px 0 -4px #fff,
+                32px 12px 0 -4px #000,
+                5px 20px 0 2px #fff,
+                2px 24px 0 2px #000;
+    animation:c3 .5s infinite;
+  }
+}

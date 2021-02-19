@@ -1,0 +1,183 @@
+{
+    "pokemons": [{
+        "name": "bulbasaur",
+        "types": ["grass", "poison"],
+        "stats": {
+            "hp": 40,
+            "attack": 51,
+            "defense": 39
+        },
+        "moves": [{
+            "name": "razor-wind",
+            "type": "normal"
+        }, {
+            "name": "razor-leaf",
+            "type": "grass"
+        }]
+    }, {
+        "name": "charmander",
+        "types": ["fire"],
+        "stats": {
+            "hp": 34,
+            "attack": 55,
+            "defense": 38
+        },
+        "moves": [{
+            "name": "mega-punch",
+            "type": "normal"
+        }, {
+            "name": "ember",
+            "type": "fire"
+        }]
+    }, {
+        "name": "squirtle",
+        "types": ["water"],
+        "stats": {
+            "hp": 39,
+            "attack": 53,
+            "defense": 29
+        },
+        "moves": [{
+            "name": "mega-kick",
+            "type": "normal"
+        }, {
+            "name": "water-gun",
+            "type": "water"
+        }]
+    }, {
+        "name": "weedle",
+        "types": ["bug", "poison"],
+        "stats": {
+            "hp": 35,
+            "attack": 40,
+            "defense": 35
+        },
+        "moves": [{
+            "name": "poison-sting",
+            "type": "poison"
+        }, {
+            "name": "string-shot",
+            "type": "poison"
+        }]
+    }, {
+        "name": "pidgey",
+        "types": ["normal", "flying"],
+        "stats": {
+            "hp": 35,
+            "attack": 42,
+            "defense": 35
+        },
+        "moves": [{
+            "name": "razor-wind",
+            "type": "normal"
+        }, {
+            "name": "sky-attack",
+            "type": "flying"
+        }]
+    }, {
+        "name": "rattata",
+        "types": ["normal"],
+        "stats": {
+            "hp": 30,
+            "attack": 45,
+            "defense": 35
+        },
+        "moves": [{
+            "name": "body-slam",
+            "type": "normal"
+        }, {
+            "name": "dig",
+            "type": "ground"
+        }]
+    }, {
+        "name": "pikachu",
+        "types": ["electric"],
+        "stats": {
+            "hp": 33,
+            "attack": 54,
+            "defense": 33
+        },
+        "moves": [{
+            "name": "slam",
+            "type": "normal"
+        }, {
+            "name": "thunder-punch",
+            "type": "electric"
+        }]
+    }, {
+        "name": "sandshrew",
+        "types": ["ground"],
+        "stats": {
+            "hp": 45,
+            "attack": 42,
+            "defense": 37
+        },
+        "moves": [{
+            "name": "headbutt",
+            "type": "normal"
+        }, {
+            "name": "earthquake",
+            "type": "ground"
+        }]
+    }, {
+        "name": "clefairy",
+        "types": ["fairy"],
+        "stats": {
+            "hp": 40,
+            "attack": 43,
+            "defense": 38
+        },
+        "moves": [{
+            "name": "fire-punch",
+            "type": "fire"
+        }, {
+            "name": "ice-punch",
+            "type": "ice"
+        }]
+    }, {
+        "name": "abra",
+        "types": ["psychic"],
+        "stats": {
+            "hp": 38,
+            "attack": 45,
+            "defense": 35
+        },
+        "moves": [{
+            "name": "mega-punch",
+            "type": "normal"
+        }, {
+            "name": "psychic",
+            "type": "psychic"
+        }]
+    }, {
+        "name": "machop",
+        "types": ["fighting"],
+        "stats": {
+            "hp": 44,
+            "attack": 55,
+            "defense": 29
+        },
+        "moves": [{
+            "name": "karate-chop",
+            "type": "fighting"
+        }, {
+            "name": "rolling-kick",
+            "type": "fighting"
+        }]
+    }, {
+        "name": "geodude",
+        "types": ["rock", "ground"],
+        "stats": {
+            "hp": 37,
+            "attack": 45,
+            "defense": 37
+        },
+        "moves": [{
+            "name": "rock-throw",
+            "type": "rock"
+        }, {
+            "name": "earthquake",
+            "type": "ground"
+        }]
+    }]
+}

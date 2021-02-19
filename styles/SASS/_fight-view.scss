@@ -1,0 +1,302 @@
+// Styles for pokemon fighting screen. Common elements should be added to _config.scss in mixins.
+
+#fight-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .playersContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .playerDetails {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      align-items: center;
+      justify-items: center;
+
+      h2 {
+        font-family: "Pokemon Solid";
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+        grid-column: span 3;
+      }
+
+      .pokeballWithPokemon {
+        width: 20px;
+        @include dropshadow;
+        margin: 0 2px;
+      }
+
+      .disabledPokemon {
+        filter: grayscale(100%);
+      }
+
+      #underline1, #underline2 {
+        position: absolute;
+        bottom: -3px;
+        width: 50%;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        display: none;
+      }
+    }
+
+    .activePlayer {
+      color: $color-primary;
+
+      #underline1, #underline2 {
+        display: block;
+      }
+    }
+  }
+
+  .activePlayerInfo {
+    text-align: center;
+    width: 80%;
+    font-size: 1.8rem;
+    margin: 25px auto;
+
+    span {
+      color: $color-primary;
+      font-weight: bold;
+    }
+  }
+
+  .battleArea {
+    width: 90%;
+
+    .pokemonDetails {
+      position: relative;
+      width: 100%;
+      min-height: 115px;
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        width: fit-content;
+        object-fit: contain;
+        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        @include transition-ease;
+      }
+
+      #pokemon-image-player2 {
+        order: 2;
+      }
+
+      .animation-div-player1, .animation-div-player2{ 
+        display: none;
+        position: absolute;
+        @include dropshadow;
+        top: 0;
+        width: 48.6px; 
+        height: 64.4px; 
+      }
+
+      .animation-div-player1 {
+        left: 25%;
+      }
+
+      .animation-div-player2 {
+        right: 25%;
+      }
+
+      .boom-player1 {
+        @include boom;
+        top: 0;
+        left: 10px;
+      }
+
+      .boom-player2 {
+        @include boom;
+        bottom: 0;
+        right: 10px;
+      }
+
+      .pokemonInfo {
+        width: 70%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+          font-family: "Pokemon Solid";
+          font-size: 1.8rem;
+          line-height: 1;
+          letter-spacing: 0.2rem;
+          text-align: center;
+          width: 100%;
+          text-align: center;
+        }
+        .hpProgressBar {
+          width: 70%;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          align-items: center;
+          justify-items: first;
+
+          .hpBarBackground {
+            position: relative;
+            background-color: lightgrey;
+            grid-column: span 5;
+            width: 100%;
+            height: 1.8rem;
+            // @include boxshadow;
+            transform-origin: left center;
+            border-radius: 10px;
+            margin-top: 1rem;
+          }
+
+          .hpBar {
+            width: 100%;
+            height: 1.8rem;
+            @include boxshadow;
+            transform-origin: left center;
+            border-radius: 10px;
+            transition: width 0.8s ease-out;
+          }
+
+          .hpBarHighLevel {
+            background-color: #0c9300;
+          }
+
+          .hpBarLowLevel {
+            background-color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .gameActions {
+    width: 90%;
+    max-height: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 25px;
+
+    .gameLogs {
+      height: 10vh;
+      width: 100%;
+      // border: 2px solid $color-text;
+      @include boxshadow;
+      border-radius: 5px;
+      padding: 5px;
+      font-size: 1.6rem;
+      overflow-y: scroll;
+
+      p {
+        margin: 5px auto;
+        color: $color-text;
+
+        &:first-child {
+          color: $color-text;
+          font-weight: bold;
+          font-size: 2rem;
+        }
+
+        &:nth-last-child(2n) {
+          color: $color-primary;
+        }
+      }
+
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar {
+        width: 10px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: $color-text;
+      }
+    }
+
+    .buttonsContainer {
+      width: 80%;
+      min-height: 163px;
+    }
+  }
+
+}
+
+.popupScreenResult {
+  @include boxshadow;
+  background-color: $color-bg;
+  display: none;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  width: 80vw;
+  max-height: fit-content;
+  min-height: 12em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5vh 15px;
+  z-index: 2;
+
+  .exitButton, .modalHeader, .modalPlayAgainButton {
+    font-family: 'Pokemon Solid';
+    letter-spacing: .2em;
+  }
+
+  .exitButton {
+    align-self:flex-end;
+    line-height: 1;
+    margin: 2vh;
+    color: $color-text;
+    user-select: none;
+    cursor: pointer;         
+  }
+
+  .modalHeader {
+    @include textshadow;
+    font-size: 3rem;
+    line-height: 1;
+    color: $color-primary;
+    text-align: center;
+  }
+
+  .modalParagraph {
+    line-height: 1.8;
+    font-size: 1.4rem;
+    color: $color-text;
+    text-align: center;
+    margin: 1em;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .modalPlayAgainButton {
+    @include boxshadow;
+    line-height: 1.8;
+    font-size: 0.7em;
+    background-color: $color-text;
+    color: $color-bg;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+    border-radius: 1em;
+    cursor: pointer;
+  }
+}

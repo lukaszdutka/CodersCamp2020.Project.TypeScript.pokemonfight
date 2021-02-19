@@ -1,0 +1,69 @@
+// File should contains:
+// - styles for body, footer, p, h1, ... 
+// - styles for buttons and scrollbars
+// - imports for rest of _<name>.scss files
+
+@import './resets';
+@import './config';
+@import './loading-view';
+@import './start-view';
+@import './pokemon-choose-view';
+@import './fight-view';
+@import './animations';
+@import './responsive';
+
+body {
+    font-family: 'Bellota Text', cursive;
+    font-size: 2.4em;
+    letter-spacing: .05em;
+    background-color: $color-bg;
+    color: $color-text;
+}
+
+a {
+    color: $color-text;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+#app {
+    height: 100vh;
+    width: 100%;
+}
+
+footer {
+    font-size: .5em;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    margin-left: .5em;
+    transform: rotate(-90deg) translate(-50%);
+    transform-origin: top left;
+    white-space: nowrap;
+}
+
+.button {
+    @include button;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.battleButton {
+    background-color: $color-bg;
+    color: $color-text;
+    @include transition-ease;
+}
+
+.disabledButton {
+    background-color: $color-disable;
+    color: $color-bg;
+    cursor: not-allowed;
+    &:hover {
+        background-color: $color-disable;
+    }
+}

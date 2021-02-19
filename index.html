@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>CodersCamp2020 | Pokemon Fight</title>
+    <link rel="stylesheet" href="styles/app.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <div id="loading-view">
+        <p>Please wait a bit, we are looking for the Poké Flute to wake up Snorlax to fight.</p>
+        <img id="zzz" src="assets/zzz.gif" alt="z z Z">
+        <img src="assets/snorlax.png" alt="sleeping snorlax">
+    </div>
+
+    <footer>
+        TypeScript Mangos project for CodersCamp2020
+    </footer>
+
+</div>
+
+    <template id="starting-page-template">
+        <div id="starting-page">
+            <div id="header-with-enter-name-manu">
+                <div class="headerWrapper">
+                    <p class="gameTitle">Pokemon Fight</p>
+                    <p class="startInstruction">Enter yours names to start the Fight!</p>
+                    <div id="enter-name-area">
+                        <input id="enter-player1-name" class="playerNameInput" placeholder="Player 1" maxlength="8"/>
+                        <input id="enter-player2-name" class="playerNameInput" placeholder="Player 2" maxlength="8"/>
+                    </div>
+                </div>
+            </div>
+            <div id="start-game-border">
+                <div id="start-game-bg1">
+                    <div id="start-game-bg2">
+                        <button id="start-game-button" class="button-disabled" disabled>
+                            Start
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="info-menu">
+                <ul id=select-info-menu>
+                    <li id="how-to-play-button" class="start-page-button">How to play</li>
+                    <li id="about-button" class="start-page-button">About</li>
+                    <li id="authors-button" class="start-page-button">Authors</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+        
+    <template id="info-modal-template">
+        <div class="popupScreen" id='info-modal-screen'>
+                <div id="modal-exit-button" class="exitButton">x</div>
+                <p id="modal-header" class="modalHeader">How to play?</p>
+                <p id="modal-paragraph" class="modalParagraph">
+                    &#8594; After entering the players' names, click start. <br>
+                    &#8594; Each player chooses three pokemons and then the game begins. <br>
+                    &#8594; During his move, the player can attack the opponent, change the pokemon or use the mango (heal currently used pokemon). <br>
+                    &#8594; The one who kills all the opponent's pokemon faster wins. <br>
+                    <span>Have fun!</span></p>
+        </div>
+    </template>
+
+    <template id="authors-modal-template">
+        <div class="popupScreen" id='authors-modal-screen'>
+                <div id="modal-exit-button" class="exitButton">x</div>
+                <p id="modal-header" class="modalHeader">Authors:</p>
+                <p id="modal-paragraph" class="modalParagraph">
+                    Mentor: <a href="https://github.com/arendarczyk" target="_blank">Łukasz Dutka</a><br>
+                    <a href="https://github.com/AleksandraCyp" target="_blank">Aleksandra Cypko</a><br>
+                    <a href="https://github.com/memeraki" target="_blank">Małgorzata Dziewit</a><br>
+                    <a href="https://github.com/daria305" target="_blank">Daria Dziubałtowska</a><br>
+                    <a href="https://github.com/AgataLudwiczynska" target="_blank">Agata Ludwiczyńska</a><br>
+                    <a href="https://github.com/mariusz-sm" target="_blank">Mariusz Smarż</a></p>
+        </div>
+    </template>
+
+    <template id="about-modal-template">
+        <div class="popupScreen" id='about-modal-screen'>
+                <div id="modal-exit-button" class="exitButton">x</div>
+                <p id="modal-paragraph" class="modalParagraph">
+                    Application made as part of the CodersCamp2020 project.<br>
+                    <a href="https://github.com/lukaszdutka/CodersCamp2020.Project.TypeScript.pokemonfight/" target="_blank">Visit Github for more information.</a></p>
+                    <img src="./assets/pikachuwithmango.png" alt="Pikachu" width="50%" object-fit="contain">
+        </div>
+    </template>
+
+    <template id='choose-page-template'>
+        <div id='choose-page'>
+            <p>Sorry, but we couldn't wake up Snorlax...<br>
+                We caught only 12 Pokemons. Choose them wisely and smarter than your opponent &#128515;</p>
+            <p id='whoChoosesParagraph'>Ash chooses 1 (the last) pokemon</p>
+            <div class='choosePagePlayers' id='choosePagePlayer1'>
+                <h1 class='choosePagePlayersName fancyFont' id='choosePagePlayer1Name'>ASH</h1>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+            </div>
+            <div class='choosePagePlayers' id='choosePagePlayer2'>
+                <h1 class='choosePagePlayersName fancyFont' id='choosePagePlayer2Name'>MISTY</h1>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+                <img src='./assets/pokeball.png' alt='Pokeball'>
+            </div>
+            <h1 class='fancyFont' id='pokemonListHeader'>POKEMON LIST</h1>
+            <p class='smallFont' id='pokemonListParagraph'>Click on a pokemon to choose the best one for you!</p>
+            <div id='pokemonList'>
+                <img src='./assets/sandshrew.png' alt='sandshrew' id='sandshrew'>
+                <img src='./assets/pikachu.png' alt='pikachu' id='pikachu'>
+                <img src='./assets/abra.png' alt='abra' id='abra'>
+                <img src='./assets/pidgey.png' alt='pidgey' id='pidgey'>
+                <img src='./assets/bulbasaur.png' alt='bulbasaur' id='bulbasaur'>
+                <img src='./assets/squirtle.png' alt='squirtle' id='squirtle'>
+                <img src='./assets/machop.png' alt='machop' id='machop'>
+                <img src='./assets/rattata.png' alt='rattata' id='rattata'>
+                <img src='./assets/charmander.png' alt='charmander' id='charmander'>
+                <img src='./assets/clefairy.png' alt='clefairy' id='clefairy'>
+                <img src='./assets/geodude.png' alt='geodude'id='geodude'>
+                <img src='./assets/weedle.png' alt='weedle' id='weedle'>
+            </div>
+        </div>
+    </template>
+
+    <template id="fight-page-template">
+        <div id='fight-page'>
+            <div class="playersContainer">
+                <div class='playerDetails activePlayer' id='fight-page-player1'>
+                    <h2 id='fight-page-player1-name'>Ash</h2>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <div id="underline1"></div>
+                </div>
+                <div class='playerDetails' id='fight-page-player2'>
+                    <h2 id='fight-page-player2-name'>Misty</h2>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <img class="pokeballWithPokemon" src='./assets/pokeball.png' alt='Pokeball'>
+                    <div id="underline2"></div>
+                </div>
+            </div>
+            <div class="activePlayerInfo" id="active-player-info">
+                Ash now is your turn. Get the revenge!
+            </div>
+            <div class="battleArea">
+                <div class="pokemonDetails">
+                    <img id="pokemon-image-player1" src='./assets/pikachu.png' alt='Pokemon'>
+                    <div class="pokemonInfo">
+                        <h2 id='pokemon-name-player1'>Pikachu</h2>
+                        <div class="hpProgressBar" id='hpProgressBarPlayer1'>
+                            <h2>HP:</h2>
+                            <div class="hpBarBackground">
+                                 <div class="hpBar" id="hp-bar-player1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boom-player1"></div>
+                    <img src="./assets/mango.gif" class="animation-div-player1"></img>
+                </div>
+                <div class="pokemonDetails">
+                    <img id="pokemon-image-player2" src='./assets/bulbasaur.png' alt='Pokemon'>
+                    <div class="pokemonInfo">
+                        <h2 id='pokemon-name-player2'>Bulbasaur</h2>
+                        <div class="hpProgressBar" id='hpProgressBarPlayer2'>
+                            <h2>HP:</h2>
+                            <div class="hpBarBackground">
+                                <div class="hpBar" id="hp-bar-player2"></div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="boom-player2"></div>
+                    <img src="./assets/mango.gif" class="animation-div-player2"></img>
+                </div>
+            </div>
+            <div class="gameActions">
+                <div class="gameLogs"></div>
+                <div class="buttonsContainer" id="actionModals">
+                </div>
+            </div>
+            
+        </div>
+    </template>
+
+    <template id="gameresult-modal-template">
+        <div class="popupScreenResult" id='gameresult-modal-screen'>
+                <p id="modal-header" class="modalHeader">Ash won!</p>
+                <p id="modal-paragraph" class="modalParagraph">It was an amazing fight, thank you both. Press <span>Play again</span> button if you want to go back to the starting page.</p>
+                <button id="modal-playagain-button" class="modalPlayAgainButton">Play again</button>
+        </div>
+    </template>
+
+    <script src="src/index.ts"></script>
+
+</body>
+
+</html>

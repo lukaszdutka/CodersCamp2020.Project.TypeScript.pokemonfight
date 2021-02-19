@@ -1,0 +1,197 @@
+// Placeholder for @media-query-breakpoints
+// Mobile first! So mobile view is default. Here you design other views
+@include desktop {
+  
+  #starting-page {
+    #header-with-enter-name-manu {
+        .headerWrapper {
+            max-width: 700px;
+            height: 300px;
+            input {
+                font-size: 1.2em;
+            }
+
+            .gameTitle {
+                font-size: 3em; 
+            }
+
+            .startInstruction {
+                font-size: 1em;
+            }
+
+            #enter-name-area {
+                .playerNameInput {
+                    width: 40%;
+                }
+            }  
+        }     
+    }
+
+    #start-game-border {
+        height: 20px;
+
+        #start-game-bg1 {
+            width: 200px;
+            height: 200px;
+
+            #start-game-bg2 {
+                width: 160px;
+                height: 160px;
+
+                #start-game-button {
+                    width: 130px;
+                    height: 130px;
+
+                }
+            }
+        }
+    }
+
+    #info-menu {
+      
+      #select-info-menu {
+          width: 350px;
+          height: 35vh;
+          
+          .start-page-button {
+              font-size: 1em;
+          }
+      } 
+    }
+  }
+
+  .popupScreen {
+    width: 70vw;
+  }
+
+    #choose-page {
+
+    padding: 5vh;
+
+        p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        #whoChoosesParagraph {
+            font-size: 24px;
+        }
+
+        .choosePagePlayers {
+            grid-template-columns: repeat(6, 1fr);
+            img {
+                max-width: 8vh;
+                margin: 2vh;
+            }
+        }
+
+        #pokemonList{
+            grid-template-columns: repeat(6, 1fr);
+            img {
+                max-height: 10vh;
+            }
+        }
+    }  
+
+    #fight-page {
+
+        .playersContainer {
+            
+            .playerDetails {
+        
+              h2 {
+                font-size: 3rem;
+              }
+        
+              .pokeballWithPokemon {
+                width: 30px;
+                margin: 0 5px;
+              }
+         }
+                
+          .activePlayerInfo {
+            font-size: 2.4rem;
+          }
+        }
+        .battleArea {
+            display: flex;
+        
+            .pokemonDetails {
+                min-height: 160px;
+                flex-flow: column;
+                align-items: center;
+        
+                #pokemon-image-player2 {
+                order: 0;
+                }
+
+                .boom-player1 {
+                  @include boom;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                }
+            
+                .boom-player2 {
+                  @include boom;
+                  top: 0;
+                  left: 0;
+                  bottom: 0;
+                  right: 0;
+                }
+            }
+        }
+        .gameActions {
+            flex-flow: row;
+            justify-content: space-evenly;
+
+           .gameLogs {
+                height: 30vh;
+                width: 45%;
+                order: 2;
+            }   
+
+            .buttonsContainer {
+                width: 45%;
+          } 
+        }
+    
+    }
+
+    .popupScreenResult {
+        width: 50vw;
+        max-height: fit-content;
+        min-height: 12em;
+      
+        .modalHeader {
+          @include textshadow;
+          font-size: 2.6em;
+          line-height: 1;
+          color: $color-primary;
+        }
+      
+        .modalParagraph {
+          line-height: 1.8;
+          font-size: 0.9em;
+          color: $color-text;
+          text-align: center;
+          margin: 1.4em;
+        }
+      
+        .modalPlayAgainButton {
+          @include boxshadow;
+          line-height: 1.8;
+          font-size: 0.7em;
+          background-color: $color-text;
+          color: $color-bg;
+          padding-left: 2em;
+          padding-right: 2em;
+          padding-bottom: 0.5em;
+          border-radius: 1em;
+        }
+      }
+}
